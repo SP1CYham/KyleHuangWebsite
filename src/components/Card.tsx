@@ -5,11 +5,7 @@ export default function Card({
 }) {
   const card = (
     <div className="card">
-      <img
-        src="https://via.placeholder.com/150"
-        alt="profile picture"
-        className="cardImg"
-      ></img>
+      <img src="favicon.svg" alt="profile picture" className="cardImg"></img>
       <h2 className="cardTitle">{name}</h2>
       <p>{desc}</p>
     </div>
