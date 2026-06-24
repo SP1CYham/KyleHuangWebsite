@@ -12,6 +12,10 @@ import Input from "./components/Input";
 import ColorPicker from "./components/ColorPicker";
 import UpdateArray from "./components/UpdateArray";
 import CarComponent from "./components/CarComponent";
+import ToDoList from "./components/ToDoList";
+import ScreenSize from "./components/ScreenSize";
+
+import ComponentA from "./components/ComponentA";
 
 function App() {
   const fruits = [
@@ -52,6 +56,18 @@ function App() {
       <br />
 
       <CarComponent />
+      <hr />
+      <br />
+
+      <ToDoList />
+      <hr />
+      <br />
+
+      <ScreenSize />
+      <hr />
+      <br />
+
+      <ComponentA />
       <hr />
       <br />
 
