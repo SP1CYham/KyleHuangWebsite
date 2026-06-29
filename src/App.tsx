@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 
 //pages
 import Home from "./pages/Home";
+import Coding from "./pages/Coding";
 import LightMode from "./pages/LightMode";
 import NotFound from "./pages/NotFound";
-import context from "react-bootstrap/esm/AccordionContext";
 
 interface ContextTypes {
   darkMode: boolean;
@@ -50,6 +50,7 @@ function App() {
           <main className="min-h-full">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/coding" element={<Coding />} />
               <Route path="/light-mode" element={<LightMode />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
