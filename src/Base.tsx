@@ -6,8 +6,8 @@ interface BaseProps {
 
 export default function Base({ children }: BaseProps) {
   return (
-    <div className="flex justify-center w-full">
-      <div className="max-w-250 flex-1">{children}</div>
+    <div className="flex justify-center">
+      <div className="max-w-250 flex-1 min-w-0">{children}</div>
     </div>
   );
 }

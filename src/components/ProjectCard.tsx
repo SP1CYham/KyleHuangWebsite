@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ProjectCard({
   title,
   text,
@@ -11,18 +13,23 @@ export default function ProjectCard({
 }) {
   return (
     <>
-      <a className="flex-1" href={to}>
+      <Link className="flex-1 h-full min-w-0" to={to}>
         <div
-          className="border-2 border-gray-400 rounded-3xl
-        p-4 text-center align-middle h-fit"
+          className="border-2 border-gray-400 rounded-3xl h-full
+        p-4 text-center align-middle text-wrap
+        flex flex-col"
         >
-          <p className="">{title}</p>
-          <span className="justify-center flex min-h-30 max-h-30">
-            <img src={img} className="w-full" />
-          </span>
-          <p>{text}</p>
+          <p className="truncate shrink-0">{title}</p>
+
+          <div
+            className={`flex flex-1 min-h-0 py-2 rounded-2xl bg-cover bg-center bg-[url(${img.toString()})]`}
+          ></div>
+
+          <p className="line-clamp-2 shrink-0 min-h-12 place-content-center">
+            {text}
+          </p>
         </div>
-      </a>
+      </Link>
     </>
   );
 }

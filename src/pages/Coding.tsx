@@ -1,22 +1,44 @@
 import Base from "../Base";
 import ProjectCard from "../components/ProjectCard";
 
+import Card from "../components/Card";
+
 export default function Coding() {
   return (
     <>
       <Base>
-        <div className="p-4">
-          coding
-          <div className="flex gap-3 h-full">
+        <div className="p-4 text-center">
+          <p className="my-3 wrap-normal">
+            check out some of the projects i've made!
+          </p>
+          <div className="flex gap-3 h-60">
             <ProjectCard
-              title="wfeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-              text="fffffffffffffffffffffffffffffffffffffff"
+              title="humptys rise"
+              text="isdewsfwerfg"
               img="/favicon.svg"
               to="erg"
             />
-            <ProjectCard title="erg" text="erg" img="/favicon.svg" to="erg" />
-            <ProjectCard title="erg" text="erg" img="/favicon.svg" to="erg" />
-            <ProjectCard title="erg" text="erg" img="erg" to="erg" />
+            <ProjectCard
+              title="friend compass"
+              text="kill me"
+              img="/favicon.svg"
+              to="erg"
+            />
+            <ProjectCard
+              title="fucking uhhh t(ai)me i guess"
+              text="buh"
+              img="/favicon.svg"
+              to="erg"
+            />
+          </div>
+
+          <div className="mt-4">
+            skills:
+            <Card text="iwejf" />
+            <Card text="iwejf" />
+            <Card text="iwejf" />
+            <Card text="iwejf" />
+            <Card text="iwejf" />
           </div>
         </div>
       </Base>

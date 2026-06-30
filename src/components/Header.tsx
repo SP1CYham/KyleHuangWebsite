@@ -19,10 +19,10 @@ function Header() {
       flex items-center
     bg-white border-b-2"
     >
-      <a className="flex gap-3 items-center min-w-fit mr-3" href="/">
+      <Link className="flex gap-3 items-center min-w-fit mr-3" to="/">
         <img src="/favicon.svg" className="size-10" />
         <span className="font-bold text-2xl">SPICYHAM</span>
-      </a>
+      </Link>
 
       <nav className="flex">
         <NavItem to="/" text="home" />
