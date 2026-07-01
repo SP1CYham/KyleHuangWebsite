@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function NavItem({ to, text }: { to: string; text: string }) {
   return (
-    <NavLink
-      to={to}
-      className="px-2 py-1 m-1 text-center rounded-2xl border-2 border-gray-400"
-    >
+    <NavLink to={to} className="m-1 rounded-2xl border-2 border-gray-400 px-2 py-1 text-center">
       {text}
     </NavLink>
   );
@@ -14,14 +11,10 @@ function NavItem({ to, text }: { to: string; text: string }) {
 
 function Header() {
   return (
-    <div
-      className="sticky top-0 w-screen whitespace-nowrap p-4 
-      flex items-center
-    bg-white border-b-2"
-    >
-      <Link className="flex gap-3 items-center min-w-fit mr-3" to="/">
+    <div className="sticky top-0 flex w-screen items-center border-b-2 bg-white p-4 whitespace-nowrap">
+      <Link className="mr-3 flex min-w-fit items-center gap-3" to="/">
         <img src="/favicon.svg" className="size-10" />
-        <span className="font-bold text-2xl">SPICYHAM</span>
+        <span className="text-2xl font-bold">SPICYHAM</span>
       </Link>
 
       <nav className="flex">
