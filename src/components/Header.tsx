@@ -27,7 +27,7 @@ function Header() {
       <nav className="flex">
         <NavItem to="/" text="home" />
         <NavItem to="/coding" text="coding" />
-        <NavItem to="/" text="art" />
+        <NavItem to="/art" text="art" />
         <NavItem to="/" text="about" />
         <NavItem to="/light-mode" text="light mode" />
       </nav>

@@ -34,11 +34,11 @@ export default function Coding() {
 
           <div className="mt-4">
             skills:
-            <Card text="iwejf" />
-            <Card text="iwejf" />
-            <Card text="iwejf" />
-            <Card text="iwejf" />
-            <Card text="iwejf" />
+            <Card text="photoshop" />
+            <Card text="blender" />
+            <Card text="unity" />
+            <Card text="python mayeb" />
+            <Card text="react" />
           </div>
         </div>
       </Base>

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 //pages
 import Home from "./pages/Home";
 import Coding from "./pages/Coding";
+import Art from "./pages/Art";
 import LightMode from "./pages/LightMode";
 import NotFound from "./pages/NotFound";
 
@@ -51,6 +52,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/coding" element={<Coding />} />
+              <Route path="/art" element={<Art />} />
               <Route path="/light-mode" element={<LightMode />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -21,9 +21,10 @@ export default function ProjectCard({
         >
           <p className="truncate shrink-0">{title}</p>
 
-          <div
-            className={`flex flex-1 min-h-0 py-2 rounded-2xl bg-cover bg-center bg-[url(${img.toString()})]`}
-          ></div>
+          <img
+            className="flex flex-1 min-h-0 py-2 rounded-2xl object-cover"
+            src={img}
+          ></img>
 
           <p className="line-clamp-2 shrink-0 min-h-12 place-content-center">
             {text}
