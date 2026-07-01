@@ -30,17 +30,37 @@ export default function Coding() {
             words words words words words words words words words words words words words words
             words words words words words words words words words words words words words words
           </ArtCard>
+
           <ArtCard
             title="art"
             img="/favicon.svg"
+            youtube="https://www.youtube.com/embed/6k6zenVHE9k"
             tools={['photoshop', 'ibis paint']}
             links={[
               ['https://twss.dev/posts/', 'insta'],
               ['https://twss.dev/posts/', 'youtube'],
             ]}
           >
-            wef
+            wefwords words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words words words words
+            words words words words words words words words words words words w
           </ArtCard>
+
           <ArtCard title="art" img="/favicon.svg">
             wef
           </ArtCard>

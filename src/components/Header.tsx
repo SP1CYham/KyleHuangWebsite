@@ -11,7 +11,7 @@ function NavItem({ to, text }: { to: string; text: string }) {
 
 function Header() {
   return (
-    <div className="sticky top-0 flex w-screen items-center border-b-2 bg-white p-4 whitespace-nowrap">
+    <div className="sticky top-0 z-10 flex w-screen items-center border-b-2 bg-white p-4 whitespace-nowrap">
       <Link className="mr-3 flex min-w-fit items-center gap-3" to="/">
         <img src="/favicon.svg" className="size-10" />
         <span className="text-2xl font-bold">SPICYHAM</span>

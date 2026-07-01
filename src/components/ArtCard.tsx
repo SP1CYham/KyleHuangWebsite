@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 interface ArtCardProps {
   title: string;
-  img: string;
+  img?: string;
+  youtube?: string;
+  youtubeAspect?: string;
   children: ReactNode;
   tools?: string[];
   links?: string[][];
@@ -14,6 +16,8 @@ interface ArtCardProps {
 export default function ArtCard({
   title,
   img,
+  youtube,
+  youtubeAspect = '16/9',
   children, //text
   tools = [''],
   links = [['']], //write link first, then text representing the link, like: [["www.insta.com", "check it out on insta!"]]
@@ -22,15 +26,26 @@ export default function ArtCard({
 
   return (
     <>
-      <div className="mb-4 flex h-auto">
+      <div className="-z-10 mb-4 flex h-auto">
         <div
           className={`h-auto flex-3 flex-col border-gray-400 p-4 text-center align-middle text-wrap ${open ? 'rounded-l-2xl border-y-2 border-l-2' : 'rounded-2xl border-2'}`}
-          onClick={() => setOpen(!open)}
+          onClick={() => (open == false ? setOpen(true) : null)}
         >
-          <img
-            src={img}
-            className="sticky top-24 -z-40 h-auto w-full rounded-2xl object-cover py-2"
-          ></img>
+          <div className="sticky top-24 z-0">
+            {img && <img src={img} className="h-auto w-full rounded-2xl object-cover py-2"></img>}
+            {youtube && (
+              <iframe
+                src={youtube}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="w-full"
+                style={{ aspectRatio: youtubeAspect }}
+              ></iframe>
+            )}
+            {open && <button onClick={() => setOpen(false)}>close sidebar</button>}
+          </div>
         </div>
 
         {/*right part, is gone when its not open*/}
