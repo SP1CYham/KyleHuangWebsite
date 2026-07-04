@@ -1,22 +1,63 @@
-import Base from '../Base';
-import ProjectCard from '../components/ProjectCard';
+import { useState } from 'react';
+import { type ReactNode } from 'react';
 
+import Base from '../Base';
+import CategoryCard from '../components/CategoryCard';
+import ProjectCard from '../components/ProjectCard';
 import Card from '../components/Card';
 
 export default function Coding() {
+  const [projIndex, setProjIndex] = useState(0);
+
+  function CodingCategory() {
+    switch (projIndex) {
+      case 1:
+        return (
+          <ProjectCard title="humpty rise" img="/favicon.svg">
+            this is my first project to show off
+          </ProjectCard>
+        );
+      case 2:
+        return (
+          <ProjectCard title="python code" img="/favicon.svg">
+            this is my second project to show off
+          </ProjectCard>
+        );
+      case 3:
+        return (
+          <ProjectCard title="humpty rise" img="/favicon.svg">
+            this is my first project to show off
+          </ProjectCard>
+        );
+    }
+  }
+
   return (
     <>
+      {CodingCategory()}
+
       <Base>
-        <div className="p-4 text-center">
+        <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
           <div className="flex h-60 gap-3">
-            <ProjectCard title="humptys rise" text="isdewsfwerfg" img="/favicon.svg" to="erg" />
-            <ProjectCard title="friend compass" text="kill me" img="/favicon.svg" to="erg" />
-            <ProjectCard
-              title="fucking uhhh t(ai)me i guess"
+            <CategoryCard
+              title="humptys rise"
+              text="isdewsfwerfg"
+              img="/favicon.svg"
+              onClick={() => setProjIndex(1)}
+            />
+            <CategoryCard
+              title="friend compass"
+              text="esafd"
+              img="/favicon.svg"
+              onClick={() => setProjIndex(2)}
+            />
+            <CategoryCard
+              title=" uhhh t(ai)me i guess"
               text="buh"
               img="/favicon.svg"
-              to="erg"
+              onClick={() => setProjIndex(1)}
+              flex={2}
             />
           </div>
 

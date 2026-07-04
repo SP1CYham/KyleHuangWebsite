@@ -1,11 +1,13 @@
 import Base from '../Base';
+import HeaderGraphic from '../components/HeaderGraphic';
 
 export default function Home() {
   return (
     <>
-      <img src="/favicon.svg" className="max-h-70 w-full" />
+      <HeaderGraphic />
+
       <Base>
-        <div className="p-4">
+        <div className="">
           ello! this is the homepage <br /> jieswfiwei
           <br /> jieswfiwei
           <br /> jieswfiwei
