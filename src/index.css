@@ -1,2 +1,49 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *)); /*allows dark mode stuff in html*/
+
+@theme {
+    --color-black: #1b2d3c;
+    --color-dark: #2b7836;
+    --color-midtone: #93c865;
+    --color-white: #fff8e2;
+    --color-accent: #e53498;
+    --color-accent2: #2629d8;
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);;
+}
+body {
+    overflow-x: hidden;
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+::selection {
+    background-color: var(--color-red-highlight);
+    color: var(--color-white);
+}
+
+.ease-out-back {
+    transition-timing-function: var(--ease-out-back);
+}
+
+.ease-in-out-back {
+    transition-timing-function: var(--ease-in-out-back);
+}
+
+.ease-out-expo {
+    transition-timing-function: var(--ease-out-expo);
+}
+
+.button{
+    background: rgb(174, 174, 174);
+    
+}
+button:hover {
+background-color: #002ead;
+transition: 0.1s;
+}
+
+button:active {
+background-color: #ffbf00;
+}

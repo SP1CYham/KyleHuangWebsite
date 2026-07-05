@@ -23,7 +23,7 @@ function iconFunc(num = 1) {
 function ArtInfo(info = '', value = '', icon = 0) {
   return (
     <div className="flex">
-      <div className="h-auto w-full flex-1 align-middle">{iconFunc(icon)}</div>
+      <div className="h-auto w-full flex-1 shrink-0 align-middle">{iconFunc(icon)}</div>
       <div className="flex-2">{info}</div>
       <div className="flex-7">{value}</div>
     </div>
@@ -41,6 +41,8 @@ interface ArtCardProps {
   time?: string; //time taken to make it
   date?: string; //date it was completed
   links?: string[][];
+  wipsNum?: number;
+  wips?: string[][];
 }
 
 export default function ArtCard({
@@ -54,6 +56,8 @@ export default function ArtCard({
   time = '',
   date = '',
   links = [['']], //write link first, then text representing the link, like: [["www.insta.com", "check it out on insta!"]]
+  wipsNum = 3,
+  wips,
 }: ArtCardProps) {
   const [open, setOpen] = useState(false);
 
@@ -79,14 +83,11 @@ export default function ArtCard({
             )}
             <button onClick={() => setOpen(!open)}>{open ? 'less info' : 'more info'}</button>
 
-            <Carousel
-              imgsToShow={3}
-              imgs={[
-                ['/favicon.svg', 'first concept art'],
-                ['/favicon.svg', 'first iteration of bg (didnt look good)'],
-                ['/favicon.svg', 'scrapped thumbnail'],
-              ]}
-            />
+            {wips && open && (
+              <div className="mt-3">
+                <Carousel imgsToShow={wipsNum} imgs={wips} />
+              </div>
+            )}
           </div>
         </div>
 

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import CategoryCard from '../components/CategoryCard';
 import ArtCard from '../components/ArtCard';
 import Imag from '../components/Imag';
+import Carousel from '../components/Carousel';
 
 export default function Art() {
   const [projIndex, setProjIndex] = useState(0);
@@ -31,6 +32,24 @@ export default function Art() {
               time="a lot of time"
               date="Feb 13, 2025"
               links={[['https://youtu.be/sQxJLyRYvn0', 'YouTube Link!']]}
+              wips={[
+                [
+                  '/favicon.svg',
+                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
+                ],
+                [
+                  '/favicon.svg',
+                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
+                ],
+                [
+                  '/favicon.svg',
+                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
+                ],
+                [
+                  '/favicon.svg',
+                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
+                ],
+              ]}
             >
               animation took me like weeks bro
               <br />
