@@ -8,8 +8,8 @@ export default function Home() {
 
       <Base>
         <div className="">
-          ello! this is the homepage <br /> jieswfiwei
-          <br /> jieswfiwei
+          ello! this is the homep0age <br /> jieswfiwei
+          <br /> jieswf<strong>ewf</strong>iwei
           <br /> jieswfiwei
           <br /> jieswfiwei <br /> jieswfiwei
           <br /> jieswfiwei

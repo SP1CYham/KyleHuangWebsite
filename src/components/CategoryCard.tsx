@@ -1,12 +1,14 @@
+import { type ReactNode } from 'react';
+
 export default function CategoryCard({
   title,
-  text,
+  children,
   img,
   onClick,
   flex = 1,
 }: {
   title: string;
-  text: string;
+  children: ReactNode;
   img: string;
   onClick?: () => void;
   flex?: number;
@@ -19,7 +21,7 @@ export default function CategoryCard({
 
           <img className="flex min-h-0 flex-1 rounded-2xl object-cover py-2" src={img}></img>
 
-          <p className="line-clamp-2 min-h-12 shrink-0 place-content-center">{text}</p>
+          <p className="line-clamp-2 min-h-12 shrink-0 place-content-center">{children}</p>
         </div>
       </div>
     </>

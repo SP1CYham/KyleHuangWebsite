@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *)); /*allows dark mode stuff in html*/
 
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
 @theme {
     --color-black: #1b2d3c;
     --color-dark: #2b7836;
@@ -16,10 +18,15 @@ body {
     overflow-x: hidden;
     color: var(--color-white);
     background-color: var(--color-black);
+    font-family: 'Azeret Mono', monospace;
+    font-weight: 250;
+}
+strong {
+    font-weight: 800;
 }
 
 ::selection {
-    background-color: var(--color-red-highlight);
+    background-color: var(--color-dark);
     color: var(--color-white);
 }
 
@@ -36,7 +43,7 @@ body {
 }
 
 .button{
-    background: rgb(174, 174, 174);
+    background-color: var(--color-shadow);
     
 }
 button:hover {
@@ -46,4 +53,24 @@ transition: 0.1s;
 
 button:active {
 background-color: #ffbf00;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

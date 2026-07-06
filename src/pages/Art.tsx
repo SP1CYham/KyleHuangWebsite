@@ -115,44 +115,42 @@ export default function Art() {
           <div className="mb-3 flex h-60 gap-3">
             <CategoryCard
               title="animations!"
-              text="moving pictures and all."
               img="/favicon.svg"
               onClick={() => handleCategoryClick(1)}
               flex={2}
-            />
+            >
+              moving pictures and all.
+            </CategoryCard>
             <CategoryCard
               title="3D renders!"
-              text="made in blender and in another dimension!"
               img="/favicon.svg"
               onClick={() => handleCategoryClick(2)}
               flex={2}
-            />
+            >
+              made in blender and in another dimension!
+            </CategoryCard>
           </div>
           <div className="mb-3 flex h-60 gap-3">
-            <CategoryCard
-              title="2D art"
-              text="characters, backgrounds, graphics, etc"
-              img="/favicon.svg"
-              onClick={() => handleCategoryClick(3)}
-            />
+            <CategoryCard title="2D art" img="/favicon.svg" onClick={() => handleCategoryClick(3)}>
+              characters & backgrounds!
+            </CategoryCard>
             <CategoryCard
               title="promotional art"
-              text="for highschool clubs and such"
               img="/favicon.svg"
               onClick={() => handleCategoryClick(4)}
-            />
-            <CategoryCard
-              title="music"
-              text="not a very good producer, but i enjoy it a lot!"
-              img="/favicon.svg"
-              onClick={() => handleCategoryClick(5)}
-            />
+            >
+              for highschool <br /> clubs and such
+            </CategoryCard>
+            <CategoryCard title="music" img="/favicon.svg" onClick={() => handleCategoryClick(5)}>
+              dj toenail <br /> on the beat
+            </CategoryCard>
             <CategoryCard
               title="other stuff"
-              text="from random drawings to video essays"
               img="/favicon.svg"
               onClick={() => handleCategoryClick(5)}
-            />
+            >
+              from random drawings to video essays
+            </CategoryCard>
           </div>
         </div>
 

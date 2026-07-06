@@ -40,25 +40,20 @@ export default function Coding() {
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
           <div className="flex h-60 gap-3">
-            <CategoryCard
-              title="humptys rise"
-              text="isdewsfwerfg"
-              img="/favicon.svg"
-              onClick={() => setProjIndex(1)}
-            />
-            <CategoryCard
-              title="friend compass"
-              text="esafd"
-              img="/favicon.svg"
-              onClick={() => setProjIndex(2)}
-            />
+            <CategoryCard title="humptys rise" img="/favicon.svg" onClick={() => setProjIndex(1)}>
+              sdv
+            </CategoryCard>
+            <CategoryCard title="friend compass" img="/favicon.svg" onClick={() => setProjIndex(2)}>
+              sdv
+            </CategoryCard>
             <CategoryCard
               title=" uhhh t(ai)me i guess"
-              text="buh"
               img="/favicon.svg"
               onClick={() => setProjIndex(1)}
               flex={2}
-            />
+            >
+              dsv
+            </CategoryCard>
           </div>
 
           <div className="mt-4">
