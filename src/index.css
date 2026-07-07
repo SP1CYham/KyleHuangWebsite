@@ -26,7 +26,7 @@ strong {
 }
 
 ::selection {
-    background-color: var(--color-dark);
+    background-color: var(--color-accent);
     color: var(--color-white);
 }
 
@@ -89,6 +89,17 @@ button{
 }
 button:hover {
     background-color: #f249bf;
+    transition: 0.1s;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    font-weight: 800;
+    transition: 0.1s;
+}
+button:not(:hover){
+    background-color: var(--color-accent);
+    transition: 0.1s;
+    padding-inline: 0.4rem;
+    padding-block: 0.25rem;
     transition: 0.1s;
 }
 button:active {

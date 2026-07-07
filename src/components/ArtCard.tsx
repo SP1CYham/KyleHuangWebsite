@@ -64,16 +64,14 @@ export default function ArtCard({
 
   return (
     <>
-      <NoiseGrad
-        className="bg-accent2 z-1 mb-4 flex h-auto"
-        direction="to top"
-        color="var(--color-black)"
-        baseFrequency={0.6}
-        xtraOpacity={50}
-      >
+      <div className="z-1 mb-4 flex h-auto">
         {/*left part*/}
-        <div
-          className={`h-auto flex-3 flex-col border-white p-4 text-center align-middle text-wrap ${open ? 'rounded-l-2xl border-y-2 border-l-2' : 'rounded-2xl border-2'}`}
+        <NoiseGrad
+          className={`bg-accent2 h-auto flex-3 shrink-0 flex-col border-white p-4 text-center align-middle text-wrap ${open ? 'rounded-l-2xl border-y-2 border-l-2' : 'rounded-2xl border-2'}`}
+          direction="to top"
+          color="var(--color-black)"
+          baseFrequency={0.6}
+          xtraOpacity={50}
         >
           <div className="sticky top-24 z-3">
             {img && <img src={img} className="h-auto w-full rounded-2xl object-cover py-2"></img>}
@@ -88,23 +86,31 @@ export default function ArtCard({
                 style={{ aspectRatio: youtubeAspect }}
               ></iframe>
             )}
-            <button onClick={() => setOpen(!open)}>{open ? 'less info' : 'more info'}</button>
+            <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
+              {open ? 'less info' : 'more info'}
+            </button>
 
             {wips && open && (
               <div className="mt-3">
+                <p className="text-accent mb-1 font-medium">concepts, sketches, etc</p>
                 <Carousel imgsToShow={wipsNum} imgs={wips} />
               </div>
             )}
           </div>
-        </div>
+        </NoiseGrad>
 
         {/*right part, is gone when its not open*/}
-        <div
-          className={`h-auto flex-2 border-2 p-4 ${open ? 'rounded-r-2xl border-white text-left' : 'border-transparent'}`}
+        <NoiseGrad
+          className={`h-auto flex-2 border-2 p-4 ${open ? 'bg-accent2 rounded-r-2xl border-white text-left' : 'border-transparent bg-transparent'}`}
+          direction="to top"
+          color="var(--color-black)"
+          baseFrequency={0.6}
+          xtraOpacity={open ? 50 : 0}
+          percent={open ? null : 100}
         >
           {open && (
             <>
-              <h2 className="shrink-0 truncate">{title}</h2>
+              <h2 className="shrink-0 truncate text-balance wrap-anywhere">{title}</h2>
               <p className="mb-4 min-h-12 shrink-0 place-content-center">{children}</p>
 
               {frames !== '' && ArtInfo('frames:', frames, 0)}
@@ -134,8 +140,8 @@ export default function ArtCard({
               )}
             </>
           )}
-        </div>
-      </NoiseGrad>
+        </NoiseGrad>
+      </div>
     </>
   );
 }

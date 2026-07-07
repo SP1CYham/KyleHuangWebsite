@@ -1,7 +1,17 @@
 import { useState } from 'react';
 import Imag from './Imag';
 
-export default function Carousel({ imgsToShow, imgs }: { imgsToShow: number; imgs: string[][] }) {
+export default function Carousel({
+  imgsToShow,
+  imgs,
+  w = 70,
+  h = 80,
+}: {
+  imgsToShow: number;
+  imgs: string[][];
+  w?: number;
+  h?: number;
+}) {
   //imgs is array of array of length 2 of strings
   //first array is src, second is desc
   //example: [["link", "this is my first drawing"]]
@@ -26,15 +36,30 @@ export default function Carousel({ imgsToShow, imgs }: { imgsToShow: number; img
   }
 
   return (
-    <div className="mx-20 flex items-center gap-3">
+    <div
+      className={`bg-accent2 mx-10 flex items-center border-2 border-white`}
+      style={{ height: `${h}px`, borderRadius: `${h / 2}px` }}
+    >
       {!locked && (
-        <button onClick={goLeft} disabled={!canGoLeft}>
-          left
+        <button
+          onClick={goLeft}
+          disabled={!canGoLeft}
+          style={{
+            margin: 0,
+            height: `${h}px`,
+            borderLeft: 0,
+            borderRadius: `${h / 2}px 0 0 ${h / 2}px`,
+            width: `${h}px`,
+            textAlign: 'center',
+          }}
+          className="text-5xl font-medium transition-all hover:font-bold"
+        >
+          {'<'}
         </button>
       )}
 
       {locked && (
-        <div className="flex flex-1 justify-center">
+        <div className="flex justify-center">
           {imgs.map((value, index) => (
             <div key={index} className="flex flex-1 justify-center px-1">
               <div className="flex shrink-0 px-1">
@@ -56,12 +81,10 @@ export default function Carousel({ imgsToShow, imgs }: { imgsToShow: number; img
             {imgs.map((value, index) => (
               <div
                 key={index}
-                className="flex shrink-0 items-center justify-center px-1"
-                style={{ width: `calc(100% / ${imgsToShow})` }}
+                className="flex shrink-0 items-center justify-center"
+                style={{ width: `calc(100% / ${imgsToShow})`, height: h - 2 }}
               >
-                <div className="">
-                  <Imag src={value[0]} desc={value[1]}></Imag>
-                </div>
+                <Imag src={value[0]} desc={value[1]} h={h} className="drop-shadow-accent-md"></Imag>
               </div>
             ))}
           </div>
@@ -69,8 +92,20 @@ export default function Carousel({ imgsToShow, imgs }: { imgsToShow: number; img
       )}
 
       {!locked && (
-        <button onClick={goRight} disabled={!canGoRight}>
-          right
+        <button
+          onClick={goRight}
+          disabled={!canGoRight}
+          style={{
+            margin: 0,
+            height: `${h}px`,
+            borderRight: 0,
+            borderRadius: `0 ${h / 2}px ${h / 2}px 0`,
+            width: `${h}px`,
+            textAlign: 'center',
+          }}
+          className="text-5xl font-medium transition-all hover:font-bold"
+        >
+          {'>'}
         </button>
       )}
     </div>

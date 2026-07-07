@@ -42,14 +42,6 @@ export default function Art() {
                   '/favicon.svg',
                   'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
                 ],
-                [
-                  '/favicon.svg',
-                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
-                ],
-                [
-                  '/favicon.svg',
-                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
-                ],
               ]}
             >
               animation took me like weeks bro
@@ -99,7 +91,7 @@ export default function Art() {
       case 2:
         return (
           <>
-            <ArtCard title="art" img="/favicon.svg">
+            <ArtCard title="arreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet" img="/favicon.svg">
               words words words words words words wwords words words words words words words words
               words words words words words words words words words words words words
             </ArtCard>

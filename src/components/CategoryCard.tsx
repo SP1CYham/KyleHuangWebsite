@@ -16,7 +16,7 @@ export default function CategoryCard({
   return (
     <>
       <div className="h-full min-w-0" style={{ flex: flex }} onClick={onClick}>
-        <div className="flex h-full flex-col rounded-3xl border-2 border-gray-400 p-1 text-center align-middle text-wrap">
+        <div className="bg-accent2 flex h-full flex-col rounded-3xl border-2 border-white p-1 text-center align-middle text-wrap">
           <p className="shrink-0 truncate">{title}</p>
 
           <img className="flex min-h-0 flex-1 rounded-2xl object-cover py-2" src={img}></img>
