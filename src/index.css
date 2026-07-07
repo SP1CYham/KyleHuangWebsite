@@ -65,7 +65,7 @@ h2:hover {
     transition: 0.1s
 }
 h2:not(:hover){
-    font-weight: 800;
+    font-weight: 600;
     transition: 0.1s
 }
 

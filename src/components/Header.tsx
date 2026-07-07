@@ -29,7 +29,7 @@ function Header() {
               className="text-3xl font-bold tracking-tight text-white"
               style={{ textDecoration: 'none' }}
             >
-              <div className="no-underline hover:underline">SPICYHAM</div>
+              <div className="no-underline transition-all hover:font-black">SPICYHAM</div>
             </span>
           </Link>
 
