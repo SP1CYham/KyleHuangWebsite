@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import Base from '../Base';
 import { Link } from 'react-router-dom';
 
+import HeaderGraphic from '../components/HeaderGraphic';
 import CategoryCard from '../components/CategoryCard';
 import ArtCard from '../components/ArtCard';
 import Imag from '../components/Imag';
@@ -109,6 +110,7 @@ export default function Art() {
 
   return (
     <>
+      <HeaderGraphic height={200} />
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the art i've made!</p>

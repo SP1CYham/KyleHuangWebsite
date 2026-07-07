@@ -1,7 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *)); /*allows dark mode stuff in html*/
-
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
     --color-black: #1b2d3c;
@@ -43,17 +42,57 @@ strong {
     transition-timing-function: var(--ease-out-expo);
 }
 
-.button{
-    background-color: var(--color-shadow);
-    
+h1 {
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
 }
-button:hover {
-background-color: #002ead;
-transition: 0.1s;
+h1:hover {
+    font-weight: 900;
+    transition: 0.1s
+}
+h1:not(:hover){
+    font-weight: 800;
+    transition: 0.1s
 }
 
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+}
+h2:hover {
+    font-weight: 800;
+    transition: 0.1s
+}
+h2:not(:hover){
+    font-weight: 800;
+    transition: 0.1s
+}
+
+a {
+    color: var(--color-accent);
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+button{
+    color: var(--color-white);
+    background-color: var(--color-accent);
+    margin: 0.25em;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-color: var(--color-white);
+    padding-inline: 0.4rem;
+    padding-block: 0.25rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #f249bf;
+    transition: 0.1s;
+}
 button:active {
-background-color: #ffbf00;
+    background-color: #f5b6f8;
 }
 
 /* width */

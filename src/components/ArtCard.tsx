@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Card from './Card';
 import Carousel from './Carousel';
+import NoiseGrad from './NoiseGrad';
 
 //icons
 import { TbKeyframes } from 'react-icons/tb';
@@ -25,7 +26,7 @@ function ArtInfo(info = '', value = '', icon = 0) {
     <div className="flex">
       <div className="h-auto w-full flex-1 shrink-0 align-middle">{iconFunc(icon)}</div>
       <div className="flex-2">{info}</div>
-      <div className="flex-7">{value}</div>
+      <div className="flex-5">{value}</div>
     </div>
   );
 }
@@ -63,12 +64,18 @@ export default function ArtCard({
 
   return (
     <>
-      <div className="-z-10 mb-4 flex h-auto">
+      <NoiseGrad
+        className="bg-accent2 z-1 mb-4 flex h-auto"
+        direction="to top"
+        color="var(--color-black)"
+        baseFrequency={0.6}
+        xtraOpacity={50}
+      >
         {/*left part*/}
         <div
-          className={`h-auto flex-3 flex-col border-gray-400 p-4 text-center align-middle text-wrap ${open ? 'rounded-l-2xl border-y-2 border-l-2' : 'rounded-2xl border-2'}`}
+          className={`h-auto flex-3 flex-col border-white p-4 text-center align-middle text-wrap ${open ? 'rounded-l-2xl border-y-2 border-l-2' : 'rounded-2xl border-2'}`}
         >
-          <div className="sticky top-24 z-0">
+          <div className="sticky top-24 z-3">
             {img && <img src={img} className="h-auto w-full rounded-2xl object-cover py-2"></img>}
             {youtube && (
               <iframe
@@ -93,11 +100,11 @@ export default function ArtCard({
 
         {/*right part, is gone when its not open*/}
         <div
-          className={`h-auto flex-2 border-2 p-4 ${open ? 'rounded-r-2xl border-gray-400 text-left' : 'border-transparent'}`}
+          className={`h-auto flex-2 border-2 p-4 ${open ? 'rounded-r-2xl border-white text-left' : 'border-transparent'}`}
         >
           {open && (
             <>
-              <p className="shrink-0 truncate">{title}</p>
+              <h2 className="shrink-0 truncate">{title}</h2>
               <p className="mb-4 min-h-12 shrink-0 place-content-center">{children}</p>
 
               {frames !== '' && ArtInfo('frames:', frames, 0)}
@@ -128,7 +135,7 @@ export default function ArtCard({
             </>
           )}
         </div>
-      </div>
+      </NoiseGrad>
     </>
   );
 }

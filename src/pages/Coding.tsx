@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { type ReactNode } from 'react';
 
+import HeaderGraphic from '../components/HeaderGraphic';
 import Base from '../Base';
 import CategoryCard from '../components/CategoryCard';
 import ProjectCard from '../components/ProjectCard';
@@ -36,6 +37,7 @@ export default function Coding() {
     <>
       {CodingCategory()}
 
+      <HeaderGraphic height={200} />
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the projects i've made!</p>

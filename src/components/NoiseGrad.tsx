@@ -1,24 +1,25 @@
-interface GradientStop {
-  color: string;
-  position?: number;
-}
-
 export default function NoiseGrad({
   className,
+  childClassName,
+  style,
   children,
   color = 'var(--color-accent)',
   percent = null,
   direction = 'to bottom',
   baseFrequency = 0.2,
   numOctaves = 3,
+  xtraOpacity = 20,
 }: {
   className?: string;
+  childClassName?: string;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
   color?: string;
   percent?: number | null;
   direction?: string;
   baseFrequency?: number;
   numOctaves?: number;
+  xtraOpacity?: number;
 }) {
   const noiseSvg = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <filter id="noiseFilter">
@@ -31,13 +32,13 @@ export default function NoiseGrad({
 
   const percentageString = percent ? (100 - percent).toString() + '%' : '';
 
-  const colorTrans = `color-mix(in srgb, ${color} 20%, transparent)`;
+  const colorTrans = `color-mix(in srgb, ${color} ${xtraOpacity}%, transparent)`;
 
   return (
-    <div className={`relative isolate ${className ?? ''}`}>
+    <div className={`relative isolate ${className ?? ''}`} style={style}>
       <div
         aria-hidden
-        className="absolute inset-0 -z-11"
+        className={`absolute inset-0 -z-11 ${childClassName ?? ''}`}
         style={{
           backgroundColor: color,
           maskImage: `linear-gradient(${direction}, black, transparent ${percentageString}), ${noiseUrl}`,
@@ -48,7 +49,7 @@ export default function NoiseGrad({
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10"
+        className={`absolute inset-0 -z-11 ${childClassName ?? ''}`}
         style={{
           background: `linear-gradient(${direction}, ${colorTrans}, transparent ${percentageString})`,
         }}
