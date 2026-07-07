@@ -56,7 +56,7 @@ export default function Carousel({ imgsToShow, imgs }: { imgsToShow: number; img
             {imgs.map((value, index) => (
               <div
                 key={index}
-                className="flex shrink-0 px-1"
+                className="flex shrink-0 items-center justify-center px-1"
                 style={{ width: `calc(100% / ${imgsToShow})` }}
               >
                 <div className="">
