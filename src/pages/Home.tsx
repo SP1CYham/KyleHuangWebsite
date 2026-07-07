@@ -8,7 +8,7 @@ export default function Home() {
 
       <Base>
         <div className="">
-          <h1>hello!</h1>>
+          <h1>hello!</h1>
           <div className="noise"></div>
           <br /> jieswf<strong>ewf</strong>iwei
           <br /> jieswfiwei
