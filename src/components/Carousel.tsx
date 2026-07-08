@@ -59,12 +59,14 @@ export default function Carousel({
       )}
 
       {locked && (
-        <div className="flex justify-center">
+        <div className="flex flex-1">
           {imgs.map((value, index) => (
-            <div key={index} className="flex flex-1 justify-center px-1">
-              <div className="flex shrink-0 px-1">
-                <Imag src={value[0]} desc={value[1]}></Imag>
-              </div>
+            <div
+              key={index}
+              className="flex flex-1 items-center justify-center"
+              style={{ height: h - 2 }}
+            >
+              <Imag src={value[0]} desc={value[1]} h={h}></Imag>
             </div>
           ))}
         </div>
@@ -84,7 +86,7 @@ export default function Carousel({
                 className="flex shrink-0 items-center justify-center"
                 style={{ width: `calc(100% / ${imgsToShow})`, height: h - 2 }}
               >
-                <Imag src={value[0]} desc={value[1]} h={h} className="drop-shadow-accent-md"></Imag>
+                <Imag src={value[0]} desc={value[1]} h={h}></Imag>
               </div>
             ))}
           </div>

@@ -2,10 +2,15 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 import NoiseGrad from './NoiseGrad';
+import { scrollContainerRef } from '../App';
 
 function NavItem({ to, text }: { to: string; text: string }) {
   return (
-    <NavLink to={to} className="text-center">
+    <NavLink
+      to={to}
+      className="text-center"
+      onClick={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
       <button>{text}</button>
     </NavLink>
   );
@@ -14,7 +19,13 @@ function NavItem({ to, text }: { to: string; text: string }) {
 function Header() {
   return (
     <div className="sticky top-0 z-10 w-screen items-center bg-black">
-      <div className="via-accent2 bg-linear-to-b from-black from-30% via-50% to-black to-70%">
+      <NoiseGrad
+        direction="to top"
+        color="var(--color-shadow)"
+        xtraOpacity={0}
+        percent={60}
+        baseFrequency={0.2}
+      >
         <NoiseGrad
           direction="to left"
           color="var(--color-accent2)"
@@ -43,7 +54,7 @@ function Header() {
             <NavItem to="/light-mode" text="light mode" />
           </nav>
         </NoiseGrad>
-      </div>
+      </NoiseGrad>
     </div>
   );
 }

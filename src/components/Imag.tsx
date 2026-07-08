@@ -21,11 +21,15 @@ export default function Imag({
   }
 
   return (
-    <div onClick={() => handleImagClick()} className={`${className}`} style={{ height: `${h}px` }}>
+    <div
+      onClick={() => handleImagClick()}
+      className={`${className}`}
+      style={h ? { height: `${h}px` } : {}}
+    >
       <img
         src={src}
-        className={`h-auto w-full object-cover p-3 transition transition-all duration-150 hover:rotate-2 hover:p-1 active:-rotate-2 active:p-4 ${imgClassName}`}
-        style={{ height: `${h}px` }}
+        className={`hover:animate-wiggle h-auto w-full object-cover p-3 transition transition-all duration-150 hover:p-1 active:p-4 ${imgClassName}`}
+        style={h ? { height: `${h}px` } : {}}
       ></img>
     </div>
   );
