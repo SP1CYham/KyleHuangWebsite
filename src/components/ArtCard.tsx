@@ -69,20 +69,25 @@ export default function ArtCard({
       <div className="z-1 mb-4 flex">
         {/*left part*/}
         <NoiseGrad
-          className={`bg-accent2 flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-l-2xl border-y-2 border-l-2' : 'rounded-2xl border-2'}`}
+          className={`bg-accent2 flex flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-l-2xl border-y-2 border-l-2' : 'max-h-[150] justify-center rounded-2xl border-2'}`}
+          childClassName={open ? 'rounded-l-2xl' : 'rounded-2xl'}
           direction="to top"
           color="var(--color-black)"
           baseFrequency={0.6}
           xtraOpacity={50}
         >
-          <h2
-            className={`-mt-2 mb-1 transition-all duration-200 ease-in-out ${open ? 'h-0 opacity-0' : 'h-auto opacity-100'}`}
-          >
-            {title}
-          </h2>
-
-          <div className={`${open ? 'sticky top-24' : ''} z-3`}>
-            {img && <img src={img} className="h-auto w-full rounded-2xl object-cover py-2"></img>}
+          <div className={`${open ? 'sticky top-24' : ''} z-3 flex flex-col`}>
+            <h2
+              className={`-mt-2 mb-1 transition-all duration-200 ease-in-out ${open ? 'h-0 opacity-0' : 'h-auto opacity-100'}`}
+            >
+              {title}
+            </h2>
+            {img && (
+              <img
+                src={img}
+                className={`${open ? 'h-auto' : 'h-96'} aspect-auto w-full rounded-2xl py-2`}
+              ></img>
+            )}
             {youtube && (
               <iframe
                 src={youtube}
@@ -90,13 +95,15 @@ export default function ArtCard({
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                className="w-full rounded-2xl"
+                className={`${open ? 'h-auto' : 'h-96'} w-full rounded-2xl`}
                 style={{ aspectRatio: youtubeAspect }}
               ></iframe>
             )}
-            <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
-              {open ? 'less info' : 'more info'}
-            </button>
+            <div>
+              <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
+                {open ? 'less info' : 'more info'}
+              </button>
+            </div>
 
             {wips && (
               <div
@@ -120,6 +127,7 @@ export default function ArtCard({
         >
           <NoiseGrad
             className="bg-accent2 h-full flex-2 rounded-r-2xl border-2 border-white p-4 text-left"
+            childClassName="rounded-r-2xl"
             direction="to top"
             color="var(--color-black)"
             baseFrequency={0.6}

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { type ReactNode } from 'react';
 import Base from '../Base';
 import { Link } from 'react-router-dom';
 
@@ -19,12 +20,29 @@ export default function Art() {
     }, 1);
   }
 
+  function CategoryHead({ title, children }: { title: string; children?: ReactNode }) {
+    return (
+      <>
+        <h1>
+          <span className="hover:animate-wiggle inline-block">{title}</span>
+        </h1>
+        <p className="mb-6 text-center">{children}</p>
+      </>
+    );
+  }
+
   function ArtCategory() {
     switch (projIndex) {
       case 1: //animations
         return (
           <>
-            <p className="text-center">this is like 90% terraria animations lol</p>
+            <CategoryHead title="animations!">
+              moving pictures! <br /> you can find most of these on my{' '}
+              <Link to="https://www.youtube.com/@SPICYham" target="_blank">
+                youtube channel.
+              </Link>{' '}
+              <br /> <p className="text-accent">{'(90% of these are terraria animations lol)'}</p>
+            </CategoryHead>
             <ArtCard
               title="Terraria Gnome Animated"
               youtube="https://www.youtube.com/embed/sQxJLyRYvn0"
@@ -121,18 +139,14 @@ export default function Art() {
               onClick={() => handleCategoryClick(2)}
               flex={2}
             >
-              made in blender and in another dimension!
+              made in another dimension!
             </CategoryCard>
           </div>
           <div className="mb-3 flex h-60 gap-3">
             <CategoryCard title="2D art" img="/favicon.svg" onClick={() => handleCategoryClick(3)}>
               characters & backgrounds!
             </CategoryCard>
-            <CategoryCard
-              title="promotional art"
-              img="/favicon.svg"
-              onClick={() => handleCategoryClick(4)}
-            >
+            <CategoryCard title="promo" img="/favicon.svg" onClick={() => handleCategoryClick(4)}>
               for highschool <br /> clubs and such
             </CategoryCard>
             <CategoryCard title="music" img="/favicon.svg" onClick={() => handleCategoryClick(5)}>
@@ -143,7 +157,7 @@ export default function Art() {
               img="/favicon.svg"
               onClick={() => handleCategoryClick(5)}
             >
-              from random drawings to video essays
+              drawings, video essays, etc
             </CategoryCard>
           </div>
         </div>
