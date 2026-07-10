@@ -37,7 +37,7 @@ export default function Coding() {
     <>
       {CodingCategory()}
 
-      <HeaderGraphic height={200} />
+      <HeaderGraphic />
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the projects i've made!</p>

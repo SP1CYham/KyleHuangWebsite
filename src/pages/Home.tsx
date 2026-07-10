@@ -4,7 +4,7 @@ import HeaderGraphic from '../components/HeaderGraphic';
 export default function Home() {
   return (
     <>
-      <HeaderGraphic height={300} />
+      <HeaderGraphic />
 
       <Base>
         <div className="">

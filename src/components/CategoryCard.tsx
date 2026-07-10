@@ -44,7 +44,7 @@ export default function CategoryCard({
             baseFrequency={3}
             direction="170deg"
           >
-            <p className="text-shadow-accent2 ml-1 flex-4 shrink-0 text-left text-6xl font-bold -tracking-widest italic transition-all duration-300 text-shadow-lg/100 group-hover:text-[4em] group-hover:text-shadow-[10px_10px_0px_rgb(0_0_0/1)] group-active:text-[3em]">
+            <p className="text-shadow-accent2 z-10 ml-1 flex-4 shrink-0 text-left text-6xl font-bold -tracking-widest italic transition-all duration-300 text-shadow-lg/100 group-hover:text-[4em] group-hover:text-shadow-[10px_10px_0px_rgb(0_0_0/1)] group-active:text-[3em]">
               {title}
             </p>
             <p className="group-hover:animate-hover line-clamp-2 inline-block min-h-12 flex-1 shrink-0 place-content-end p-4 text-right align-text-bottom text-wrap">

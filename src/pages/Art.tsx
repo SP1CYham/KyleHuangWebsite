@@ -120,7 +120,7 @@ export default function Art() {
 
   return (
     <>
-      <HeaderGraphic height={200} />
+      <HeaderGraphic />
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the art i've made!</p>

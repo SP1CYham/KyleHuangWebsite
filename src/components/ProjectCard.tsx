@@ -15,7 +15,7 @@ export default function ProjectCard({
 }) {
   return (
     <>
-      <HeaderGraphic />
+      <HeaderGraphic height={500} />
 
       <Base>
         <div className="rounded-3xl border-2 border-gray-400 p-4 text-center align-middle text-wrap">

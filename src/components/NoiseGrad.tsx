@@ -1,3 +1,5 @@
+import { NoiseGradBase } from './NoiseGradBase';
+
 export default function NoiseGrad({
   className,
   childClassName,
@@ -9,6 +11,8 @@ export default function NoiseGrad({
   baseFrequency = 0.2,
   numOctaves = 3,
   xtraOpacity = 20,
+  head = false,
+  headScaleX = 1,
 }: {
   className?: string;
   childClassName?: string;
@@ -20,33 +24,25 @@ export default function NoiseGrad({
   baseFrequency?: number;
   numOctaves?: number;
   xtraOpacity?: number;
+  head?: boolean;
+  headScaleX?: number;
 }) {
-  const noiseSvg = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <filter id="noiseFilter">
-      <feTurbulence type="fractalNoise" baseFrequency="${baseFrequency}" numOctaves="${numOctaves}" stitchTiles="stitch"/>
-    </filter>
-    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
-  </svg>`;
-
-  const noiseUrl = `url("data:image/svg+xml,${encodeURIComponent(noiseSvg)}")`;
-
   const percentageString = percent ? (100 - percent).toString() + '%' : '';
-
   const colorTrans = `color-mix(in srgb, ${color} ${xtraOpacity}%, transparent)`;
 
   return (
     <div className={`relative isolate ${className ?? ''}`} style={style}>
-      <div
-        aria-hidden
-        className={`absolute inset-0 -z-11 ${childClassName ?? ''}`}
-        style={{
-          backgroundColor: color,
-          maskImage: `linear-gradient(${direction}, black, transparent ${percentageString}), ${noiseUrl}`,
-          maskComposite: 'intersect',
-          WebkitMaskImage: `linear-gradient(${direction}, black, transparent ${percentageString}), ${noiseUrl}`,
-          WebkitMaskComposite: 'source-in',
-        }}
-      />
+      {NoiseGradBase({
+        className: head ? className : childClassName,
+        children: head ? children : null,
+        color: color,
+        percent: percent ? percent : 0,
+        direction: direction,
+        baseFrequency: baseFrequency,
+        numOctaves: numOctaves,
+        head: head,
+        headScaleX: headScaleX,
+      })}
       <div
         aria-hidden
         className={`absolute inset-0 -z-11 ${childClassName ?? ''}`}
@@ -54,7 +50,7 @@ export default function NoiseGrad({
           background: `linear-gradient(${direction}, ${colorTrans}, transparent ${percentageString})`,
         }}
       />
-      {children}
+      {!head ? children : null}
     </div>
   );
 }

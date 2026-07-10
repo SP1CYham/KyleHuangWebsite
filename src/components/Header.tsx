@@ -34,15 +34,14 @@ function Header() {
           baseFrequency={0.08}
           className="flex p-4 whitespace-nowrap"
         >
-          <Link className="mr-3 flex min-w-fit items-center gap-3" to="/">
+          <Link
+            className="mr-3 flex min-w-fit items-center gap-3"
+            to="/"
+            style={{ textDecoration: 'none' }}
+          >
             <img src="/favicon.svg" className="size-10" />
-            <span
-              className="text-3xl font-bold tracking-tight text-white"
-              style={{ textDecoration: 'none' }}
-            >
-              <div className="no-underline transition-all hover:font-medium active:font-black">
-                SPICYHAM
-              </div>
+            <span className="text-3xl font-bold tracking-tight text-white">
+              <div className="transition-all hover:font-medium active:font-black">SPICYHAM</div>
             </span>
           </Link>
 
