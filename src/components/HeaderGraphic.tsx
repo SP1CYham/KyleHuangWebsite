@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 
 import NoiseGrad from './NoiseGrad';
-import { NoiseGradBase } from './NoiseGradBase';
 
 export default function HeaderGraphic({
   height = 300,
@@ -80,31 +79,26 @@ export default function HeaderGraphic({
                     style={{ flex: '0 0 15%' }}
                   />
 
-                  <div className="flex max-w-200 shrink-0 grow-0 basis-[70%] scale-y-110 items-center justify-center overflow-hidden text-center font-[Impact] font-black tracking-tight whitespace-nowrap">
-                    <div
-                      className="text-accent2 text-shadow-[0px_5px_0px_rgb(0_0_0/1)]"
-                      style={{
-                        transform: `scaleX(${scaleX * finalMult}) scaleY(1.25)`,
-                        fontSize: '36cqh',
-                      }}
-                    >
-                      SPICYHAM
-                    </div>
-
-                    <NoiseGradBase
-                      className="absolute inset-0 -z-11"
-                      color="var(--color-accent2)"
-                      baseFrequency={3}
-                      direction="to bottom"
+                  <div className="max-w-200 shrink-0 grow-0 basis-[70%] scale-y-110 items-center justify-center text-center font-[Impact] font-black tracking-tight whitespace-nowrap">
+                    <NoiseGrad
+                      className="absolute inset-0"
+                      childClassName="bg-clip-text text-transparent z-50"
+                      color="var(--color-accent)"
+                      baseFrequency={1}
+                      direction="to top"
+                      xtraOpacity={0}
                       head={true}
                       headScaleX={scaleX * finalMult}
                     >
                       SPICYHAM
-                    </NoiseGradBase>
+                    </NoiseGrad>
                   </div>
 
-                  <div
+                  <NoiseGrad
                     className="bg-accent2 w-full max-w-200 min-w-53 rounded-b-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
+                    childClassName="w-full max-w-200 min-w-53 rounded-b-full"
+                    direction="to top"
+                    color="var(--color-black)"
                     style={{ flex: '0 0 15%' }}
                   />
                 </div>
