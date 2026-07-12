@@ -12,6 +12,9 @@
     --color-accent2: #2629d8; /*2629d8*/
 
     --color-accent-light: #e53498;
+    --color-head-light: #00aaff;
+    --color-head-mid: #1f55c9;
+    --color-head-dark: #3f0097;
 
     --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
     --ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6);

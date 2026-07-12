@@ -73,9 +73,18 @@ export default function HeaderGraphic({
             {src == null && (
               <div className="[container-type:size] h-full w-full hover:cursor-default">
                 <div className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14">
-                  <div
+                  <NoiseGrad
                     ref={containerRef}
                     className="bg-accent2 w-full max-w-200 min-w-53 rounded-t-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
+                    childClassName="w-full max-w-200 min-w-53 rounded-t-full"
+                    direction="to bottom"
+                    color="var(--color-head-dark)"
+                    baseFrequency={0.1}
+                    percent={30}
+                    overrideColor="var(--color-midtone)"
+                    overridePercent={50}
+                    xtraOpacity={30}
+                    overrideDirection="to top"
                     style={{ flex: '0 0 15%' }}
                   />
 
@@ -83,10 +92,13 @@ export default function HeaderGraphic({
                     <NoiseGrad
                       className="absolute inset-0"
                       childClassName="bg-clip-text text-transparent z-50"
-                      color="var(--color-accent)"
-                      baseFrequency={1}
+                      color="var(--color-head-light)"
+                      baseFrequency={3}
+                      percent={20}
                       direction="to top"
-                      xtraOpacity={0}
+                      xtraOpacity={90}
+                      overrideColor="var(--color-midtone)"
+                      overridePercent={60}
                       head={true}
                       headScaleX={scaleX * finalMult}
                     >
@@ -95,10 +107,11 @@ export default function HeaderGraphic({
                   </div>
 
                   <NoiseGrad
-                    className="bg-accent2 w-full max-w-200 min-w-53 rounded-b-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
+                    className="bg-head-mid w-full max-w-200 min-w-53 rounded-b-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
                     childClassName="w-full max-w-200 min-w-53 rounded-b-full"
                     direction="to top"
-                    color="var(--color-black)"
+                    color="var(--color-midtone)"
+                    xtraOpacity={0}
                     style={{ flex: '0 0 15%' }}
                   />
                 </div>
