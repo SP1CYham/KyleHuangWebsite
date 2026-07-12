@@ -7,8 +7,8 @@ export default function HeaderGraphic({
   src,
   title = 'SPICYHAM',
   flex = 1,
-  scaleXMultiplier = 0.3,
-  scaleXBase = -0.5,
+  scaleXMultiplier = 0.24,
+  scaleXBase = -0.03,
   scaleXMin = 0.5,
   scaleXMax = 100,
   finalMult = 1,
@@ -75,8 +75,8 @@ export default function HeaderGraphic({
                 <div className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14">
                   <NoiseGrad
                     ref={containerRef}
-                    className="bg-accent2 w-full max-w-200 min-w-53 rounded-t-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
-                    childClassName="w-full max-w-200 min-w-53 rounded-t-full"
+                    className="bg-accent2 w-full max-w-200 min-w-110 rounded-t-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
+                    childClassName="w-full max-w-200 min-w-110 rounded-t-full"
                     direction="to bottom"
                     color="var(--color-head-dark)"
                     baseFrequency={0.1}
@@ -107,8 +107,8 @@ export default function HeaderGraphic({
                   </div>
 
                   <NoiseGrad
-                    className="bg-head-mid w-full max-w-200 min-w-53 rounded-b-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
-                    childClassName="w-full max-w-200 min-w-53 rounded-b-full"
+                    className="bg-head-mid w-full max-w-200 min-w-110 rounded-b-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"
+                    childClassName="w-full max-w-200 min-w-110 rounded-b-full"
                     direction="to top"
                     color="var(--color-midtone)"
                     xtraOpacity={0}

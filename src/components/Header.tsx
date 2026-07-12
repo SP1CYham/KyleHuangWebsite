@@ -32,26 +32,31 @@ function Header() {
           xtraOpacity={70}
           percent={20}
           baseFrequency={0.08}
-          className="flex p-4 whitespace-nowrap"
+          className="flex flex-row p-4 whitespace-nowrap md:flex-row"
         >
-          <Link
-            className="mr-3 flex min-w-fit items-center gap-3"
-            to="/"
-            style={{ textDecoration: 'none' }}
-          >
-            <img src="/favicon.svg" className="size-10" />
-            <span className="text-3xl font-bold tracking-tight text-white">
-              <div className="transition-all hover:font-medium active:font-black">SPICYHAM</div>
-            </span>
+          <Link className="mr-3 flex min-w-fit items-center gap-3 md:hidden md:h-0" to="/">
+            <img src="/favicon.svg" className="size-20" />
           </Link>
 
-          <nav className="flex">
-            <NavItem to="/" text="home" />
-            <NavItem to="/coding" text="coding" />
-            <NavItem to="/art" text="art" />
-            <NavItem to="/" text="about" />
-            <NavItem to="/light-mode" text="light mode" />
-          </nav>
+          <div className="flex flex-col whitespace-nowrap md:flex-row">
+            <Link
+              className="mr-3 flex min-w-fit items-center gap-3"
+              to="/"
+              style={{ textDecoration: 'none' }}
+            >
+              <img src="/favicon.svg" className="hidden size-10 md:block" />
+              <span className="text-3xl font-bold tracking-tight text-white">
+                <div className="transition-all hover:font-medium active:font-black">SPICYHAM</div>
+              </span>
+            </Link>
+            <nav className="mt-2 flex md:mt-0">
+              <NavItem to="/" text="home" />
+              <NavItem to="/coding" text="coding" />
+              <NavItem to="/art" text="art" />
+              <NavItem to="/" text="about" />
+              <NavItem to="/light-mode" text="light mode" />
+            </nav>
+          </div>
         </NoiseGrad>
       </NoiseGrad>
     </div>

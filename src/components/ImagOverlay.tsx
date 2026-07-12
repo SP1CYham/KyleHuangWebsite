@@ -28,16 +28,16 @@ export function OverlayProvider({ children }: { children: ReactNode }) {
           style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
           onClick={() => setContent(null)}
         >
-          <div className="mx-30 flex-1 bg-white object-center p-10 text-center align-middle">
+          <div className="mx-30 flex flex-1 flex-col items-center rounded-3xl bg-black object-center p-10 text-center align-middle">
             {/*fix latr */}
             <img
               src={content.src}
               onClick={(e) => e.stopPropagation}
-              className="mx-auto block h-50"
+              className="mx-auto block h-auto max-h-80 w-full"
             />
             {/*dont exit when click image*/}
-            <p>{content.desc}</p>
-            <p>(click anywhere to close)</p>
+            <p className="mt-4 max-w-[80%] items-center text-center">{content.desc}</p>
+            <p className="text-accent mt-4">(click anywhere to close)</p>
           </div>
         </div>
       )}

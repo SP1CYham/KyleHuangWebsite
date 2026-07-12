@@ -1,4 +1,4 @@
-import { useState, createContext, createRef } from 'react';
+import { useState, createContext, createRef, lazy, Suspense } from 'react';
 import './index.css';
 
 import { Routes, Route, Link } from 'react-router-dom';
@@ -10,10 +10,11 @@ import NoiseGrad from './components/NoiseGrad';
 
 //pages
 import Home from './pages/Home';
-import Coding from './pages/Coding';
-import Art from './pages/Art';
-import LightMode from './pages/LightMode';
-import NotFound from './pages/NotFound';
+
+const Coding = lazy(() => import('./pages/Coding'));
+const Art = lazy(() => import('./pages/Art'));
+const LightMode = lazy(() => import('./pages/LightMode'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 interface ContextTypes {
   darkMode: boolean;
@@ -50,35 +51,37 @@ function App() {
   return (
     <>
       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-        <div className="h-screen overflow-x-hidden" ref={scrollContainerRef}>
-          <Header />
-          <NoiseGrad
-            direction="to left"
-            color="var(--color-shadow)"
-            xtraOpacity={0}
-            baseFrequency={2}
-            percent={80}
-          >
+        <Suspense fallback={<div>loading...</div>}>
+          <div className="h-screen overflow-x-hidden" ref={scrollContainerRef}>
+            <Header />
             <NoiseGrad
-              direction="to right"
+              direction="to left"
               color="var(--color-shadow)"
               xtraOpacity={0}
               baseFrequency={2}
               percent={80}
             >
-              <main className="min-h-full">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/coding" element={<Coding />} />
-                  <Route path="/art" element={<Art />} />
-                  <Route path="/light-mode" element={<LightMode />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
+              <NoiseGrad
+                direction="to right"
+                color="var(--color-shadow)"
+                xtraOpacity={0}
+                baseFrequency={2}
+                percent={80}
+              >
+                <main className="min-h-full">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/coding" element={<Coding />} />
+                    <Route path="/art" element={<Art />} />
+                    <Route path="/light-mode" element={<LightMode />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+              </NoiseGrad>
             </NoiseGrad>
-          </NoiseGrad>
-          <Footer />
-        </div>
+            <Footer />
+          </div>
+        </Suspense>
       </DarkModeContext.Provider>
     </>
   );
