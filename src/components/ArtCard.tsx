@@ -24,7 +24,7 @@ function iconFunc(num = 1) {
 function ArtInfo(info = '', value = '', icon = 0) {
   return (
     <div className="flex">
-      <div className="h-auto w-full flex-1 shrink-0 align-middle">{iconFunc(icon)}</div>
+      <div className="h-6 w-full flex-1 shrink-0 align-middle">{iconFunc(icon)}</div>
       <div className="flex-2">{info}</div>
       <div className="text-accent flex-5 font-bold">
         <span className="hover:animate-wiggle inline-block">{value}</span>
@@ -66,26 +66,29 @@ export default function ArtCard({
 
   return (
     <>
-      <div className="z-1 mb-4 flex">
+      <div className="z-1 mb-4 flex flex-col md:flex-row">
         {/*left part*/}
         <NoiseGrad
-          className={`bg-accent2 flex flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-l-2xl border-y-2 border-l-2' : 'max-h-[150] justify-center rounded-2xl border-2'}`}
-          childClassName={open ? 'rounded-l-2xl' : 'rounded-2xl'}
+          className={`bg-accent2 flex flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'max-h-[150] justify-center rounded-2xl border-2'}`}
+          childClassName={
+            open ? 'rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none' : 'rounded-2xl'
+          }
           direction="to top"
           color="var(--color-black)"
           baseFrequency={0.6}
           xtraOpacity={50}
         >
-          <div className={`${open ? 'sticky top-24' : ''} z-3 flex flex-col`}>
+          <div className={`${open ? 'md:sticky md:top-24' : ''} z-3 flex flex-col`}>
             <h2
-              className={`-mt-2 mb-1 transition-all duration-200 ease-in-out ${open ? 'h-0 opacity-0' : 'h-auto opacity-100'}`}
+              className={`-mt-2 mb-1 transition-all duration-200 ease-in-out ${open ? 'h-auto opacity-100 md:h-0 md:opacity-0' : 'h-auto opacity-100'}`}
             >
               {title}
             </h2>
             {img && (
               <img
                 src={img}
-                className={`${open ? 'h-auto' : 'h-96'} aspect-auto w-full rounded-2xl py-2`}
+                className={`${open ? 'h-auto' : 'h-120'} aspect-auto w-full rounded-2xl py-2`}
+                loading="lazy"
               ></img>
             )}
             {youtube && (
@@ -126,29 +129,36 @@ export default function ArtCard({
           style={{ minWidth: open ? undefined : 0 }}
         >
           <NoiseGrad
-            className="bg-accent2 h-full flex-2 rounded-r-2xl border-2 border-white p-4 text-left"
-            childClassName="rounded-r-2xl"
+            className="bg-accent2 h-full flex-2 rounded-t-none rounded-b-2xl border-2 border-white p-4 text-left md:rounded-l-none md:rounded-r-2xl"
+            childClassName="rounded-t-none rounded-b-2xl md:rounded-r-2xl md:rounded-l-none"
             direction="to top"
             color="var(--color-black)"
             baseFrequency={0.6}
             xtraOpacity={50}
           >
-            <h2 className="shrink-0 truncate text-balance wrap-anywhere">{title}</h2>
+            <h2 className="hidden shrink-0 truncate text-balance wrap-anywhere md:block">
+              {title}
+            </h2>
             <p className="mb-4 min-h-12 shrink-0 place-content-center">{children}</p>
 
-            {frames !== '' && ArtInfo('frames:', frames, 0)}
-            {time !== '' && ArtInfo('time:', time, 1)}
-            {date !== '' && ArtInfo('date:', date, 2)}
-
-            {software[0] !== '' && (
-              <div className="mt-4 h-auto w-auto text-center">
-                software used:
-                <br />
-                {software.map((tool, index) => (
-                  <Card text={tool} key={index} />
-                ))}
+            <div className="flex flex-col sm:flex-row md:flex-col">
+              <div className="flex-1">
+                {frames !== '' && ArtInfo('frames:', frames, 0)}
+                {time !== '' && ArtInfo('time:', time, 1)}
+                {date !== '' && ArtInfo('date:', date, 2)}
               </div>
-            )}
+
+              {software[0] !== '' && (
+                <div className="mt-4 h-auto w-auto max-w-1000 flex-1 text-center sm:mt-0 sm:max-w-100 md:mt-4">
+                  software used:
+                  <br />
+                  {software.map((tool, index) => (
+                    <Card text={tool} key={index} />
+                  ))}
+                </div>
+              )}
+            </div>
+
             <br />
 
             {/*replace w button later*/}

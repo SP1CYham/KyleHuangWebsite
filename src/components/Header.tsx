@@ -8,10 +8,12 @@ function NavItem({ to, text }: { to: string; text: string }) {
   return (
     <NavLink
       to={to}
-      className="text-center"
+      className="group inline-block h-full align-middle"
       onClick={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
     >
-      <button>{text}</button>
+      <div className="bg-accent m-1 -mb-2 line-clamp-1 inline-block cursor-default rounded-2xl border-2 border-white px-2 py-1 font-normal text-nowrap text-white transition-all group-hover:bg-[#f249bf] group-hover:px-3 group-hover:font-bold group-active:bg-[#f5b6f8]">
+        {text}
+      </div>
     </NavLink>
   );
 }

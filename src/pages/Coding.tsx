@@ -3,7 +3,7 @@ import { type ReactNode } from 'react';
 
 import HeaderGraphic from '../components/HeaderGraphic';
 import Base from '../Base';
-import CategoryCard from '../components/CategoryCard';
+import Category from '../components/CategoryCard';
 import ProjectCard from '../components/ProjectCard';
 import Card from '../components/Card';
 
@@ -41,22 +41,25 @@ export default function Coding() {
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
-          <div className="flex h-60 gap-3">
-            <CategoryCard title="humptys rise" img="/favicon.svg" onClick={() => setProjIndex(1)}>
-              sdv
-            </CategoryCard>
-            <CategoryCard title="friend compass" img="/favicon.svg" onClick={() => setProjIndex(2)}>
-              sdv
-            </CategoryCard>
-            <CategoryCard
-              title=" uhhh t(ai)me i guess"
-              img="/favicon.svg"
-              onClick={() => setProjIndex(1)}
-              flex={2}
-            >
-              dsv
-            </CategoryCard>
-          </div>
+
+          <Category
+            categoryArray={[
+              {
+                title: 'friend compass oh god',
+                text: 'moving pictures and all.',
+                img: '/favicon.svg',
+                onClick: () => setProjIndex(1),
+                flex: 4,
+              },
+              {
+                title: 't(ai)me',
+                text: 'moving pictures and all.',
+                img: '/favicon.svg',
+                onClick: () => setProjIndex(1),
+                flex: 1,
+              },
+            ]}
+          />
 
           <div className="mt-4">
             skills:

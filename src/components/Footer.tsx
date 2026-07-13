@@ -42,20 +42,26 @@ function icon(to = '', index = 1) {
 function Footer() {
   return (
     <NoiseGrad
-      className="bg-shadow text-accent flex w-screen p-4"
+      className="bg-shadow text-accent flex w-screen flex-col p-4 md:flex-row"
       direction="to top"
       color="var(--color-accent2)"
       xtraOpacity={0}
       percent={50}
     >
-      {icon('https://www.youtube.com/@SPICYham', 0) /*youtube*/}
-      {icon('https://www.instagram.com/sp1cy_ham', 1) /*insta*/}
-      {icon('https://www.tiktok.com/@sp1cyham', 4) /*tiktok*/}
-      {icon('https://discord.gg/6Jrc2j4', 5) /*discord*/}
-      {icon('https://www.reddit.com/user/BR0COL1/', 6) /*reddit*/}
-      {icon('https://github.com/SP1CYham', 2) /*github*/}
-      {icon('fix latere', 3) /*linkedin*/}
-      <p className="mr-5 flex-9 text-right"> kyle huang / spicyham studios 2026</p>
+      <div className="flex flex-row">
+        {icon('https://www.youtube.com/@SPICYham', 0) /*youtube*/}
+        {icon('https://www.instagram.com/sp1cy_ham', 1) /*insta*/}
+        {icon('https://www.tiktok.com/@sp1cyham', 4) /*tiktok*/}
+        {icon('https://discord.gg/6Jrc2j4', 5) /*discord*/}
+        {icon('https://www.reddit.com/user/BR0COL1/', 6) /*reddit*/}
+        {icon('https://github.com/SP1CYham', 2) /*github*/}
+        {icon('fix latere', 3) /*linkedin*/}
+      </div>
+
+      <p className="mt-2 mr-5 ml-2 flex-1 md:mt-0 md:text-right">
+        {' '}
+        kyle huang / spicyham studios 2026
+      </p>
     </NoiseGrad>
   );
 }

@@ -4,7 +4,7 @@ import Base from '../Base';
 import { Link } from 'react-router-dom';
 
 import HeaderGraphic from '../components/HeaderGraphic';
-import CategoryCard from '../components/CategoryCard';
+import Category from '../components/CategoryCard';
 import ArtCard from '../components/ArtCard';
 import Imag from '../components/Imag';
 import Carousel from '../components/Carousel';
@@ -37,11 +37,11 @@ export default function Art() {
         return (
           <>
             <CategoryHead title="animations!">
-              moving pictures! <br /> you can find most of these on my{' '}
+              moving pictures! animations are my main artform. <br /> you can find most of these on
+              my{' '}
               <Link to="https://www.youtube.com/@SPICYham" target="_blank">
                 youtube channel.
               </Link>{' '}
-              <br /> <p className="text-accent">{'(90% of these are terraria animations lol)'}</p>
             </CategoryHead>
             <ArtCard
               title="Terraria Gnome Animated"
@@ -124,42 +124,53 @@ export default function Art() {
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the art i've made!</p>
-          <div className="mb-3 flex h-60 gap-3">
-            <CategoryCard
-              title="animations!"
-              img="/favicon.svg"
-              onClick={() => handleCategoryClick(1)}
-              flex={2}
-            >
-              moving pictures and all.
-            </CategoryCard>
-            <CategoryCard
-              title="3D renders!"
-              img="/favicon.svg"
-              onClick={() => handleCategoryClick(2)}
-              flex={2}
-            >
-              made in another dimension!
-            </CategoryCard>
-          </div>
-          <div className="mb-3 flex h-60 gap-3">
-            <CategoryCard title="2D art" img="/favicon.svg" onClick={() => handleCategoryClick(3)}>
-              characters & backgrounds!
-            </CategoryCard>
-            <CategoryCard title="promo" img="/favicon.svg" onClick={() => handleCategoryClick(4)}>
-              for highschool <br /> clubs and such
-            </CategoryCard>
-            <CategoryCard title="music" img="/favicon.svg" onClick={() => handleCategoryClick(5)}>
-              dj toenail <br /> on the beat
-            </CategoryCard>
-            <CategoryCard
-              title="other stuff"
-              img="/favicon.svg"
-              onClick={() => handleCategoryClick(5)}
-            >
-              drawings, video essays, etc
-            </CategoryCard>
-          </div>
+
+          <Category
+            categoryArray={[
+              {
+                title: 'animations!',
+                text: 'moving pictures and all.',
+                img: '/favicon.svg',
+                onClick: () => handleCategoryClick(1),
+                flex: 2,
+              },
+              {
+                title: '3D renders',
+                text: 'moving pictures and all.',
+                img: '/favicon.svg',
+                onClick: () => handleCategoryClick(2),
+                flex: 2,
+              },
+              {
+                title: '2D art',
+                text: 'characters & backgrounds!',
+                img: '/favicon.svg',
+                onClick: () => handleCategoryClick(3),
+                flex: 1,
+              },
+              {
+                title: 'promo',
+                text: 'for highschool clubs and such',
+                img: '/favicon.svg',
+                onClick: () => handleCategoryClick(3),
+                flex: 1,
+              },
+              {
+                title: 'music',
+                text: 'dj toenail on the beat',
+                img: '/favicon.svg',
+                onClick: () => handleCategoryClick(3),
+                flex: 1,
+              },
+              {
+                title: 'other stuff',
+                text: 'drawings, video essays, etc',
+                img: '/favicon.svg',
+                onClick: () => handleCategoryClick(3),
+                flex: 1,
+              },
+            ]}
+          />
         </div>
 
         <div className="h-20" ref={categoryRef}></div>

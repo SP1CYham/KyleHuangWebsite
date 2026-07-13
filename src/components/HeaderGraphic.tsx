@@ -44,7 +44,7 @@ export default function HeaderGraphic({
 
   return (
     <NoiseGrad
-      className="w-full"
+      className="-mb-10 w-full"
       style={{ height: `${height + 10}px` }}
       baseFrequency={0.1}
       xtraOpacity={100}
