@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 import NoiseGrad from './NoiseGrad';
 import { scrollContainerRef } from '../App';
+
+import SpicyhamLogo from './spicyhamLogo';
+import SpicyhamLogoFace from './spicyhamLogoFace';
 
 function NavItem({ to, text }: { to: string; text: string }) {
   return (
@@ -19,6 +22,17 @@ function NavItem({ to, text }: { to: string; text: string }) {
 }
 
 function Header() {
+  const [hovered, setHovered] = useState(false);
+
+  function spicyhamLogo(className: string) {
+    return (
+      <div>
+        {!hovered && <SpicyhamLogo className={className} />}
+        {hovered && <SpicyhamLogoFace className={className} />}
+      </div>
+    );
+  }
+
   return (
     <div className="sticky top-0 z-10 w-screen items-center bg-black">
       <NoiseGrad
@@ -37,20 +51,26 @@ function Header() {
           className="flex flex-row p-4 whitespace-nowrap md:flex-row"
         >
           <Link className="mr-3 flex min-w-fit items-center gap-3 md:hidden md:h-0" to="/">
-            <img src="/favicon.svg" className="size-20" />
+            {spicyhamLogo('size-20')}
           </Link>
 
           <div className="flex flex-col whitespace-nowrap md:flex-row">
             <Link
-              className="mr-3 flex min-w-fit items-center gap-3"
+              className="group mr-3 flex min-w-fit items-center gap-3"
               to="/"
               style={{ textDecoration: 'none' }}
+
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
             >
-              <img src="/favicon.svg" className="hidden size-10 md:block" />
+              {spicyhamLogo('hidden size-10 md:block text-accent')}
               <span className="text-3xl font-bold tracking-tight text-white">
-                <div className="transition-all hover:font-medium active:font-black">SPICYHAM</div>
+                <div className="transition-all group-hover:font-medium group-active:font-black">
+                  SPICYHAM
+                </div>
               </span>
             </Link>
+
             <nav className="mt-2 flex md:mt-0">
               <NavItem to="/" text="home" />
               <NavItem to="/coding" text="coding" />
