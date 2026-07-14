@@ -37,7 +37,7 @@ export default function Coding() {
     <>
       {CodingCategory()}
 
-      <HeaderGraphic />
+      <HeaderGraphic title="CODING" finalMult={1.37} />
       <Base className="text-center">
         <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
 

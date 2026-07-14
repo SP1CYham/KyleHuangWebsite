@@ -120,7 +120,7 @@ export default function Art() {
 
   return (
     <>
-      <HeaderGraphic />
+      <HeaderGraphic title="ART N' STUFF" finalMult={0.83} />
       <Base>
         <div className="text-center">
           <p className="my-3 wrap-normal">check out some of the art i've made!</p>

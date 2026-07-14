@@ -14,7 +14,7 @@ function NavItem({ to, text }: { to: string; text: string }) {
       className="group inline-block h-full align-middle"
       onClick={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
     >
-      <div className="bg-accent m-1 -mb-2 line-clamp-1 inline-block cursor-default rounded-2xl border-2 border-white px-2 py-1 font-normal text-nowrap text-white transition-all group-hover:bg-[#f249bf] group-hover:px-3 group-hover:font-bold group-active:bg-[#f5b6f8]">
+      <div className="bg-accent group-hover:bg-midtone group-active:bg-light m-1 -mb-2 line-clamp-1 inline-block cursor-default rounded-2xl border-2 border-white px-2 py-1 font-normal text-nowrap text-white transition-all group-hover:px-3 group-hover:font-bold">
         {text}
       </div>
     </NavLink>
@@ -80,7 +80,7 @@ function Header() {
               <NavItem to="/" text="home" />
               <NavItem to="/coding" text="coding" />
               <NavItem to="/art" text="art" />
-              <NavItem to="/" text="about" />
+              <NavItem to="/about" text="about" />
               <NavItem to="/light-mode" text="light mode" />
             </nav>
           </div>

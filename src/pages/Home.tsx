@@ -23,7 +23,7 @@ export default function Home() {
           <li>
             creating animations, devlogs and video essays for my{' '}
             <Link to="https://www.youtube.com/@SPICYham/videos" target="_blank">
-              youtube channel,
+              youtube channel
             </Link>{' '}
             with over <strong> 108,000 subscribers</strong>
           </li>

@@ -26,7 +26,7 @@ function ArtInfo(info = '', value = '', icon = 0) {
     <div className="flex">
       <div className="h-6 w-full flex-1 shrink-0 align-middle">{iconFunc(icon)}</div>
       <div className="flex-2">{info}</div>
-      <div className="text-accent flex-5 font-bold">
+      <div className="text-midtone flex-5 font-bold">
         <span className="hover:animate-wiggle inline-block">{value}</span>
       </div>
     </div>
@@ -114,7 +114,7 @@ export default function ArtCard({
                   open ? 'mt-3 max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-accent mb-1 font-medium">concepts, sketches, etc</p>
+                <p className="text-midtone mb-1 font-medium">concepts, sketches, etc</p>
                 <Carousel imgsToShow={wipsNum} imgs={wips} />
               </div>
             )}

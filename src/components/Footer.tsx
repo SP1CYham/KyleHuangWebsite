@@ -42,7 +42,7 @@ function icon(to = '', index = 1) {
 function Footer() {
   return (
     <NoiseGrad
-      className="bg-shadow text-accent flex w-screen flex-col p-4 md:flex-row"
+      className="bg-shadow text-midtone flex w-screen flex-col p-4 md:flex-row"
       direction="to top"
       color="var(--color-accent2)"
       xtraOpacity={0}

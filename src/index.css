@@ -5,8 +5,9 @@
 @theme {
     --color-black: #1b2d3c;
     --color-shadow: #171933;
-    --color-dark: #2b7836; /*unused lol!*/
-    --color-midtone: #93c865; /*unused lol!*/
+    --color-dark: #2b7836; 
+    --color-midtone: #70ad50; 
+    --color-light: #c8e78a; 
     --color-white: #fff8e2;
     --color-accent: #2b7836; /*e53498*/
     --color-accent2: #2629d8; /*2629d8*/
@@ -42,6 +43,22 @@
         }
     }
 }
+:root.light {
+    --color-black: #fff8e2; 
+    --color-shadow: #e0ddd0;
+    --color-dark: #c8e78a;  
+    --color-midtone: #70ad50;   
+    --color-light: #2b7836;
+    --color-white: #1b2d3c;
+    --color-accent: #e53498;    
+    --color-accent2: #00aaff;
+
+    --color-accent-light: #e53498;
+    --color-head-light: #00aaff;
+    --color-head-mid: #1f55c9;
+    --color-head-dark: #3f0097;
+}
+
 body {
     overflow-x: hidden;
     color: var(--color-white);
@@ -101,12 +118,12 @@ h2:not(:hover){
 }
 
 a {
-    color: var(--color-accent);
+    color: var(--color-midtone);
     font-weight: 800;
     text-decoration: underline;
 }
 a:hover {
-    color: var(--color-white);
+    color: var(--color-light);
     transition: 0.2s;
 }
 a:not(:hover) {
@@ -126,7 +143,7 @@ button{
     cursor: pointer;
 }
 button:hover {
-    background-color: #f249bf;
+    background-color: var(--color-midtone);
     transition: 0.1s;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
@@ -139,7 +156,7 @@ button:not(:hover){
     padding-block: 0.25rem;
 }
 button:active {
-    background-color: #f5b6f8;
+    background-color: var(--color-light);
 }
 
 ul{

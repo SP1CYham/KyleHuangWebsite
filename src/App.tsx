@@ -13,6 +13,7 @@ import Home from './pages/Home';
 
 const Coding = lazy(() => import('./pages/Coding'));
 const Art = lazy(() => import('./pages/Art'));
+const About = lazy(() => import('./pages/About'));
 const LightMode = lazy(() => import('./pages/LightMode'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -25,13 +26,15 @@ export const DarkModeContext = createContext<ContextTypes | null>(null);
 
 /*
 function getInitialDarkMode(): boolean {
-  const prefersLight = window.matchMedia(
-    "(prefers-color-scheme: light)",
-  ).matches;
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
   if (prefersLight) return false;
-  return true; //dark by default if dark or no preference
+
+  const initial = getInitialDarkMode();
+  document.documentElement.classList.toggle('light', !initial);
+
+  return true;
 }
-*/
+  */
 
 export const scrollContainerRef = createRef<HTMLDivElement>();
 
@@ -45,7 +48,7 @@ function App() {
   function toggleDarkMode() {
     const next = !darkMode;
     setDarkMode(next);
-    document.documentElement.classList.toggle('dark', next);
+    document.documentElement.classList.toggle('light', !next);
   }
 
   return (
@@ -73,6 +76,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/coding" element={<Coding />} />
                     <Route path="/art" element={<Art />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/light-mode" element={<LightMode />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>

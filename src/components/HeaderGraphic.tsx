@@ -68,6 +68,7 @@ export default function HeaderGraphic({
             style={{ height: `${height - 10}px` }}
             xtraOpacity={0}
             baseFrequency={3}
+            color="var(--color-midtone)"
           >
             {src && <img src={src} className="w-full p-4" style={{ height: `${height}px` }}></img>}
             {src == null && (
@@ -102,7 +103,7 @@ export default function HeaderGraphic({
                       head={true}
                       headScaleX={scaleX * finalMult}
                     >
-                      SPICYHAM
+                      {title}
                     </NoiseGrad>
                   </div>
 
