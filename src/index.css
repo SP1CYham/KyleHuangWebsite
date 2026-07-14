@@ -8,7 +8,7 @@
     --color-dark: #2b7836; /*unused lol!*/
     --color-midtone: #93c865; /*unused lol!*/
     --color-white: #fff8e2;
-    --color-accent: #e53498;
+    --color-accent: #2b7836; /*e53498*/
     --color-accent2: #2629d8; /*2629d8*/
 
     --color-accent-light: #e53498;
@@ -79,7 +79,8 @@ h1 {
 h1:hover {
     font-weight: 900;
     text-shadow: 6px 6px var(--color-accent2);
-    transition: 0.2s
+    transition: 0.2s;
+    animation: wiggle 1s ease-in-out infinite;
 }
 h1:not(:hover){
     font-weight: 800;
@@ -130,17 +131,30 @@ button:hover {
     padding-left: 0.6rem;
     padding-right: 0.6rem;
     font-weight: 800;
-    transition: 0.1s;
 }
 button:not(:hover){
     background-color: var(--color-accent);
     transition: 0.1s;
     padding-inline: 0.4rem;
     padding-block: 0.25rem;
-    transition: 0.1s;
 }
 button:active {
     background-color: #f5b6f8;
+}
+
+ul{
+    padding-left: 36px;
+    list-style-type: "→  ";
+    list-style-position: outside;
+}
+li {
+    transform: translateX(0px);
+    transition: transform 0.4s var(--ease-out-back); 
+    margin-top: 3px;
+}
+
+li:hover {
+    transform: translateX(10px);
 }
 
 

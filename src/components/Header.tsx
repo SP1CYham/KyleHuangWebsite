@@ -50,8 +50,13 @@ function Header() {
           baseFrequency={0.08}
           className="flex flex-row p-4 whitespace-nowrap md:flex-row"
         >
-          <Link className="mr-3 flex min-w-fit items-center gap-3 md:hidden md:h-0" to="/">
-            {spicyhamLogo('size-20')}
+          <Link
+            className="hover:text-accent text-accent mr-3 flex min-w-fit items-center gap-3 duration-initial md:hidden md:h-0"
+            to="/"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            {spicyhamLogo('size-20 hover:text-accent')}
           </Link>
 
           <div className="flex flex-col whitespace-nowrap md:flex-row">

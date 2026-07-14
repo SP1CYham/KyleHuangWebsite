@@ -38,37 +38,35 @@ export default function Coding() {
       {CodingCategory()}
 
       <HeaderGraphic />
-      <Base>
-        <div className="text-center">
-          <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
+      <Base className="text-center">
+        <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
 
-          <Category
-            categoryArray={[
-              {
-                title: 'friend compass oh god',
-                text: 'moving pictures and all.',
-                img: '/favicon.svg',
-                onClick: () => setProjIndex(1),
-                flex: 4,
-              },
-              {
-                title: 't(ai)me',
-                text: 'moving pictures and all.',
-                img: '/favicon.svg',
-                onClick: () => setProjIndex(1),
-                flex: 1,
-              },
-            ]}
-          />
+        <Category
+          categoryArray={[
+            {
+              title: 'friend compass oh god',
+              text: 'moving pictures and all.',
+              img: '/favicon.svg',
+              onClick: () => setProjIndex(1),
+              flex: 4,
+            },
+            {
+              title: 't(ai)me',
+              text: 'moving pictures and all.',
+              img: '/favicon.svg',
+              onClick: () => setProjIndex(1),
+              flex: 1,
+            },
+          ]}
+        />
 
-          <div className="mt-4">
-            skills:
-            <Card text="photoshop" />
-            <Card text="blender" />
-            <Card text="unity" />
-            <Card text="python mayeb" />
-            <Card text="react" />
-          </div>
+        <div className="mt-4">
+          skills:
+          <Card text="photoshop" />
+          <Card text="blender" />
+          <Card text="unity" />
+          <Card text="python mayeb" />
+          <Card text="react" />
         </div>
       </Base>
     </>

@@ -24,7 +24,7 @@ export default function Art() {
     return (
       <>
         <h1>
-          <span className="hover:animate-wiggle inline-block">{title}</span>
+          <span className="inline-block">{title}</span>
         </h1>
         <p className="mb-6 text-center">{children}</p>
       </>
