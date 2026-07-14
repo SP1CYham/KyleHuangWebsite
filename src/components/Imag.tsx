@@ -28,9 +28,10 @@ export default function Imag({
     >
       <img
         src={src}
-        className={`hover:animate-wiggle h-auto w-full object-cover p-3 transition-all duration-150 hover:p-1 active:p-4 ${imgClassName}`}
+        className={`hover:animate-wiggle h-auto w-full max-w-100 truncate object-cover p-3 transition-all duration-150 hover:cursor-zoom-in hover:p-1 active:p-4 ${imgClassName}`}
         style={h ? { height: `${h}px` } : {}}
         loading="lazy"
+        alt={src}
       ></img>
     </div>
   );

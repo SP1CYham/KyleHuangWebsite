@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *)); /*allows dark mode stuff in html*/
 
+
 @theme {
     --color-black: #1b2d3c;
     --color-shadow: #171933;

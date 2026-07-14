@@ -46,6 +46,7 @@ interface ArtCardProps {
   links?: string[][];
   wipsNum?: number;
   wips?: string[][];
+  wipsPath?: string;
 }
 
 export default function ArtCard({
@@ -61,8 +62,14 @@ export default function ArtCard({
   links = [['']], //write link first, then text representing the link, like: [["www.insta.com", "check it out on insta!"]]
   wipsNum = 3,
   wips,
+  wipsPath = '',
 }: ArtCardProps) {
   const [open, setOpen] = useState(false);
+
+  function addPath(wipsVar: string[][]) {
+    if (wipsVar == null) return [];
+    return wipsVar.map((row) => [wipsPath + row[0], ...row.slice(1)]);
+  }
 
   return (
     <>
@@ -115,7 +122,7 @@ export default function ArtCard({
                 }`}
               >
                 <p className="text-midtone mb-1 font-medium">concepts, sketches, etc</p>
-                <Carousel imgsToShow={wipsNum} imgs={wips} />
+                <Carousel imgsToShow={wipsNum} imgs={addPath(wips)} />
               </div>
             )}
           </div>

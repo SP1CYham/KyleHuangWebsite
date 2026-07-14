@@ -35,11 +35,11 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
           <NoiseGrad
             className="flex h-full flex-col rounded-3xl border-2 border-white transition-all"
             childClassName="rounded-3xl transition-all"
-            color="var(--color-accent)"
             percent={60}
             xtraOpacity={0}
             baseFrequency={3}
             direction="170deg"
+            color="var(--color-midtone)"
           >
             <p className="text-shadow-accent2 z-10 ml-1 flex-2 shrink-0 text-left text-6xl font-bold -tracking-widest hyphens-auto italic transition-all duration-300 text-shadow-lg/100 group-hover:text-[4em] group-hover:text-shadow-[10px_10px_0px_rgb(0_0_0/1)] group-active:text-[3em] md:hyphens-none">
               {title}

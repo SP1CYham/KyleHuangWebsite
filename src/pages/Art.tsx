@@ -46,29 +46,44 @@ export default function Art() {
             <ArtCard
               title="Terraria Gnome Animated"
               youtube="https://www.youtube.com/embed/sQxJLyRYvn0"
-              software={['Flipaclip', 'Premiere Pro', 'ibisPaintX']}
-              frames="2000"
-              time="a lot of time"
+              software={['Flipaclip', 'Premiere Pro', 'ibisPaintX', 'FL Studio']}
+              frames="3500 (15 fps)"
+              time="~13 months"
               date="Feb 13, 2025"
               links={[['https://youtu.be/sQxJLyRYvn0', 'YouTube Link!']]}
+              wipsPath="/assets/art/animation/gnome"
               wips={[
                 [
-                  '/favicon.svg',
-                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
+                  '/cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
                 ],
                 [
-                  '/favicon.svg',
-                  'the first sketch of the video. i always make a mini sketch before attempting a video to outline colors define character shape',
+                  '/cGnomeBG.webp',
+                  'various backgrounds throughout the video that genuinely showed up for less than a second',
                 ],
+                ['/cBanner.webp', 'the player banner in all of its glory'],
+                ['/cProjects.webp', 'all the different flipaclip projects'],
+                ['/cMidFinger.webp', 'uncensored gnome middle finger'],
               ]}
             >
-              animation took me like weeks bro
+              This is the latest entry in my Terraria Animated series. At the time, no animations
+              ever focused on Terraria Calamity, a very popular mod of Terraria. I combined this
+              with the idea of chasing down a gnome Tom and Jerry style, along with a
+              Animation-vs-Animator-esque meta sequence of downloading the mod and using its
+              features to finally stop the gnome.
               <br />
-              also did in collaboration with{' '}
+              <br />
+              This video was done in collaboration with{' '}
               <Link to="https://www.youtube.com/@Terraw" target="_blank">
                 Terrasteel,
               </Link>{' '}
-              an awesome Terraria youtuber I've been watching for a while, so that was awesome!
+              an awesome Terraria youtuber I've been watching for a while, appearing as exposition
+              in order to give the protagonist a motive (the in-game achievement).
+              <br />
+              <br />
+              This video took months; I started working on it before Solar Eclipse animated came out
+              and took a long break in the middle of animating. This would be my last video animated
+              in Flipaclip as the app limitations were starting to hinder my work.
             </ArtCard>
 
             <ArtCard
