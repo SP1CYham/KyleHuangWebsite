@@ -85,7 +85,7 @@ export default function ArtCard({
           baseFrequency={0.6}
           xtraOpacity={50}
         >
-          <div className={`${open ? 'md:sticky md:top-24' : ''} z-3 flex flex-col`}>
+          <div className={`${open ? 'md:sticky md:top-24' : ''} z-3 flex flex-col items-center`}>
             <h2
               className={`-mt-2 mb-1 transition-all duration-200 ease-in-out ${open ? 'h-auto opacity-100 md:h-0 md:opacity-0' : 'h-auto opacity-100'}`}
             >
@@ -105,7 +105,7 @@ export default function ArtCard({
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                className={`${open ? 'h-auto' : 'h-96'} w-full rounded-2xl`}
+                className={`${open ? 'h-auto' : 'h-96'} w-full max-w-170 rounded-2xl`}
                 style={{ aspectRatio: youtubeAspect }}
               ></iframe>
             )}
@@ -143,7 +143,7 @@ export default function ArtCard({
             baseFrequency={0.6}
             xtraOpacity={50}
           >
-            <h2 className="hidden shrink-0 truncate text-balance wrap-anywhere md:block">
+            <h2 className="mb-2 hidden shrink-0 truncate text-balance wrap-anywhere md:block">
               {title}
             </h2>
             <p className="mb-4 min-h-12 shrink-0 place-content-center">{children}</p>

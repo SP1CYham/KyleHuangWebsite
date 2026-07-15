@@ -51,19 +51,23 @@ export default function Art() {
               time="~13 months"
               date="Feb 13, 2025"
               links={[['https://youtu.be/sQxJLyRYvn0', 'YouTube Link!']]}
-              wipsPath="/assets/art/animation/gnome"
+              wipsPath="/assets/art/animation/gnome/"
               wips={[
                 [
-                  '/cGnomeSketch.webp',
+                  'cGnomeSketch.webp',
                   'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
                 ],
                 [
-                  '/cGnomeBG.webp',
+                  'cGnomeBG.webp',
                   'various backgrounds throughout the video that genuinely showed up for less than a second',
                 ],
-                ['/cBanner.webp', 'the player banner in all of its glory'],
-                ['/cProjects.webp', 'all the different flipaclip projects'],
-                ['/cMidFinger.webp', 'uncensored gnome middle finger'],
+                [
+                  'cGnomeFeat.webp',
+                  "featured in the media spotlight in Feburary 2025's state of the game!",
+                ],
+                ['cBanner.webp', 'the player banner in all of its glory'],
+                ['cProjects.webp', 'all the different flipaclip projects'],
+                ['cMidFinger.webp', 'uncensored gnome middle finger'],
               ]}
             >
               This is the latest entry in my Terraria Animated series. At the time, no animations
@@ -87,37 +91,208 @@ export default function Art() {
             </ArtCard>
 
             <ArtCard
-              title="art"
-              img="/favicon.svg"
-              youtube="https://www.youtube.com/embed/6k6zenVHE9k"
-              software={['photoshop', 'ibis paint']}
+              title="CO-MOTION - Collaborative Animation Project"
+              youtube="https://www.youtube.com/embed/sfZZX7dUDc4"
+              software={['Flipaclip', 'After Effects', 'Premiere Pro', 'Toonsquid', 'Blender']}
+              frames="250 (painfully detailed) frames"
+              time="~7 months"
+              date="Jun 5th, 2026"
               links={[
-                ['https://twss.dev/posts/', 'insta'],
-                ['https://twss.dev/posts/', 'youtube'],
+                ['https://www.instagram.com/reel/DZc3PtaRsEY/', 'Instagram Link'],
+                ['https://www.youtube.com/watch?v=sfZZX7dUDc4', 'Youtube Link!'],
+                ['https://www.instagram.com/reel/DW37RX9Efn9/', 'Promotional Video I Made'],
+              ]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
               ]}
             >
-              wefwords words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words words words words
-              words words words words words words words words words words words w
+              My sendoff to our school's Art Club: a 250-frame collaborative animation with full
+              color, rendering and all. We ended with over <strong>40 individual artists </strong>
+              participating, and <strong>85+ individual </strong>
+              drawings contributed.
+              <br />
+              <br />
+              Artists contributed by drawing Art Club logos, Woodlands (our school) logos/crests, or
+              skull drawings. Artists were given full creative freedom, resulting in a chaotic but
+              beautiful sequence of different colors, rendering styles and mediums!
+              <br />
+              <br />
+              Originally, I planned each frame to be assigned to an individual artist, but soon
+              realized it was unrealistic. I ended up creating most of the animation myself over a
+              few months. I tried incorporating as much Woodlands culture as possible, using student
+              artwork as backgrounds, including a section filled with other clubs, and more.
             </ArtCard>
 
-            <ArtCard title="art" img="/favicon.svg">
-              wef
+            <ArtCard
+              title="Terraria Solar Eclipse Animated"
+              youtube="https://www.youtube.com/embed/-ia6zQR0olI"
+              software={['Flipaclip', 'Premiere Pro']}
+              frames="~1500 (12 fps)"
+              time="2 days"
+              date="Apr 9, 2024"
+              links={[['https://www.youtube.com/watch?v=-ia6zQR0olI', 'Youtube Link!']]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
+              ]}
+            >
+              This was created to celebrate the{' '}
+              <Link
+                to="https://en.wikipedia.org/wiki/Solar_eclipse_of_April_8,_2024"
+                target="_blank"
+              >
+                Great North American Eclipse,
+              </Link>{' '}
+              which I had heard about a couple days prior. The idea of an animation about one of the
+              most infamous <i>'Terraria'</i> things in Terraria, the dreaded Solar Eclipse, while
+              it was happening in real life, was something I couldn't pass off.
+              <br />
+              <br />
+              I had the idea of all my animations so far coming together for one big event. I
+              included all my previous characters (except meteorite armor guy sorry) into a sort of
+              multiverse (cliche I know). I originally planned all players in all my animations to
+              be the same person in different times, so I came up with new names for the other
+              players (that you can see in the death log).
+              <br />
+              <br />
+              This led me to speedrunning the whole video in just <strong>2 days.</strong> I
+              actually saw the solar eclipse in-person too (not in totality but it was still cool),
+              animating the drive there and the drive back, and editing all night long. I skipped a
+              swim practice to try and get it out on the day of, and still missed it.
+              <br />
+              <br />
+              This rush led to wayyy more mistakes in the animation than usual, like the missing
+              sounds when hitting the moon, and the Moon Lord literally disappearing at the end (I
+              WAS GONNA EDIT HIM IN FORTNITE DANCING IT WAS GONNA BE SO FUNNY IM SO MAD).
+              <br />
+              <br />
+              Despite it all,{' '}
+              <Link
+                to="https://www.reddit.com/r/Terraria/comments/1bzj7j6/comment/kyuosz7/"
+                target="blank"
+              >
+                Redigit,
+              </Link>{' '}
+              the creator of Terraria saw it, which I'm still flabbergasted about!
+            </ArtCard>
+
+            <ArtCard
+              title="Sherma (Silksong Animated)"
+              youtube="https://www.youtube.com/embed/a-2mq2p-guY"
+              software={['Toonsquid', 'Premiere Pro', 'After Effects']}
+              frames="720 (15 fps)"
+              time="1 week"
+              date="Nov 23, 2025"
+              links={[['https://www.youtube.com/watch?v=a-2mq2p-guY', 'Youtube Link!']]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
+              ]}
+            >
+              na
+            </ArtCard>
+
+            <ArtCard
+              title="Terraria Goblin Tinkerer Animated"
+              youtube="https://www.youtube.com/embed/qrPZx68gY9I"
+              software={['Flipaclip', 'Premiere Pro']}
+              frames="1354 (20 fps)"
+              time="~1 month"
+              date="Apr 9, 2024"
+              links={[['https://www.youtube.com/watch?v=qrPZx68gY9I', 'Youtube Link!']]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
+              ]}
+            >
+              na
+            </ArtCard>
+
+            <ArtCard
+              title="Hermitcraft S10 Trap Animation"
+              youtube="https://www.youtube.com/embed/gfI4R38zY-g"
+              software={['Flipaclip', 'Premiere Pro']}
+              frames="~1000 (15 fps)"
+              time="~1 week"
+              date="Feb 27, 2024"
+              links={[['https://www.youtube.com/watch?v=gfI4R38zY-g', 'Youtube Link!']]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
+              ]}
+            >
+              na
+            </ArtCard>
+
+            <ArtCard
+              title="Dream vs. Gumball"
+              youtube="https://www.youtube.com/embed/24v18rdIe80"
+              software={['Flipaclip', 'Premiere Pro']}
+              frames="~1000 (15 fps)"
+              time="~1 week"
+              date="Feb 27, 2024"
+              links={[['https://www.youtube.com/watch?v=24v18rdIe80', 'Youtube Link!']]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
+              ]}
+            >
+              na
+            </ArtCard>
+
+            <ArtCard
+              title="PVZ Oak vs. Bling Yeti"
+              youtube="https://www.youtube.com/embed/TgrYxzbDuUs"
+              software={['Flipaclip', 'Premiere Pro']}
+              frames="~1000 (15 fps)"
+              time="~1 week"
+              date="Feb 27, 2024"
+              links={[['https://www.youtube.com/watch?v=TgrYxzbDuUs', 'Youtube Link!']]}
+              wipsPath="/assets/art/animation/gnome/"
+              wips={[
+                [
+                  'cGnomeSketch.webp',
+                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                ],
+              ]}
+            >
+              yeah
+            </ArtCard>
+
+            <ArtCard
+              title="cave divers when they fight queen bee"
+              youtube="https://youtube.com/embed/9qmniMSMA8c"
+              youtubeAspect="9/16"
+              software={['Flipaclip', 'Capcut :sob:']}
+              frames="~132 (15 fps)"
+              time="like an hour"
+              date="Feb 24, 2025"
+              links={[['https://youtube.com/shorts/9qmniMSMA8c', 'Youtube Link.']]}
+            >
+              i made this in computer science class in one morning. my friend wrote the description
+              in 10 seconds. <br />
+              <br /> it has 7 million views.
+              <br />
+              <br /> i dont even pretend to know the algorithm anymore.
             </ArtCard>
           </>
         );

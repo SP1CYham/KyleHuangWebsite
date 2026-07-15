@@ -24,6 +24,9 @@ export default function Carousel({
   const canGoLeft = index > 0;
   const canGoRight = index + imgsToShow < imgs.length;
 
+  const [lHovered, setLHovered] = useState(false);
+  const [rHovered, setRHovered] = useState(false);
+
   function goLeft() {
     if (locked) return;
     if (canGoLeft) setIndex((i) => i - 1);
@@ -44,6 +47,8 @@ export default function Carousel({
         <button
           onClick={goLeft}
           disabled={!canGoLeft}
+          onMouseEnter={() => !!canGoLeft && setLHovered(true)}
+          onMouseLeave={() => setLHovered(false)}
           style={{
             margin: 0,
             height: `${h}px`,
@@ -51,8 +56,15 @@ export default function Carousel({
             borderRadius: `${h / 2}px 0 0 ${h / 2}px`,
             width: `${h}px`,
             textAlign: 'center',
+            backgroundColor: !canGoLeft
+              ? 'var(--color-black)'
+              : lHovered
+                ? 'var(--color-midtone)'
+                : 'var(--color-accent)',
+            cursor: !canGoLeft ? 'not-allowed' : 'pointer',
+            transition: 'background-color 0.2s ease',
           }}
-          className="text-5xl font-medium transition-all hover:font-bold"
+          className="text-5xl font-medium"
         >
           {'<'}
         </button>
@@ -97,6 +109,8 @@ export default function Carousel({
         <button
           onClick={goRight}
           disabled={!canGoRight}
+          onMouseEnter={() => !!canGoRight && setRHovered(true)}
+          onMouseLeave={() => setRHovered(false)}
           style={{
             margin: 0,
             height: `${h}px`,
@@ -104,8 +118,15 @@ export default function Carousel({
             borderRadius: `0 ${h / 2}px ${h / 2}px 0`,
             width: `${h}px`,
             textAlign: 'center',
+            backgroundColor: !canGoRight
+              ? 'var(--color-black)'
+              : rHovered
+                ? 'var(--color-midtone)'
+                : 'var(--color-accent)',
+            cursor: !canGoRight ? 'not-allowed' : 'pointer',
+            transition: 'background-color 0.2s ease',
           }}
-          className="text-5xl font-medium transition-all hover:font-bold"
+          className="text-5xl font-medium"
         >
           {'>'}
         </button>
