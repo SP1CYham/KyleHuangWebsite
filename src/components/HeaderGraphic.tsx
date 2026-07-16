@@ -5,8 +5,9 @@ import NoiseGrad from './NoiseGrad';
 export default function HeaderGraphic({
   height = 300,
   src,
+  srcPixel = false,
   title = 'SPICYHAM',
-  flex = 1,
+  titleShadowColor = null,
   scaleXMultiplier = 0.24,
   scaleXBase = -0.03,
   scaleXMin = 0.5,
@@ -14,9 +15,10 @@ export default function HeaderGraphic({
   finalMult = 1,
 }: {
   height?: number;
-  src?: string;
+  src?: string | null;
+  srcPixel?: boolean;
   title?: string;
-  flex?: number;
+  titleShadowColor?: string | null;
   scaleXMultiplier?: number;
   scaleXBase?: number;
   scaleXMin?: number;
@@ -70,7 +72,21 @@ export default function HeaderGraphic({
             baseFrequency={3}
             color="var(--color-midtone)"
           >
-            {src && <img src={src} className="w-full p-4" style={{ height: `${height}px` }}></img>}
+            {src && (
+              <div
+                className="flex w-full justify-center"
+                style={srcPixel ? { imageRendering: 'pixelated' } : {}}
+              >
+                <img
+                  src={src}
+                  className="p-4 drop-shadow-2xl"
+                  style={{
+                    height: `${height - 40}px`,
+                    filter: `drop-shadow(0 8px 30px ${titleShadowColor})`,
+                  }}
+                ></img>
+              </div>
+            )}
             {src == null && (
               <div className="[container-type:size] h-full w-full hover:cursor-default">
                 <div className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14">

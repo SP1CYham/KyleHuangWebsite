@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { type ReactNode } from 'react';
 
+import { scrollContainerRef } from '../App';
+
 import HeaderGraphic from '../components/HeaderGraphic';
 import Base from '../Base';
 import Category from '../components/CategoryCard';
@@ -10,17 +12,30 @@ import Card from '../components/Card';
 export default function Coding() {
   const [projIndex, setProjIndex] = useState(0);
 
+  function handleCategoryClick(index = 0) {
+    setProjIndex(index);
+    setTimeout(() => {
+      scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 1);
+  }
+
   function CodingCategory() {
     switch (projIndex) {
       case 1:
         return (
-          <ProjectCard title="humpty rise" img="/favicon.svg">
+          <ProjectCard
+            titleImg="/assets/coding/humptysRise/humptyTitle.png"
+            titleShadow="#3E157080"
+            pixel={true}
+            title="Humpty's Rise"
+            img="/favicon.svg"
+          >
             this is my first project to show off
           </ProjectCard>
         );
       case 2:
         return (
-          <ProjectCard title="python code" img="/favicon.svg">
+          <ProjectCard title="Friend Compass" img="/favicon.svg">
             this is my second project to show off
           </ProjectCard>
         );
@@ -37,7 +52,7 @@ export default function Coding() {
     <>
       {CodingCategory()}
 
-      <HeaderGraphic title="CODING" finalMult={1.37} />
+      {projIndex === 0 && <HeaderGraphic title="CODING" finalMult={1.37} />}
       <Base className="text-center">
         <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
 
@@ -47,27 +62,18 @@ export default function Coding() {
               title: 'friend compass oh god',
               text: 'moving pictures and all.',
               img: '/favicon.svg',
-              onClick: () => setProjIndex(1),
-              flex: 4,
+              onClick: () => handleCategoryClick(1),
+              flex: 2,
             },
             {
               title: 't(ai)me',
               text: 'moving pictures and all.',
               img: '/favicon.svg',
-              onClick: () => setProjIndex(1),
-              flex: 1,
+              onClick: () => handleCategoryClick(2),
+              flex: 2,
             },
           ]}
         />
-
-        <div className="mt-4">
-          skills:
-          <Card text="photoshop" />
-          <Card text="blender" />
-          <Card text="unity" />
-          <Card text="python mayeb" />
-          <Card text="react" />
-        </div>
       </Base>
     </>
   );

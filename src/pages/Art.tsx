@@ -305,6 +305,12 @@ export default function Art() {
             </ArtCard>
           </>
         );
+      default:
+        return (
+          <div className="text-center">
+            work in progress! <br /> {':)'}{' '}
+          </div>
+        );
     }
   }
 
