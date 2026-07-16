@@ -13,13 +13,16 @@ export default function About() {
 
       <Base maxW={45} className="z-10 mb-30">
         <div className="gap-10 md:flex">
-          <img
-            loading="lazy"
-            src="/favicon.svg"
-            className="h-full w-full items-center md:sticky md:top-24 md:flex-1"
-          />
+          <div className="md:sticky md:top-24 md:min-w-0 md:flex-1">
+            <img
+              loading="lazy"
+              src="/assets/other/me.webp"
+              className="h-auto max-h-60 w-full items-center object-scale-down md:max-h-full"
+            />
+          </div>
+
           <div className="md:flex-1">
-            <h2 className="text-midtone -mt-2 mb-2 text-2xl">Hiya!</h2>
+            <h2 className="text-midtone mt-3 mb-2 text-2xl md:-mt-2">Hiya!</h2>
             <p>
               I'm <strong>Kyle Huang</strong>, but people online may know me as{' '}
               <strong>SPICYHAM</strong>. I'm an animator, developer and CS student heading to the

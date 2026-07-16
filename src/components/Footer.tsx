@@ -51,12 +51,18 @@ function Footer() {
       <div className="flex flex-row">
         {icon('https://www.youtube.com/@SPICYham', 0) /*youtube*/}
         {icon('https://www.instagram.com/sp1cy_ham', 1) /*insta*/}
-        {icon('https://www.tiktok.com/@sp1cyham', 4) /*tiktok*/}
+
         {icon('https://discord.gg/6Jrc2j4', 5) /*discord*/}
-        {icon('https://www.reddit.com/user/BR0COL1/', 6) /*reddit*/}
+
         {icon('https://github.com/SP1CYham', 2) /*github*/}
         {icon('fix latere', 3) /*linkedin*/}
       </div>
+
+      {/*
+      
+      {icon('https://www.tiktok.com/@sp1cyham', 4) tiktok}
+      {icon('https://www.reddit.com/user/BR0COL1/', 6) reddit}
+      */}
 
       <p className="mt-2 mr-5 ml-2 flex-1 md:mt-0 md:text-right">
         {' '}

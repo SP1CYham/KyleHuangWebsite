@@ -55,6 +55,7 @@ function Header() {
             to="/"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            style={{ color: 'var(--color-accent)' }}
           >
             {spicyhamLogo('size-20 hover:text-accent')}
           </Link>

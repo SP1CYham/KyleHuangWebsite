@@ -53,7 +53,12 @@ export default function ProjectCard({
 
           <div className="flex grow-0 flex-col-reverse gap-4 md:flex-row">
             <div className="flex-2">
-              <div>{children}</div>
+              <div className="mb-10">{children}</div>
+
+              <h2>Technology:</h2>
+              {uses.map((use, _) => (
+                <Card text={use} />
+              ))}
             </div>
             <div className="flex flex-1 justify-center md:flex-col">
               {ss.map((link, index) => (

@@ -31,6 +31,7 @@ export default function Coding() {
             tagline="A Humpty Dumpty themed dungeon crawler"
             img="/favicon.svg"
             ss={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
+            uses={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
           >
             this is my first project to show off
           </ProjectCard>
