@@ -28,7 +28,9 @@ export default function Coding() {
             titleShadow="#3E157080"
             pixel={true}
             title="Humpty's Rise"
+            tagline="A Humpty Dumpty themed dungeon crawler"
             img="/favicon.svg"
+            ss={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
           >
             this is my first project to show off
           </ProjectCard>

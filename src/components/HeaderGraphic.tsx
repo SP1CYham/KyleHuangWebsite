@@ -82,7 +82,7 @@ export default function HeaderGraphic({
                   className="p-4 drop-shadow-2xl"
                   style={{
                     height: `${height - 40}px`,
-                    filter: `drop-shadow(0 8px 30px ${titleShadowColor})`,
+                    filter: `drop-shadow(0 8px 10px ${titleShadowColor})`,
                   }}
                 ></img>
               </div>
