@@ -116,7 +116,7 @@ export default function Home() {
             <Link to="/about">
               <button className="w-90">learn more about me!</button>
             </Link>
-            <Link to="/about">
+            <Link to="/resume">
               <button className="w-90 font-black">R E S U M E</button>
             </Link>
           </div>

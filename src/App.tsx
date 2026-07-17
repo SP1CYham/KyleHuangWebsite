@@ -16,6 +16,7 @@ const Art = lazy(() => import('./pages/Art'));
 const About = lazy(() => import('./pages/About'));
 const LightMode = lazy(() => import('./pages/LightMode'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Resume = lazy(() => import('./pages/Resume'));
 
 interface ContextTypes {
   darkMode: boolean;
@@ -78,6 +79,7 @@ function App() {
                     <Route path="/art" element={<Art />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/light-mode" element={<LightMode />} />
+                    <Route path="/resume" element={<Resume />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </main>
