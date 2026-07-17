@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 import HeaderGraphic from '../components/HeaderGraphic';
 import Category from '../components/CategoryCard';
 import ArtCard from '../components/ArtCard';
-import Imag from '../components/Imag';
-import Carousel from '../components/Carousel';
 
 export default function Art() {
   const [projIndex, setProjIndex] = useState(0);

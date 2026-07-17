@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *)); /*allows dark mode stuff in html*/
 
 
-@theme {
+theme {
     --color-black: #1b2d3c;
     --color-shadow: #171933;
     --color-dark: #2b7836; 

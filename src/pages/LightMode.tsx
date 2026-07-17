@@ -11,7 +11,7 @@ export default function LightMode() {
       </button>
       <br />
       <br />
-      <p className="h-[100vh]">this page is in progress!</p>
+      <p className="h-screen">this page is in progress!</p>
     </>
   );
 }

@@ -1,13 +1,10 @@
 import { useState } from 'react';
-import { type ReactNode } from 'react';
-
 import { scrollContainerRef } from '../App';
 
 import HeaderGraphic from '../components/HeaderGraphic';
 import Base from '../Base';
 import Category from '../components/CategoryCard';
 import ProjectCard from '../components/ProjectCard';
-import Card from '../components/Card';
 import ArtCard from '../components/ArtCard';
 
 export default function Coding() {

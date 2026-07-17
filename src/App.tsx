@@ -1,7 +1,7 @@
 import { useState, createContext, createRef, lazy, Suspense } from 'react';
 import './index.css';
 
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';

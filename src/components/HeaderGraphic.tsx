@@ -88,7 +88,7 @@ export default function HeaderGraphic({
               </div>
             )}
             {src == null && (
-              <div className="[container-type:size] h-full w-full hover:cursor-default">
+              <div className="@container-size h-full w-full hover:cursor-default">
                 <div className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14">
                   <NoiseGrad
                     ref={containerRef}
