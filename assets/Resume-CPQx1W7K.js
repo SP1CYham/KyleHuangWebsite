@@ -1,0 +1,1 @@
+import{n as e,t}from"./jsx-runtime-D4s_8jBC.js";var n=e(),r=t();function i(){let e=(0,n.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,r.jsx)(`div`,{style:{height:`100vh`},children:(0,r.jsx)(`embed`,{src:`/KyleHuangResume.pdf`,type:`application/pdf`,width:`100%`,height:`100%`})}),e[0]=t):t=e[0],t}export{i as default};
