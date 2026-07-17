@@ -24,12 +24,12 @@ export default function Coding() {
       case 1:
         return (
           <ProjectCard
-            titleImg="/assets/coding/humptysRise/humptyTitle.png"
+            titleImg="public/assets/coding/humptysRise/humptyTitle.png"
             titleShadow="#3E157080"
             pixel={true}
             title="Humpty's Rise"
             tagline="A Humpty Dumpty themed dungeon crawler"
-            img="/favicon.svg"
+            img="public/favicon.svg"
             ss={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
             uses={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
           >

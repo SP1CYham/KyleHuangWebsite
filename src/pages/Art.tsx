@@ -51,7 +51,7 @@ export default function Art() {
               time="~13 months"
               date="Feb 13, 2025"
               links={[['https://youtu.be/sQxJLyRYvn0', 'YouTube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
+              wipsPath="public/assets/art/animation/gnome/"
               wips={[
                 [
                   'cGnomeSketch.webp',
@@ -102,7 +102,7 @@ export default function Art() {
                 ['https://www.youtube.com/watch?v=sfZZX7dUDc4', 'Youtube Link!'],
                 ['https://www.instagram.com/reel/DW37RX9Efn9/', 'Promotional Video I Made'],
               ]}
-              wipsPath="/assets/art/animation/gnome/"
+              wipsPath="public/assets/art/animation/gnome/"
               wips={[
                 [
                   'cGnomeSketch.webp',
@@ -135,7 +135,7 @@ export default function Art() {
               time="2 days"
               date="Apr 9, 2024"
               links={[['https://www.youtube.com/watch?v=-ia6zQR0olI', 'Youtube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
+              wipsPath="public/assets/art/animation/gnome/"
               wips={[
                 [
                   'cGnomeSketch.webp',

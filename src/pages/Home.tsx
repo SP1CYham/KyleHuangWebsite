@@ -17,7 +17,7 @@ export default function Home() {
         <p className="text-center">
           i'm a developer, animator and incoming Waterloo CS student. <br /> it's nice to meet you!
         </p>
-        <img loading="lazy" src="/favicon.svg" className="my-10 h-50 w-full items-center" />
+        <img loading="lazy" src="public/favicon.svg" className="my-10 h-50 w-full items-center" />
         <h2>what i've been up to:</h2>
         <ul>
           <li>

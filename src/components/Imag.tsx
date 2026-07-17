@@ -31,7 +31,7 @@ export default function Imag({
         className={`hover:animate-wiggle h-auto w-full max-w-100 truncate object-cover p-3 transition-all duration-150 hover:cursor-zoom-in hover:p-1 active:p-4 ${imgClassName}`}
         style={h ? { height: `${h}px` } : {}}
         loading="lazy"
-        alt={src}
+        alt={'image'}
       ></img>
     </div>
   );

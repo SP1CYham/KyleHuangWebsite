@@ -12,7 +12,7 @@ export default function About() {
           <div className="md:sticky md:top-24 md:min-w-0 md:flex-1">
             <img
               loading="lazy"
-              src="/assets/other/me.webp"
+              src="public/assets/other/me.webp"
               className="h-auto max-h-60 w-full items-center object-scale-down md:max-h-full"
             />
           </div>
