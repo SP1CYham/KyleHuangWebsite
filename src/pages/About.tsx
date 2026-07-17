@@ -1,9 +1,5 @@
 import Base from '../Base';
-import Card from '../components/Card';
 import HeaderGraphic from '../components/HeaderGraphic';
-import { scrollContainerRef } from '../App';
-
-import NoiseGrad from '../components/NoiseGrad';
 import { Link } from 'react-router-dom';
 
 export default function About() {

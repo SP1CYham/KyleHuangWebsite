@@ -4,7 +4,6 @@ import Imag from './Imag';
 export default function Carousel({
   imgsToShow,
   imgs,
-  w = 70,
   h = 80,
 }: {
   imgsToShow: number;
@@ -19,7 +18,6 @@ export default function Carousel({
   const [index, setIndex] = useState(0);
 
   const locked = imgs.length <= imgsToShow ? true : false;
-  const lockedNum = locked ? 0 : 1;
 
   const canGoLeft = index > 0;
   const canGoRight = index + imgsToShow < imgs.length;
