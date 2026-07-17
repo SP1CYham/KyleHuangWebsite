@@ -14,5 +14,5 @@ export default defineConfig({
     compression(),
     visualizer({ open: true })
   ],
-  base: "/kylehuangwebsite"
+  base: "/KyleHuangWebsite/"
 })
