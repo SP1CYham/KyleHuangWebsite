@@ -33,6 +33,8 @@ export default function Art() {
 
   function ArtCategory() {
     switch (projIndex) {
+      case 0:
+        return <div></div>;
       case 1: //animations
         return (
           <>
@@ -296,12 +298,111 @@ export default function Art() {
             </ArtCard>
           </>
         );
-      case 2:
+      case 2: //3d art
         return (
           <>
-            <ArtCard title="arreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet" img="/favicon.svg">
-              words words words words words words wwords words words words words words words words
-              words words words words words words words words words words words words
+            <CategoryHead title="3d art">renders and other 3d work.</CategoryHead>
+
+            <ArtCard
+              title="Transparent"
+              img="/favicon.svg"
+              wipsPath="/"
+              wips={[
+                ['favicon.svg', ''],
+                ['favicon.svg', ''],
+                ['favicon.svg', ''],
+                ['favicon.svg', ''],
+              ]}
+            >
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Ready to Depart" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Hermitcraft Bunny" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Hack the North" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Ni Hao Film" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Pokemon Day 2026" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+          </>
+        );
+      case 3: //2d
+        return (
+          <>
+            <CategoryHead title="2d art">characters & backgrounds!</CategoryHead>
+
+            <ArtCard title="Family Car Gif" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="ESL Door Mural" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Lost Flock" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Pac Ma Menu" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Mr Beast Caricature" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="The Vietnam Guy" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+          </>
+        );
+      case 4: //promo
+        return (
+          <>
+            <CategoryHead title="promo">for highschool clubs and such.</CategoryHead>
+
+            <ArtCard title="Pixel Art Workshop" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Samosa" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Kowloon City" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Comes in Pairs" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Depths" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Matcha Mochi" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Animation Workshop" img="/favicon.svg">
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Asia Month Teaser" img="/favicon.svg">
+              placeholder description
             </ArtCard>
           </>
         );
@@ -348,21 +449,21 @@ export default function Art() {
                 title: 'promo',
                 text: 'for highschool clubs and such',
                 img: '/favicon.svg',
-                onClick: () => handleCategoryClick(3),
+                onClick: () => handleCategoryClick(4),
                 flex: 1,
               },
               {
                 title: 'music',
                 text: 'dj toenail on the beat',
                 img: '/favicon.svg',
-                onClick: () => handleCategoryClick(3),
+                onClick: () => handleCategoryClick(5),
                 flex: 1,
               },
               {
                 title: 'other stuff',
                 text: 'drawings, video essays, etc',
                 img: '/favicon.svg',
-                onClick: () => handleCategoryClick(3),
+                onClick: () => handleCategoryClick(6),
                 flex: 1,
               },
             ]}

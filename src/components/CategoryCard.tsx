@@ -21,7 +21,7 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-300 group-hover:scale-x-150 group-hover:rotate-3 group-active:scale-200 group-active:-rotate-3"
         style={{
-          mixBlendMode: 'multiply',
+          mixBlendMode: 'screen',
           zIndex: 0,
         }}
         loading="lazy"
