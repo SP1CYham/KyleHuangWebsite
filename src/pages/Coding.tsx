@@ -56,7 +56,13 @@ export default function Coding() {
         );
       case 5:
         return (
-          <ProjectCard title="Woodlands Bathroom Simulator" img="/favicon.svg">
+          <ProjectCard
+            title="Woodlands Bathroom Simulator"
+            img="/favicon.svg"
+            itchio="https://sp1cyham.itch.io/wbs"
+            itchioEmbed="https://itch.io/embed-upload/10512227?color=2b7836"
+            itchioEmbedMobile="https://itch.io/embed/2728107"
+          >
             placeholder description
           </ProjectCard>
         );

@@ -11,6 +11,9 @@ export default function ProjectCard({
   pixel = false,
   tagline,
   img,
+  itchio,
+  itchioEmbed,
+  itchioEmbedMobile /*just the normal embed option*/,
   children,
   uses = [''],
   ss = [''],
@@ -22,6 +25,9 @@ export default function ProjectCard({
   pixel?: boolean;
   tagline?: string;
   img?: string;
+  itchio?: string;
+  itchioEmbed?: string;
+  itchioEmbedMobile?: string;
   children: ReactNode;
   uses?: string[];
   ss?: string[];
@@ -47,9 +53,17 @@ export default function ProjectCard({
           <h1 className="">{title}</h1>
           {tagline !== null && <h2 className="text-center">{tagline}</h2>}
 
-          <div className="mt-4 mb-10 flex w-full justify-center">
-            <img src={img} className="h-auto max-h-80 w-full"></img>
-          </div>
+          {img && (
+            <div className="mt-4 mb-10 flex w-full justify-center">
+              <img src={img} className="h-auto max-h-80 w-full"></img>
+            </div>
+          )}
+
+          {itchio && (
+            <iframe src={itchioEmbed} className="aspect-video h-auto w-full rounded-2xl">
+              <a href={itchio}>Play {title} on itch.io</a>
+            </iframe>
+          )}
 
           <div className="flex grow-0 flex-col-reverse gap-4 md:flex-row">
             <div className="flex-2">
