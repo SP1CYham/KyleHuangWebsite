@@ -13,8 +13,8 @@ export default function ProjectCard({
   tagline,
   img,
   itchio,
-  itchioEmbed,
-  itchioEmbedMobile /*just the normal embed option*/,
+  itchioEmbed, //just the number
+  itchioEmbedMobile, //just the number
   children,
   uses = [''],
   ss = [''],
@@ -27,8 +27,8 @@ export default function ProjectCard({
   tagline?: string;
   img?: string;
   itchio?: string;
-  itchioEmbed?: string;
-  itchioEmbedMobile?: string;
+  itchioEmbed?: number | null;
+  itchioEmbedMobile?: number | null;
   children: ReactNode;
   uses?: string[];
   ss?: string[];
@@ -64,7 +64,7 @@ export default function ProjectCard({
             <div className="mt-4 mb-10 flex w-full justify-center">
               {/* desktop (game embed) */}
               <iframe
-                src={itchioEmbed}
+                src={'https://itch.io/embed-upload/' + itchioEmbed}
                 title={`${title} on itch.io`}
                 className="hidden aspect-video h-auto w-full rounded-2xl md:block"
               >
@@ -73,7 +73,7 @@ export default function ProjectCard({
 
               {/* mobile (embed) */}
               <iframe
-                src={itchioEmbedMobile ?? itchioEmbed}
+                src={'https://itch.io/embed/' + itchioEmbedMobile?.toString()}
                 title={`${title} on itch.io`}
                 className="bg-accent block h-auto w-full rounded-2xl md:hidden"
               >

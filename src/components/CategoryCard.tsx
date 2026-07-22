@@ -55,10 +55,16 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
   );
 }
 
-export default function Category({ categoryArray }: { categoryArray: categoryProps[] }) {
+export default function Category({
+  categoryArray,
+  overrideMax = null,
+}: {
+  categoryArray: categoryProps[];
+  overrideMax?: number | null;
+}) {
   function findMaxCat() {
     const innerWidth = window.innerWidth;
-    if (innerWidth > 768) return 4;
+    if (innerWidth > 768) return overrideMax ? overrideMax : 4;
     else return 2;
   }
 

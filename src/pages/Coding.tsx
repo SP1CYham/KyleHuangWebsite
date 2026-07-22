@@ -29,11 +29,22 @@ export default function Coding() {
             pixel={true}
             title="Humpty's Rise"
             tagline="A Humpty Dumpty themed dungeon crawler"
-            img="/favicon.svg"
+            itchio="https://sp1cyham.itch.io/humptys-rise"
+            itchioEmbed={13998305}
+            itchioEmbedMobile={3083622}
             ss={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
             uses={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
           >
-            this is my first project to show off
+            <i>*above demo is a beta build!</i>
+            <br />
+            <br />
+            <strong>Humpty's Rise</strong> is a dungeon crawler with balatro-like elements. Collect
+            cards and shells, apply modifiers, and take your revenge against the evil usurper, The
+            Gingerbread Man.
+            <br />
+            <br />
+            Created by a friend and I in a school game jam in the Unity game engine, this game has
+            been in progress since grade 10, changing forms multiple times along the way.
           </ProjectCard>
         );
       case 2:
@@ -44,29 +55,35 @@ export default function Coding() {
         );
       case 3:
         return (
-          <ProjectCard title="Buckshot Mobile" img="/favicon.svg">
-            placeholder description
+          <ProjectCard title="Friend Compass" img="/favicon.svg">
+            this is my second project to show off
           </ProjectCard>
         );
       case 4:
         return (
-          <ProjectCard title="T(AI)ME" img="/favicon.svg">
+          <ProjectCard title="Buckshot Mobile" img="/favicon.svg">
             placeholder description
           </ProjectCard>
         );
       case 5:
         return (
-          <ProjectCard
-            title="Woodlands Bathroom Simulator"
-            img="/favicon.svg"
-            itchio="https://sp1cyham.itch.io/wbs"
-            itchioEmbed="https://itch.io/embed-upload/10512227?color=2b7836"
-            itchioEmbedMobile="https://itch.io/embed/2728107"
-          >
+          <ProjectCard title="T(AI)ME" img="/favicon.svg">
             placeholder description
           </ProjectCard>
         );
       case 6:
+        return (
+          <ProjectCard
+            title="Woodlands Bathroom Simulator"
+            img="/favicon.svg"
+            itchio="https://sp1cyham.itch.io/wbs"
+            itchioEmbed={10512227}
+            itchioEmbedMobile={2728107}
+          >
+            placeholder description
+          </ProjectCard>
+        );
+      case 7:
         return (
           <>
             <Base>
@@ -96,6 +113,7 @@ export default function Coding() {
         <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
 
         <Category
+          overrideMax={5}
           categoryArray={[
             {
               title: "Humpty's Rise",
@@ -105,39 +123,46 @@ export default function Coding() {
               flex: 3,
             },
             {
+              title: 'Exposure',
+              text: 'full photography editing suite + personalized coach',
+              img: '/favicon.svg',
+              onClick: () => handleCategoryClick(2),
+              flex: 2,
+            },
+            {
               title: 'Friend Compass',
               text: 'navigation for friends using only SMS!',
               img: '/favicon.svg',
-              onClick: () => handleCategoryClick(2),
+              onClick: () => handleCategoryClick(3),
               flex: 2,
             },
             {
               title: 'Buckshot Mobile',
               text: 'a recreation of "Buckshot Roulette" for mobile multiplayer',
               img: '/favicon.svg',
-              onClick: () => handleCategoryClick(3),
+              onClick: () => handleCategoryClick(4),
               flex: 2,
             },
             {
               title: 'T(AI)ME',
               text: 'how is AI saving you time... and impacting the world?',
               img: '/favicon.svg',
-              onClick: () => handleCategoryClick(4),
-              flex: 3,
+              onClick: () => handleCategoryClick(5),
+              flex: 2,
             },
             {
               title: 'Woodlands Bath. Sim.',
               text: 'a FNAF fangame themed around a high-school bathroom',
               img: '/favicon.svg',
-              onClick: () => handleCategoryClick(5),
+              onClick: () => handleCategoryClick(6),
               flex: 3,
             },
             {
               title: 'other',
               text: 'etc',
               img: '/favicon.svg',
-              onClick: () => handleCategoryClick(6),
-              flex: 3,
+              onClick: () => handleCategoryClick(7),
+              flex: 2,
             },
           ]}
         />

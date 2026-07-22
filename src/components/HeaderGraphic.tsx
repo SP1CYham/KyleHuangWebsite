@@ -75,15 +75,15 @@ export default function HeaderGraphic({
           >
             {src && (
               <div
-                className="flex w-full justify-center"
+                className="flex h-auto w-auto justify-center align-middle"
                 style={srcPixel ? { imageRendering: 'pixelated' } : {}}
               >
                 <img
                   src={asset(src)}
-                  className="p-4 drop-shadow-2xl"
+                  className="h-full w-full object-contain p-4 align-middle drop-shadow-2xl"
                   style={{
-                    height: `${height - 40}px`,
                     filter: `drop-shadow(0 8px 10px ${titleShadowColor})`,
+                    maxHeight: `${height - 40}px`,
                   }}
                 ></img>
               </div>
