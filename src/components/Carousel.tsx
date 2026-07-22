@@ -38,7 +38,7 @@ export default function Carousel({
 
   return (
     <div
-      className={`bg-accent2 mx-10 flex items-center border-2 border-white`}
+      className={`bg-accent2 mx-10 flex min-w-0 max-w-[calc(100%-5rem)] items-center border-2 border-white`}
       style={{ height: `${h}px`, borderRadius: `${h / 2}px` }}
     >
       {!locked && (
@@ -83,7 +83,7 @@ export default function Carousel({
       )}
 
       {!locked && (
-        <div className="flex-1 overflow-hidden">
+        <div className="min-w-0 flex-1 overflow-hidden">
           <div
             className="flex transition-transform duration-300 ease-in-out"
             style={{

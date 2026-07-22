@@ -77,7 +77,7 @@ export default function ArtCard({
       <div className="z-1 mb-4 flex flex-col md:flex-row">
         {/*left part*/}
         <NoiseGrad
-          className={`bg-accent2 flex flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'justify-center rounded-2xl border-2'}`}
+          className={`bg-accent2 flex flex-3 min-w-0 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'justify-center rounded-2xl border-2'}`}
           childClassName={
             open ? 'rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none' : 'rounded-2xl'
           }
@@ -86,7 +86,9 @@ export default function ArtCard({
           baseFrequency={0.6}
           xtraOpacity={50}
         >
-          <div className={`${open ? 'md:sticky md:top-24' : ''} z-3 flex flex-col items-center`}>
+          <div
+            className={`${open ? 'md:sticky md:top-24' : ''} z-3 flex w-full min-w-0 flex-col items-center`}
+          >
             <h2
               className={`-mt-2 mb-1 transition-all duration-200 ease-in-out ${open ? 'h-auto opacity-100 md:h-0 md:opacity-0' : 'h-auto opacity-100'}`}
             >
@@ -118,7 +120,7 @@ export default function ArtCard({
 
             {wips && (
               <div
-                className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                className={`w-full min-w-0 overflow-hidden transition-all duration-200 ease-in-out ${
                   open ? 'mt-3 max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
