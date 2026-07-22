@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 
 import NoiseGrad from './NoiseGrad';
+import asset from '../asset';
 
 export default function HeaderGraphic({
   height = 300,
@@ -78,7 +79,7 @@ export default function HeaderGraphic({
                 style={srcPixel ? { imageRendering: 'pixelated' } : {}}
               >
                 <img
-                  src={src}
+                  src={asset(src)}
                   className="p-4 drop-shadow-2xl"
                   style={{
                     height: `${height - 40}px`,

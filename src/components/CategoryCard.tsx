@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import NoiseGrad from './NoiseGrad';
+import asset from '../asset';
 
 interface categoryProps {
   title: string;
@@ -17,7 +18,7 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
       onClick={onClick}
     >
       <img
-        src={img}
+        src={asset(img)}
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-300 group-hover:scale-x-150 group-hover:rotate-3 group-active:scale-200 group-active:-rotate-3"
         style={{

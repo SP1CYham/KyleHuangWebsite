@@ -5,6 +5,7 @@ import { scrollContainerRef } from '../App';
 
 import NoiseGrad from '../components/NoiseGrad';
 import { Link } from 'react-router-dom';
+import asset from '../asset';
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         <p className="text-center">
           i'm a developer, animator and incoming Waterloo CS student. <br /> it's nice to meet you!
         </p>
-        <img loading="lazy" src="public/favicon.svg" className="my-10 h-50 w-full items-center" />
+        <img loading="lazy" src={asset('favicon.svg')} className="my-10 h-50 w-full items-center" />
         <h2>what i've been up to:</h2>
         <ul>
           <li>
@@ -83,7 +84,7 @@ export default function Home() {
         <br />
 
         <NoiseGrad
-          className="bg-accent2 flex max-h-[150] flex-col justify-center rounded-2xl border-2 border-white p-4 text-center align-middle text-wrap"
+          className="bg-accent2 flex flex-col justify-center rounded-2xl border-2 border-white p-4 text-center align-middle text-wrap"
           childClassName="rounded-2xl"
           direction="to top"
           color="var(--color-black)"

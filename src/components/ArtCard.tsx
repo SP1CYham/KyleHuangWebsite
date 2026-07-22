@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import Carousel from './Carousel';
 import NoiseGrad from './NoiseGrad';
+import asset from '../asset';
 
 //icons
 import { TbKeyframes } from 'react-icons/tb';
@@ -68,7 +69,7 @@ export default function ArtCard({
 
   function addPath(wipsVar: string[][]) {
     if (wipsVar == null) return [];
-    return wipsVar.map((row) => [wipsPath + row[0], ...row.slice(1)]);
+    return wipsVar.map((row) => [asset(wipsPath + row[0]), ...row.slice(1)]);
   }
 
   return (
@@ -76,7 +77,7 @@ export default function ArtCard({
       <div className="z-1 mb-4 flex flex-col md:flex-row">
         {/*left part*/}
         <NoiseGrad
-          className={`bg-accent2 flex flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'max-h-[150] justify-center rounded-2xl border-2'}`}
+          className={`bg-accent2 flex flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'justify-center rounded-2xl border-2'}`}
           childClassName={
             open ? 'rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none' : 'rounded-2xl'
           }
@@ -93,7 +94,7 @@ export default function ArtCard({
             </h2>
             {img && (
               <img
-                src={img}
+                src={asset(img)}
                 className={`${open ? 'h-auto' : 'h-120'} aspect-auto w-full rounded-2xl py-2`}
                 loading="lazy"
               ></img>

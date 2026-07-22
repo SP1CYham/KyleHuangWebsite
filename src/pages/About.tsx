@@ -1,6 +1,7 @@
 import Base from '../Base';
 import HeaderGraphic from '../components/HeaderGraphic';
 import { Link } from 'react-router-dom';
+import asset from '../asset';
 
 export default function About() {
   return (
@@ -12,7 +13,7 @@ export default function About() {
           <div className="md:sticky md:top-24 md:min-w-0 md:flex-1">
             <img
               loading="lazy"
-              src="public/assets/other/me.webp"
+              src={asset('assets/other/me.webp')}
               className="h-auto max-h-60 w-full items-center object-scale-down md:max-h-full"
             />
           </div>

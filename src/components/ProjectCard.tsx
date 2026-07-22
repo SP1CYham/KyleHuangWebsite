@@ -3,6 +3,7 @@ import HeaderGraphic from './HeaderGraphic';
 import { type ReactNode } from 'react';
 import NoiseGrad from './NoiseGrad';
 import Card from './Card';
+import asset from '../asset';
 
 export default function ProjectCard({
   titleImg = null,
@@ -55,14 +56,30 @@ export default function ProjectCard({
 
           {img && (
             <div className="mt-4 mb-10 flex w-full justify-center">
-              <img src={img} className="h-auto max-h-80 w-full"></img>
+              <img src={asset(img)} className="h-auto max-h-80 w-full"></img>
             </div>
           )}
 
           {itchio && (
-            <iframe src={itchioEmbed} className="aspect-video h-auto w-full rounded-2xl">
-              <a href={itchio}>Play {title} on itch.io</a>
-            </iframe>
+            <div className="mt-4 mb-10 flex w-full justify-center">
+              {/* desktop (game embed) */}
+              <iframe
+                src={itchioEmbed}
+                title={`${title} on itch.io`}
+                className="hidden aspect-video h-auto w-full rounded-2xl md:block"
+              >
+                <a href={itchio}>Play {title} on itch.io</a>
+              </iframe>
+
+              {/* mobile (embed) */}
+              <iframe
+                src={itchioEmbedMobile ?? itchioEmbed}
+                title={`${title} on itch.io`}
+                className="bg-accent block h-auto w-full rounded-2xl md:hidden"
+              >
+                <a href={itchio}>Play {title} on itch.io</a>
+              </iframe>
+            </div>
           )}
 
           <div className="flex grow-0 flex-col-reverse gap-4 md:flex-row">
@@ -77,7 +94,11 @@ export default function ProjectCard({
             <div className="flex flex-1 justify-center md:flex-col">
               {ss.map((link, index) => (
                 <div className="p-5">
-                  <img key={index} src={ssPath + link} className="h-auto w-full max-w-80"></img>
+                  <img
+                    key={index}
+                    src={asset(ssPath + link)}
+                    className="h-auto w-full max-w-80"
+                  ></img>
                 </div>
               ))}
             </div>
