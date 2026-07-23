@@ -1,3 +1,5 @@
+import { useState, useRef, useEffect } from 'react';
+
 import Base from '../Base';
 import Card from '../components/Card';
 import HeaderGraphic from '../components/HeaderGraphic';
@@ -8,17 +10,81 @@ import { Link } from 'react-router-dom';
 import asset from '../asset';
 
 export default function Home() {
+  const [hover, setHover] = useState(false);
+  const gifRef = useRef<HTMLVideoElement>(null);
+  const waveRef = useRef<HTMLVideoElement>(null);
+
+  //restart gifs on each hover
+  useEffect(() => {
+    if (gifRef !== null && gifRef.current) {
+      gifRef.current.currentTime = 0;
+      gifRef.current.play().catch(() => {});
+    } else if (waveRef !== null && waveRef.current) {
+      waveRef.current.currentTime = 0;
+      waveRef.current.play().catch(() => {});
+    }
+  }, [hover]);
+
+  const [transforms, setTransforms] = useState('scaleX(1) scaleY(1)');
+  const allTransforms = ['scaleX(1) scaleY(1)', 'scaleX(-1) scaleY(1)', 'scaleX(1) scaleY(-1)'];
+  var transformIndex = 0;
+
+  //changing the squareGrad
+  useEffect(() => {
+    const interval = setInterval(() => {
+      transformIndex++;
+      if (transformIndex >= allTransforms.length) transformIndex = 0;
+      setTransforms(allTransforms[transformIndex]);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <HeaderGraphic />
 
       <Base maxW={45} className="z-10">
-        {/*casual ver */}
         <h1>hello, i'm kyle huang!</h1>
         <p className="text-center">
           i'm a developer, animator and incoming Waterloo CS student. <br /> it's nice to meet you!
         </p>
-        <img loading="lazy" src={asset('favicon.svg')} className="my-10 h-50 w-full items-center" />
+
+        <div className="flex w-full justify-center">
+          <div
+            className="bg-accent relative aspect-square h-full w-[80%] hover:cursor-grab md:h-100 md:w-100"
+            style={{
+              maskImage: `url(${asset('/assets/other/gradSquare.webp')})`,
+              maskSize: 'cover',
+              WebkitMaskImage: `url(${asset('/assets/other/gradSquare.webp')})`,
+              WebkitMaskSize: 'cover',
+              transform: transforms,
+            }}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            <video
+              ref={gifRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              src={asset('/assets/spicyham/spicyhamGif.webm')}
+              className={`absolute inset-0 h-full w-full object-cover ${hover ? 'opacity-0' : 'opacity-100'}`}
+              style={{ mixBlendMode: 'screen', transform: transforms }}
+            />
+            <video
+              ref={waveRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              src={asset('/assets/spicyham/spicyhamGifWave.webm')}
+              className={`absolute inset-0 h-full w-full object-cover ${hover ? 'opacity-100' : 'opacity-0'}`}
+              style={{ mixBlendMode: 'screen', transform: transforms }}
+            />
+          </div>
+        </div>
+
         <h2>what i've been up to:</h2>
         <ul>
           <li>
