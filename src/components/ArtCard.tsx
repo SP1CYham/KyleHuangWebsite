@@ -77,7 +77,7 @@ export default function ArtCard({
       <div className="z-1 mb-4 flex flex-col md:flex-row">
         {/*left part*/}
         <NoiseGrad
-          className={`bg-accent2 flex flex-3 min-w-0 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'justify-center rounded-2xl border-2'}`}
+          className={`bg-accent2 flex min-w-0 flex-3 border-white p-4 text-center align-middle text-wrap ${open ? 'h-auto flex-col rounded-t-2xl rounded-b-none border-x-2 border-t-2 md:rounded-l-2xl md:rounded-r-none md:border-y-2 md:border-r-0 md:border-l-2' : 'justify-center rounded-2xl border-2'}`}
           childClassName={
             open ? 'rounded-t-2xl rounded-b-none md:rounded-l-2xl md:rounded-r-none' : 'rounded-2xl'
           }

@@ -9,7 +9,7 @@ export default function About() {
       <HeaderGraphic title="ABOUT ME" finalMult={1.02} />
 
       <Base maxW={45} className="z-10 mb-30">
-        <div className="gap-10 md:flex">
+        <div className="mb-10 gap-10 md:flex">
           <div className="md:sticky md:top-24 md:min-w-0 md:flex-1">
             <img
               loading="lazy"
@@ -49,6 +49,9 @@ export default function About() {
             </p>
           </div>
         </div>
+        <Link to="/resume">
+          <button className="w-full py-10 font-black">R E S U M E</button>
+        </Link>
       </Base>
     </>
   );
