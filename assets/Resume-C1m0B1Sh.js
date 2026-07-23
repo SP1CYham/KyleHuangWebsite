@@ -1,0 +1,1 @@
+import{n as e,t}from"./jsx-runtime-D4s_8jBC.js";import{a as n}from"./index-Yyh8tnqA.js";var r=e(),i=t();function a(){let e=(0,r.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,i.jsx)(`div`,{style:{height:`100vh`},children:(0,i.jsx)(`embed`,{src:n(`KyleHuangResume.pdf`),type:`application/pdf`,width:`100%`,height:`100%`})}),e[0]=t):t=e[0],t}export{a as default};
