@@ -95,8 +95,8 @@ export default function ProjectCard({
               <div className="mb-10">{children}</div>
 
               <h2>Technology & Features:</h2>
-              {uses.map((use, _) => (
-                <Card text={use} />
+              {uses.map((use, index) => (
+                <Card text={use} key={index} />
               ))}
 
               {links.length !== 0 && <h2 className="mt-6">Links!</h2>}

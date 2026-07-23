@@ -44,7 +44,7 @@ export default function Home() {
       <HeaderGraphic />
 
       <Base maxW={45} className="z-10">
-        <h1>hello, i'm kyle huang!</h1>
+        <h1 className="mb-3 leading-10 text-balance">hello, i'm kyle huang!</h1>
         <p className="text-center">
           i'm a developer, animator and incoming Waterloo CS student. <br /> it's nice to meet you!
         </p>

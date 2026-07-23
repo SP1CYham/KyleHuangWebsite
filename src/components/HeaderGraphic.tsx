@@ -28,10 +28,11 @@ export default function HeaderGraphic({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scaleX, setScaleX] = useState(scaleXBase);
+  const [smallScreenMult, setSmallScreenMult] = useState(window.innerWidth > 768 ? 0 : 1);
 
   useEffect(() => {
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || src) return;
 
     const observer = new ResizeObserver(([entry]) => {
       const width = entry.contentRect.width;
@@ -39,7 +40,11 @@ export default function HeaderGraphic({
       const raw = scaleXBase + (width / 100) * scaleXMultiplier;
       const clamped = Math.min(scaleXMax, Math.max(scaleXMin, raw));
       setScaleX(clamped);
+
+      setSmallScreenMult(window.innerWidth > 768 ? 0 : 1);
     });
+
+    console.log('Container width observed by header graphic: ' + title);
 
     observer.observe(el);
     return () => observer.disconnect();
@@ -93,7 +98,10 @@ export default function HeaderGraphic({
             )}
             {src == null && (
               <div className="@container-size h-full w-full hover:cursor-default">
-                <div className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14">
+                <div
+                  className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14"
+                  style={{ transform: `scaleX(${1 - 0.4 * smallScreenMult})` }}
+                >
                   <NoiseGrad
                     ref={containerRef}
                     className="bg-accent2 w-full max-w-200 min-w-110 rounded-t-full shadow-[0px_5px_0px_rgb(0_0_0/1)]"

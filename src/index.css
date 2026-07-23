@@ -59,6 +59,20 @@
     --color-head-dark: #f3e6be;
 }
 
+@media (width < 48rem) { 
+    body {
+        font-size: 0.7rem
+    }
+    h1 {
+        font-weight: 800;
+        font-size: 0px;
+    }
+    h2 {
+        font-weight: 600;
+        font-size: 0.1rem;
+    }
+}
+
 body {
     overflow-x: hidden;
     color: var(--color-white);
