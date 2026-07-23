@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import { scrollContainerRef } from '../App';
 
 import HeaderGraphic from '../components/HeaderGraphic';
@@ -6,6 +6,13 @@ import Base from '../Base';
 import Category from '../components/CategoryCard';
 import ProjectCard from '../components/ProjectCard';
 import ArtCard from '../components/ArtCard';
+
+interface CategoryContextTypes {
+  projIndex: number;
+  resetProjIndex: () => void;
+}
+
+export const CategoryContext = createContext<CategoryContextTypes | null>(null);
 
 export default function Coding() {
   const [projIndex, setProjIndex] = useState(0);
@@ -15,6 +22,10 @@ export default function Coding() {
     setTimeout(() => {
       scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
     }, 1);
+  }
+
+  function resetProjIndex() {
+    handleCategoryClick(0);
   }
 
   function CodingCategory() {
@@ -32,8 +43,24 @@ export default function Coding() {
             itchio="https://sp1cyham.itch.io/humptys-rise"
             itchioEmbed={13998305}
             itchioEmbedMobile={3083622}
-            ss={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
-            uses={['favicon.svg', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
+            ss={[
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+              ['cGnomeSketch.webp', 'edr'],
+              ['cBanner.webp', 'df'],
+            ]}
+            ssPath="public/assets/art/animation/gnome/"
+            uses={['cGnomeSketch.webp', 'favicon.svg', 'favicon.svg', 'favicon.svg']}
           >
             <i>*above demo is a beta build!</i>
             <br />
@@ -106,7 +133,9 @@ export default function Coding() {
 
   return (
     <>
-      {CodingCategory()}
+      <CategoryContext.Provider value={{ projIndex, resetProjIndex }}>
+        {CodingCategory()}
+      </CategoryContext.Provider>
 
       {projIndex === 0 && <HeaderGraphic title="CODING" finalMult={1.37} />}
       <Base className="text-center">

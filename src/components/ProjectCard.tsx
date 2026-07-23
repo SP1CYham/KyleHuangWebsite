@@ -1,9 +1,11 @@
+import { useContext, type ReactNode } from 'react';
 import Base from '../Base';
 import HeaderGraphic from './HeaderGraphic';
-import { type ReactNode } from 'react';
 import NoiseGrad from './NoiseGrad';
 import Card from './Card';
+import Imag from './Imag';
 import asset from '../asset';
+import { CategoryContext } from '../pages/Coding';
 
 export default function ProjectCard({
   titleImg = null,
@@ -17,7 +19,7 @@ export default function ProjectCard({
   itchioEmbedMobile, //just the number
   children,
   uses = [''],
-  ss = [''],
+  ss = [],
   ssPath = '/',
 }: {
   titleImg?: string | null;
@@ -31,9 +33,11 @@ export default function ProjectCard({
   itchioEmbedMobile?: number | null;
   children: ReactNode;
   uses?: string[];
-  ss?: string[];
+  ss?: string[][];
   ssPath?: string;
 }) {
+  const { resetProjIndex } = useContext(CategoryContext)!;
+
   return (
     <>
       <HeaderGraphic
@@ -83,7 +87,7 @@ export default function ProjectCard({
           )}
 
           <div className="flex grow-0 flex-col-reverse gap-4 md:flex-row">
-            <div className="flex-2">
+            <div className="flex-3">
               <div className="mb-10">{children}</div>
 
               <h2>Technology:</h2>
@@ -91,17 +95,25 @@ export default function ProjectCard({
                 <Card text={use} />
               ))}
             </div>
-            <div className="flex flex-1 justify-center md:flex-col">
+            <div className="flex flex-1 items-center justify-center md:flex-col md:gap-2">
               {ss.map((link, index) => (
-                <div className="p-5">
-                  <img
-                    key={index}
-                    src={asset(ssPath + link)}
-                    className="h-auto w-full max-w-80"
-                  ></img>
+                <div className="-mx-2 flex items-center justify-center" key={index}>
+                  <Imag
+                    src={asset(ssPath + link[0])}
+                    desc={link[1]}
+                    className="flex-1"
+                    imgClassName="object-contain"
+                    h={125}
+                  ></Imag>
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="flex w-full items-center justify-center">
+            <button className="w-[80%]" onClick={resetProjIndex}>
+              Close
+            </button>
           </div>
         </NoiseGrad>
       </Base>
