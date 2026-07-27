@@ -75,8 +75,15 @@ const NoiseGrad = forwardRef<
           style={{
             backgroundColor: color,
             maskImage: `linear-gradient(${direction}, black, transparent ${percentageString}), ${noiseUrl}`,
+            // gradient covers the element; noise rasterizes as a small fixed tile and repeats.
+            // without this, mask-size:auto scales feTurbulence across the whole element,
+            // which is enormously expensive (the site's main perf killer).
+            maskSize: '100% 100%, 20px 20px',
+            maskRepeat: 'no-repeat, repeat',
             maskComposite: 'intersect',
             WebkitMaskImage: `linear-gradient(${direction}, black, transparent ${percentageString}), ${noiseUrl}`,
+            WebkitMaskSize: '100% 100%, 200px 200px',
+            WebkitMaskRepeat: 'no-repeat, repeat',
             WebkitMaskComposite: 'source-in',
             transform: head ? `scaleX(${headScaleX}) scaleY(1.25)` : '',
             fontSize: head ? '36cqh' : '',
