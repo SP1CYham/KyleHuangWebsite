@@ -179,64 +179,58 @@ export default function Coding() {
       case 3:
         return (
           <ProjectCard
-            titleImg="/assets/coding/humptysRise/humptyTitle.png"
+            titleImg="/assets/coding/friendCompass/friendTitle.webp"
             titleShadow="#3E157080"
-            pixel={true}
-            title="Humpty's Rise"
-            tagline="A Humpty Dumpty themed dungeon crawler"
-            itchio="https://sp1cyham.itch.io/humptys-rise"
-            itchioEmbed={13998305}
-            itchioEmbedMobile={3083622}
-            uses={[
-              'Expo',
-              'React Native',
-              'Fast API',
-              'Gemini API',
-              'Nano Banana',
-              'Figma',
-              'Adobe After Effects',
-              'Python',
-              'MongoDB Atlas',
-              'ElevenLabs + LiveKit',
-              'Typescript',
-              '',
-              '',
-            ]}
+            title="Friend Compass"
+            tagline="An SMS-based friend finder"
+            youtube="https://www.youtube.com/embed/EtJe8NGx1LQ"
+            uses={['Twilio', 'Amazon DynamoDB', 'Android Studio', 'Kitlio', 'Node.js']}
             ss={[
               ['cGnomeSketch.webp', 'edr'],
               ['cBanner.webp', 'df'],
             ]}
             ssPath="public/assets/art/animation/gnome/"
             links={[
-              ['https://github.com/waaberi/ht6-2026', 'github link'],
-              ['https://devpost.com/software/exposure-qet3vc', 'devpost'],
+              ['https://github.com/supershoop/FriendCompass', 'github link'],
+              ['https://devpost.com/software/friend-compass', 'devpost'],
               ['https://www.youtube.com/watch?v=DXqbNUakSM8', 'demo video'],
             ]}
           >
-            <i>*above demo is a beta build!</i>
+            <strong>Friend Compass</strong> was a project was born out of limitation during{' '}
+            <Link to="https://hackthenorth.com/" target="_blank">
+              Hack the North 2025:
+            </Link>{' '}
+            My friend Owen, didn't have a data plan. Instead, he had what many data plans do offer
+            is unlimited call and texting. We combined this with map games like Pikmin Bloom and
+            Pokemon Go, and created Friend Compass.
+            <br /> <br />
+            Friend Compass is an Android App that displays your direction, position and elevation,
+            but also where your friends are! We designed it to connect friends in unexpected places:
+            you never know when your friend might be shopping a grocery isle away! As our first ever
+            hackathon, we picked a small-scale project to build something with novelty we would use.
+            <br /> <br />
+            Though the project is quite simple, Friend Compass has a lot of potential, like
+            emergency location directions in situations without Wifi. Even with such a simple
+            project, we still had our fair share of difficulties:
+            <ul>
+              <li>
+                Only Owen had an Android phone, so we couldn't even test the app with multiplayer by
+                ourselves and had to borrow other hackers' phone (shoutout to them!)
+              </li>
+              <li>
+                The code we wrote for Twilio, the automatic text service we used just refused to
+                work for a solid day
+              </li>
+              <li>It was our first hackathon and first all-nighter, so we were a little fried</li>
+              <li>
+                I literally didn't have a computer and had to borrow one from the provided computer
+                lab (which I think is shut down now? the one in E7)
+              </li>
+              <li>I HATE KOTLIN I HATE KOTLIN WHYYYYYY</li>
+            </ul>
             <br />
-            <br />
-            <strong>Humpty's Rise</strong> is a dungeon crawler with balatro-like elements. Collect
-            cards and shells, apply modifiers, and take your revenge against the evil usurper, The
-            Gingerbread Man.
-            <br />
-            <br />
-            Created by a friend and I in a school game jam in the Unity game engine, this game has
-            been in progress since grade 10, changing forms multiple times along the way.
-            <br />
-            <br />
-            The game features complex enemy AI using A* pathfinding, procedural room spawning, a
-            modular and infinitely scalable system for upgrades, hundreds of animated sprites, a
-            system to automatically build rooms from just an outline, a custom font and much, much
-            more.
-            <br />
-            <br />
-            The game isn't released yet, but I've learned a lot from making it! You can play a
-            (very) early demo on{' '}
-            <Link to="https://sp1cyham.itch.io/humptys-rise" target="_blank">
-              itch.io
-            </Link>
-            .
+            Please read the devpost it is hilarious lol. Also, never mention Friend Compass to Owen
+            Wang ever. It is triggering.
           </ProjectCard>
         );
       case 4:

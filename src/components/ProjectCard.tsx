@@ -15,6 +15,7 @@ export default function ProjectCard({
   pixel = false,
   tagline,
   img,
+  youtube,
   itchio,
   itchioEmbed, //just the number
   itchioEmbedMobile, //just the number
@@ -30,6 +31,7 @@ export default function ProjectCard({
   pixel?: boolean;
   tagline?: string;
   img?: string;
+  youtube?: string;
   itchio?: string;
   itchioEmbed?: number | null;
   itchioEmbedMobile?: number | null;
@@ -65,6 +67,17 @@ export default function ProjectCard({
             <div className="mt-4 mb-10 flex w-full justify-center">
               <img src={asset(img)} className="h-auto max-h-80 w-full"></img>
             </div>
+          )}
+
+          {youtube && (
+            <iframe
+              src={youtube}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="mt-4 mb-10 aspect-video h-auto w-full rounded-2xl"
+            ></iframe>
           )}
 
           {itchio && (
