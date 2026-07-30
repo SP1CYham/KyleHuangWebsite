@@ -358,28 +358,304 @@ export default function Art() {
           <>
             <CategoryHead title="2d art">characters & backgrounds!</CategoryHead>
 
-            <ArtCard title="Family Car Gif" img="/favicon.svg">
+            <ArtCard title="Late Drive Home" video="/assets/art/2D/lateDriveHome.webm">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="ESL Door Mural" img="/favicon.svg">
+            <ArtCard
+              title="ESL Door Mural"
+              img="/assets/art/2D/eslDoor/eslDoor.webp"
+              wipsPath="/assets/art/2D/eslDoor/"
+              wips={[
+                ['cDoorIRL.webp', 'the real door at The Woodlands Secondary School!'],
+                [
+                  'cDoorInit.webp',
+                  'my initial proposal was for a different door. i was not picked (obviously) but had the opportunity to do ESL instead! thankfully one of my friends was picked and did a great job!',
+                ],
+                [
+                  'cDoorSketch.webp',
+                  'a preliminary sketch. i actually like the wonders of the world in the background, i wish i did that in the final design.',
+                ],
+              ]}
+            >
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Lost Flock" img="/favicon.svg">
+            <ArtCard title="Lost Flock" img="/assets/art/2D/lostflock.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Pac Ma Menu" img="/favicon.svg">
+            <ArtCard title="Panda's Plight" video="/assets/art/2D/hang.webm">
+              I just came up with the name lol.
+              <br />
+              <br />
+              This was made for an art secret santa in our highschool's Art Club. I made it for Hang
+              Zeng who now attends the same uni program as me!
+            </ArtCard>
+
+            <ArtCard
+              title="Pac Ma Menu"
+              img="/assets/art/2D/pacMa/pacMa.webp"
+              wips={[
+                [
+                  '/assets/art/2D/pacMa/cPacMaColor.webp',
+                  'when i compressed the image with Squoosh the color compression did this and it actually looks pretty cool',
+                ],
+              ]}
+            >
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Mr Beast Caricature" img="/favicon.svg">
-              placeholder description
+            <ArtCard title="Pikmin Pancake" img="/assets/art/2D/pikminPancake.webp">
+              a fun little thing i made for media arts class! heavily inspired by pikmin bloom
+              startup screen art
+              <br />
+              <br />i dont actually own the image pls dont sue
             </ArtCard>
 
-            <ArtCard title="The Vietnam Guy" img="/favicon.svg">
-              placeholder description
+            <ArtCard title="Mr Beast Caricature" img="/assets/art/2D/mrBeast.webp">
+              MISTER BEAAAAAAAAAAAAAAAAAAAAAAAAAAST
+              <br />
+              <br />
+              (i made this for a caricature assignment in media arts lol)
+              <br />
+              <br />
+              <p>
+                [Intro]
+                <br />
+                Rap Battle!
+                <br />
+                Seong Gi-Hun!
+                <br />
+                Versus
+                <br />
+                MrBeast!
+                <br />
+                Begin!
+              </p>
+              <p>
+                [Verse 1: Mr. Beast]
+                <br />
+                Welcome to your final test
+                <br />
+                I&rsquo;m Mr. Beast
+                <br />
+                We can scrap the 'S'
+                <br />
+                'Cause I've never missed a beat
+                <br />
+                You had to cut from honey
+                <br />
+                Under threat of a gun blast
+                <br />
+                When I had a cut from Honey
+                <br />
+                That&rsquo;s another check that I'm gon' cash
+                <br />
+                You're coming last, Number one is Jimmy!
+                <br />
+                Only dub you have is horribly written
+                <br />
+                You're accomplished 'cause you fought the opposition
+                <br />
+                And became the best, but the consequences
+                <br />
+                That you've got to live with is you paved their deaths
+                <br />
+                All to pay your debt; I applaud you, Gi-Hun
+                <br />
+                In the diss game, you won't get rich
+                <br />
+                I'm like your momma, I'm dead sick
+                <br />
+                Then check the gaming channel
+                <br />
+                Millions of children watch it
+                <br />
+                How'd you win all that Won, kid
+                <br />
+                But not custody of one kid?
+                <br />
+                Did ya think you'd get her back
+                <br />
+                With that lighter you bought her?
+                <br />
+                You're playing tug-o-war with your ex
+                <br />
+                But the rope is your daughter (Ooh!)
+                <br />
+                So stupid, Sang Woo showed you the light
+                <br />
+                You didn't go to SNU, that's right
+                <br />
+                If the task was 'last to get backstabbed by a pal'
+                <br />
+                You wouldn't make it through the night
+                <br />
+                When I feast, I don't need a suit and tie
+                <br />
+                Wrapping with gold like the food I try
+                <br />
+                Utter a word, then you will die
+                <br />
+                Save those subs for PewDiePie
+                <br />
+                You might also like
+                <br />
+                A&amp;W
+                <br />
+                Lana Del Rey
+                <br />
+                Flowers
+                <br />
+                Miley Cyrus
+                <br />
+                Say You Won&rsquo;t Let Go
+                <br />
+                James Arthur
+                <br />
+                [Verse 2: Seong Gi-Hun]
+                <br />
+                So this is the next test
+                <br />
+                They&rsquo;ll make us fight in our survival?
+                <br />
+                But instead of a kiddie game
+                <br />
+                We&rsquo;ll be playing this manchild? (Hm?)
+                <br />
+                Your career's fragile like glass
+                <br />I will smash it if you push me
+                <br />
+                Made your fortune from subscribers
+                <br />
+                Now give them their fucking cookies!
+                <br />
+                You've done all this good
+                <br />
+                You fed lives in need, right 'til they get by each time
+                <br />
+                Gave islands, sweet rides, let high trees thrive
+                <br />
+                Set headlines, being nice when you spread vibes
+                <br />
+                Teens hype it and then buy MrBeast line
+                <br />
+                So you make ten times what you leave guys
+                <br />
+                Only ever "moving" when you're in set sight of a keen child
+                <br />
+                Like an anti-red light, green light
+                <br />
+                Don't talk about loyalty, you don't get any
+                <br />
+                You're like "I spent at least
+                <br />
+                Ten-thousand dollars renting people out
+                <br />
+                To pretend to be friends with me"
+                <br />I wondered why VIPs
+                <br />
+                Had to hide their face behind plastic
+                <br />
+                Now that I see this bastard
+                <br />I get what the point of the mask is
+                <br />
+                [Verse 3: Mr. Beast, Karl]
+                <br />I just replaced all
+                <br />
+                Of Gi-Hun's surviving friends with Legos!
+                <br />
+                Um, Jimmy
+                <br />
+                There aren't any Legos (Hahahaha!)
+                <br />
+                For a 'critique on greed'
+                <br />
+                It seems ironic
+                <br />
+                Your show sold out like it's stock
+                <br />
+                From shopmrbeast.com, bitch
+              </p>
+              <p>
+                [Verse 4: Seong Gi-Hun]
+                <br />
+                (Yeah) You spent twenty-four hours in a bunker
+                <br />
+                Another twenty-four inside of a fake prison
+                <br />
+                And over fifty hours in a coffin
+                <br />
+                Could you do us all a big solid and stay in it?
+                <br />
+                Spending a minute with the Jeff Bezos for daycare kiddies
+                <br />
+                Is a challenge that I couldn't be paid to be in
+                <br />
+                You can't make good lines, I won't stay within 'em
+                <br />
+                Like Jake the Viking, I'm straight up leaving
+              </p>
+              <p>
+                [Verse 5: Mr. Beast]
+                <br />
+                Let's hope that you didn't bet
+                <br />
+                All of your money on winning this fight now
+                <br />
+                'Cause a lot like your job, if that happened
+                <br />
+                You're likely to die in my fire and strike out
+                <br />
+                Join Team Seas and clean
+                <br />
+                That garbage past you deem so awful!
+                <br />
+                You lost everything to a pensioner
+                <br />
+                Who lost his fucking marbles!
+                <br />
+                [Verse 6: Front Man]
+                <br />I make the calls
+                <br />
+                In this torture ridden place
+                <br />
+                You only got balls
+                <br />
+                In an Orbeez giveaway
+                <br />
+                It's a real manhunt, you don't got the courage to beat me
+                <br />
+                Go hide in your nerdy Dream streams
+                <br />
+                We've got more beef than your burger meat, Beast
+                <br />
+                Plotting more seeds in your girl than Team Trees
+                <br />
+                Pictured a world where equality rules
+                <br />
+                That's not just a pic you can fly to the moon
+                <br />
+                Got no firepower against my roster
+                <br />
+                Don't you identify as an attack helicopter?
+                <br />
+                You said "Hi" to your brother with a brand new channel
+                <br />I said "Bye" to my brother with a mag of ammo
+                <br />
+                Go cry to your momma in an ad to pack dough
+                <br />
+                You'd ditch your morals to put your hand on Lambos
+                <br />
+                Can't handle the truth; if you run out of money
+                <br />
+                You run out of your personality too
+                <br />
+                Out of one-hundred percent of your viewers
+                <br />
+                Nobody watches your channel for you
+              </p>
             </ArtCard>
           </>
         );

@@ -42,6 +42,7 @@ interface ArtCardProps {
   imgs?: string[];
   youtube?: string;
   youtubeAspect?: string;
+  video?: string;
   itchio?: string;
   itchioEmbed?: number | null; //just the number
   itchioEmbedMobile?: number; //just the number
@@ -62,6 +63,7 @@ export default function ArtCard({
   imgs,
   youtube,
   youtubeAspect = '16/9',
+  video,
   itchio,
   itchioEmbed = null, //just the number
   itchioEmbedMobile, //just the number
@@ -141,6 +143,17 @@ export default function ArtCard({
                 style={{ aspectRatio: youtubeAspect }}
               ></iframe>
             )}
+
+            {video && (
+              <video
+                src={asset(video)}
+                className={`${open ? 'h-auto' : 'h-96'} w-full max-w-170 rounded-2xl`}
+                muted
+                autoPlay
+                loop
+              />
+            )}
+
             {itchio && (
               <>
                 <button onClick={() => setItchOpen(!itchOpen)}>
