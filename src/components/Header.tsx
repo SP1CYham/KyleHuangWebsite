@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import NoiseGrad from './NoiseGrad';
@@ -7,12 +7,21 @@ import { scrollContainerRef } from '../App';
 import SpicyhamLogo from './spicyhamLogo';
 import SpicyhamLogoFace from './spicyhamLogoFace';
 
+import { AppContext } from '../App';
+
 function NavItem({ to, text }: { to: string; text: string }) {
+  const { triggerFn } = useContext(AppContext)!;
+
   return (
     <NavLink
       to={to}
       className="group inline-block h-full align-middle"
-      onClick={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+      onClick={() => {
+        scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+        if (text === 'coding') {
+          triggerFn();
+        }
+      }}
     >
       <div className="bg-accent group-hover:bg-midtone group-active:bg-light m-1 -mb-2 line-clamp-1 inline-block cursor-default rounded-2xl border-2 border-white px-2 py-1 font-normal text-nowrap text-white transition-all group-hover:px-3 group-hover:font-bold">
         {text}

@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 import { scrollContainerRef } from '../App';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +7,8 @@ import Base from '../Base';
 import Category from '../components/CategoryCard';
 import ProjectCard from '../components/ProjectCard';
 import ArtCard from '../components/ArtCard';
+
+import { AppContext } from '../App';
 
 interface CategoryContextTypes {
   projIndex: number;
@@ -29,6 +31,14 @@ export default function Coding() {
     handleCategoryClick(0);
   }
 
+  const { registerFn } = useContext(AppContext)!;
+
+  useEffect(() => {
+    registerFn(() => {
+      resetProjIndex();
+    });
+  }, []);
+
   function CodingCategory() {
     switch (projIndex) {
       case 0:
@@ -39,6 +49,7 @@ export default function Coding() {
             titleImg="/assets/coding/humptysRise/humptyTitle.png"
             titleShadow="#3E157080"
             pixel={true}
+            imgMinusHeight={40}
             title="Humpty's Rise"
             tagline="A Humpty Dumpty themed dungeon crawler"
             itchio="https://sp1cyham.itch.io/humptys-rise"
@@ -97,12 +108,11 @@ export default function Coding() {
       case 2:
         return (
           <ProjectCard
-            titleImg="/assets/coding/humptysRise/humptyTitle.png"
+            video="/assets/coding/exposure/exposureTitle.webm"
             titleShadow="#3E157080"
-            pixel={true}
             title="Exposure"
+            youtube="https://www.youtube.com/embed/DXqbNUakSM8"
             tagline="A full photography editing suite + personalized coach"
-            img="favicon.svg"
             uses={[
               'Expo',
               'React Native',
@@ -180,7 +190,7 @@ export default function Coding() {
         return (
           <ProjectCard
             titleImg="/assets/coding/friendCompass/friendTitle.webp"
-            titleShadow="#3E157080"
+            titleShadow="2629BD80"
             title="Friend Compass"
             tagline="An SMS-based friend finder"
             youtube="https://www.youtube.com/embed/EtJe8NGx1LQ"
@@ -236,14 +246,14 @@ export default function Coding() {
       case 4:
         return (
           <ProjectCard
-            titleImg="/assets/coding/humptysRise/humptyTitle.png"
+            titleImg="/assets/coding/buckshot/buckshotTitle.webp"
             titleShadow="#3E157080"
             pixel={true}
-            title="Humpty's Rise"
-            tagline="A Humpty Dumpty themed dungeon crawler"
-            itchio="https://sp1cyham.itch.io/humptys-rise"
-            itchioEmbed={13998305}
-            itchioEmbedMobile={3083622}
+            title="Buckshot Mobile"
+            tagline="A Buckshot Roulette remake for mobile"
+            itchio="https://sp1cyham.itch.io/multiplayer-buckshot-roulette"
+            itchioEmbedMobile={2893473}
+            youtube="https://www.youtube.com/embed/ppfFA4YLgpY"
             uses={[
               'Unity 2D',
               'A* Pathfinding',
@@ -268,43 +278,32 @@ export default function Coding() {
               ['https://sp1cyham.itch.io/humptys-rise', 'ignore'],
             ]}
           >
-            <i>*above demo is a beta build!</i>
+            <i>*please keep in mind the game is not available to download!</i>
             <br />
             <br />
-            <strong>Humpty's Rise</strong> is a dungeon crawler with balatro-like elements. Collect
-            cards and shells, apply modifiers, and take your revenge against the evil usurper, The
-            Gingerbread Man.
+            <strong>Buckshot Mobile</strong> is a remake of Buckshot Roulette, a video game by Mike
+            Klubnika.
             <br />
             <br />
-            Created by a friend and I in a school game jam in the Unity game engine, this game has
-            been in progress since grade 10, changing forms multiple times along the way.
-            <br />
-            <br />
-            The game features complex enemy AI using A* pathfinding, procedural room spawning, a
-            modular and infinitely scalable system for upgrades, hundreds of animated sprites, a
-            system to automatically build rooms from just an outline, a custom font and much, much
-            more.
-            <br />
-            <br />
-            The game isn't released yet, but I've learned a lot from making it! You can play a
-            (very) early demo on{' '}
-            <Link to="https://sp1cyham.itch.io/humptys-rise" target="_blank">
-              itch.io
-            </Link>
-            .
+            Buckshot Roulette, like Russian Roulette, is a game about probability. Live and blank
+            rounds are loaded in the shotgun in a random order, and you must best your opponent
+            simply named “The Dealer” to win. While watching big youtubers and streamers like
+            Markiplier, 8BitRyan, and CaseOh play, I wondered how cool Buckshot Roulette could be if
+            it was made as a tabletop multiplayer game. Imagine shooting your opponent by actually
+            holding up the phone and shooting! You actually don't have to imagine; I coded Buckshot
+            Roulette as a tabletop multiplayer game, and here is the making of it. . wip
           </ProjectCard>
         );
       case 5:
         return (
           <ProjectCard
-            titleImg="/assets/coding/humptysRise/humptyTitle.png"
-            titleShadow="#3E157080"
+            video="/assets/coding/taime/taimeTitle.webm"
+            videoLoop={true}
+            titleShadow="#3E1570"
             pixel={true}
-            title="Humpty's Rise"
-            tagline="A Humpty Dumpty themed dungeon crawler"
-            itchio="https://sp1cyham.itch.io/humptys-rise"
-            itchioEmbed={13998305}
-            itchioEmbedMobile={3083622}
+            title="T(AI)ME"
+            tagline="How much time does AI save you? Is it worth it??"
+            youtube="https://www.youtube.com/embed/BWxXolwkqVo"
             uses={[
               'Unity 2D',
               'A* Pathfinding',
@@ -329,41 +328,68 @@ export default function Coding() {
               ['https://sp1cyham.itch.io/humptys-rise', 'ignore'],
             ]}
           >
-            <i>*above demo is a beta build!</i>
+            WIP
             <br />
             <br />
-            <strong>Humpty's Rise</strong> is a dungeon crawler with balatro-like elements. Collect
-            cards and shells, apply modifiers, and take your revenge against the evil usurper, The
-            Gingerbread Man.
+            Across North America, ongoing plans for data centers (such as recent proposals in
+            Mississauga and Hamilton) and AI-related projects have sparked significant debate on the
+            environmental cost of progress. Despite this, consumers are either mostly unaware of
+            these impacts or the scale of impact on them and their local community. These facilities
+            require massive amounts of electricity, water, and physical infrastructure, yet most
+            consumers have little understanding of how their everyday AI usage contributes to these
+            demands. We created TAIME (pronounced time) to bridge this gap. Our goal was to make the
+            hidden environmental costs of AI visible, understandable, and personally relevant. By
+            connecting individual AI usage to environmental metrics and local community impacts, we
+            hope to encourage more informed conversations about the future of AI and the
+            infrastructure that powers it. What it does TAIME is an interactive transparency
+            platform that estimates the environmental footprint of an individual's AI usage through
+            a survey-based model. Users answer questions about their AI habits, including frequency
+            of AI use, types of models used, image, video, and text generation activity, and
+            duration and intensity of usage. Using publicly available research and infrastructure
+            estimates, TAIME generates personalized impact metrics, including estimated electricity
+            consumption, estimated carbon emissions, estimated water usage, as well as show the
+            potential impacts of AI infrastructure on local communities through utility bills and
+            cognitive function.
             <br />
             <br />
-            Created by a friend and I in a school game jam in the Unity game engine, this game has
-            been in progress since grade 10, changing forms multiple times along the way.
+            How we built it with hopes and dreams? Taime was built by a team of four over the course
+            of JAMHacks using a Node.js backend with a Typescript, HTML, and CSS frontend. The
+            calculation engine uses user-submitted usecases to estimate the number of tokens, which
+            can be used to find energy and water consumption. This required us to do large amounts
+            of research into the energy consumption created by different models and it's relevant
+            cost found in areas such as Ontario. Challenges we ran into Accurate quantitative
+            sources on AI power consumption are often biased and few and far between, and we tried
+            finding citable and defensible sources The environmental impact on an individual level
+            was much lower than expected, meaning we had to adjust some features Being able to build
+            a product that feels personal and impactful to the user elliot is a beautiful chadlite
+            and claude is an ltn
             <br />
             <br />
-            The game features complex enemy AI using A* pathfinding, procedural room spawning, a
-            modular and infinitely scalable system for upgrades, hundreds of animated sprites, a
-            system to automatically build rooms from just an outline, a custom font and much, much
-            more.
+            Accomplishments that we're proud of Being beginner hackers, we were really proud that we
+            managed to pick up so many skills on the fly and ultimately create a product we are
+            proud of. Cool visual elements Finding the really awesome 213 page MIT study What we
+            learned "meow. wait no i learned that coding. is evil. and that everyone that works in
+            tech and ai is kind of evil. " Elliot "we learned a lot about ai and it's actual impacts
+            on the environment, challenging our assumptions such as energy and water usage." Kyle
+            "and I LEARNED how to use claude" Lucas "i learned about the power of friendship and
+            that my head fits perfectly under a chair that blocks out light so i can sleep in hour
+            intervals" Andrew
             <br />
             <br />
-            The game isn't released yet, but I've learned a lot from making it! You can play a
-            (very) early demo on{' '}
-            <Link to="https://sp1cyham.itch.io/humptys-rise" target="_blank">
-              itch.io
-            </Link>
-            .
+            What's next for T(AI)ME We think that our product could be further integrated to LLMs
+            via plug-ins or browser extensions that would allow users to understand their impact and
+            usage during sessions. Further research must also be conducted on the resource
+            consumption, as data is still unreliable.
           </ProjectCard>
         );
       case 6:
         return (
           <ProjectCard
-            titleImg="/assets/coding/humptysRise/humptyTitle.png"
+            titleImg="/assets/coding/wbs/wbsTitle.webp"
             titleShadow="#3E157080"
             pixel={true}
             title="Woodlands Bathroom Simulator"
-            tagline="A Humpty Dumpty themed dungeon crawler"
-            img="/favicon.svg"
+            tagline="A FNAF fangame about my highschool"
             itchio="https://sp1cyham.itch.io/wbs"
             itchioEmbed={10512227}
             itchioEmbedMobile={2728107}
@@ -371,15 +397,9 @@ export default function Coding() {
             uses={[
               'Unity 2D',
               'A* Pathfinding',
-              'Procedural Generation',
               'Enemy AI/Behavior',
-              'Modular Upgrade System',
-              'Auto-Build System',
-              'Custom Font',
-              'Audacity',
               'FL Studio',
-              'Pixilart Studio',
-              'Pixelforge',
+              'Audacity',
               'C#',
             ]}
             ss={[
@@ -388,31 +408,49 @@ export default function Coding() {
             ]}
             ssPath="public/assets/art/animation/gnome/"
             links={[
-              ['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!'],
-              ['https://sp1cyham.itch.io/humptys-rise', 'ignore'],
+              ['https://sp1cyham.itch.io/wbs', 'itch.io link!'],
+              [
+                'https://sp1cyham.itch.io/woodlands-bathroom-simulator-artsfest',
+                'itch.io link (artsfest ver)',
+              ],
             ]}
           >
-            <i>*above demo is a beta build!</i>
+            <strong>Woodlands Bathroom Simulator</strong> (what a title..) is a Five Nights at
+            Freddy's fangame themed around my highschool's bathroom. While learning Unity, I decided
+            to recreate games, and chose FNAF. After a bit of development though, I decided to give
+            the game an actual theme and story, and my highschool, The Woodlands SS, came into mind.
             <br />
             <br />
-            <strong>Humpty's Rise</strong> is a dungeon crawler with balatro-like elements. Collect
-            cards and shells, apply modifiers, and take your revenge against the evil usurper, The
-            Gingerbread Man.
+            Not only does the game boast 5 nights with 4 unique "animatronics", a bonus 6th night
+            with a 'Ram' bossfight (our school animal mascot), additional in-between-night minigames
+            and a customizable difficulty night, but ALSO features a top-down bullet hell twin-stick
+            shooter where you fight through 4 levels, and another final boss against the Ram.
             <br />
             <br />
-            Created by a friend and I in a school game jam in the Unity game engine, this game has
-            been in progress since grade 10, changing forms multiple times along the way.
+            I legitimately thought I would get suspended when releasing the game, but it turned out
+            to be a bit hit among students.. and teachers! Our school's art teacher allowed me to
+            showcase the game at our school's ARTSFEST.
             <br />
             <br />
-            The game features complex enemy AI using A* pathfinding, procedural room spawning, a
-            modular and infinitely scalable system for upgrades, hundreds of animated sprites, a
-            system to automatically build rooms from just an outline, a custom font and much, much
-            more.
+            Here's a disclaimer ripped straight from the game:
+            <br />
+            <i className="text-[10px] leading-none">
+              This game is based on a real-life high school, The Woodlands. While I do draw
+              inspiration from the school, this game does not accurately represent the school, its
+              students, faculty, clubs, teachers, or facilities, including the bathrooms. This game
+              was not created with hate, but instead respect to The Woodlands for being such an
+              amazing school. (Hour-long lunch breaks, amazing clubs, awesome teachers--like cmon!)
+              This game is a personal project I've been working on for 8-ish months with the main
+              purpose of entertaining. The post-apocalyptic world that the game is set in and the
+              events that occur are not at all accurate to the real school; everything is fictional,
+              and any resemblance to real individuals, events, or locations is purely coincidental.
+              This game is not intended to offend or misrepresent anyone associated with The
+              Woodlands, and I apologize if I do.
+            </i>
             <br />
             <br />
-            The game isn't released yet, but I've learned a lot from making it! You can play a
-            (very) early demo on{' '}
-            <Link to="https://sp1cyham.itch.io/humptys-rise" target="_blank">
+            Of course, you can play the game and it's ARTSFEST version on{' '}
+            <Link to="https://sp1cyham.itch.io/wbs" target="_blank">
               itch.io
             </Link>
             .
@@ -447,7 +485,27 @@ export default function Coding() {
 
       {projIndex === 0 && <HeaderGraphic title="CODING" finalMult={1.37} />}
       <Base className="text-center">
-        <p className="my-3 wrap-normal">check out some of the projects i've made!</p>
+        <p className="my-3 wrap-normal">
+          check out some of the projects i've made! <br /> <br />
+          you can find most of my work on{' '}
+          <Link to="https://github.com/SP1CYham" target="_blank">
+            github
+          </Link>
+          ,
+          <br />
+          some of my video games on{' '}
+          <Link to="https://sp1cyham.itch.io" target="_blank">
+            itch.io
+          </Link>
+          ,
+          <br />
+          and my hackathon projects on{' '}
+          <Link to="https://devpost.com/kylehuang1107" target="_blank">
+            devpost!
+          </Link>
+          <br />
+          <br />
+        </p>
 
         <Category
           overrideMax={5}

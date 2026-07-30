@@ -7,17 +7,21 @@ import Card from './Card';
 import Imag from './Imag';
 import asset from '../asset';
 import { CategoryContext } from '../pages/Coding';
+import { AppContext } from '../App';
 
 export default function ProjectCard({
   titleImg = null,
   title,
   titleShadow,
   pixel = false,
+  video,
+  videoLoop = false,
+  imgMinusHeight = 0,
   tagline,
   img,
   youtube,
   itchio,
-  itchioEmbed, //just the number
+  itchioEmbed = null, //just the number
   itchioEmbedMobile, //just the number
   children,
   uses = [''],
@@ -29,6 +33,9 @@ export default function ProjectCard({
   title: string;
   titleShadow?: string | null;
   pixel?: boolean;
+  video?: string;
+  videoLoop?: boolean;
+  imgMinusHeight?: number;
   tagline?: string;
   img?: string;
   youtube?: string;
@@ -42,15 +49,19 @@ export default function ProjectCard({
   links?: string[][];
 }) {
   const { resetProjIndex } = useContext(CategoryContext)!;
+  const { mobile } = useContext(AppContext)!;
 
   return (
     <>
       <HeaderGraphic
         height={400}
         src={titleImg}
+        video={video}
+        videoLoop={videoLoop}
         title={title}
         srcPixel={pixel}
         titleShadowColor={titleShadow}
+        imgMinusHeight={imgMinusHeight}
       />
 
       <Base>
@@ -83,22 +94,26 @@ export default function ProjectCard({
           {itchio && (
             <div className="mt-4 mb-10 flex w-full justify-center">
               {/* desktop (game embed) */}
-              <iframe
-                src={'https://itch.io/embed-upload/' + itchioEmbed}
-                title={`${title} on itch.io`}
-                className="hidden aspect-video h-auto w-full rounded-2xl md:block"
-              >
-                <a href={itchio}>Play {title} on itch.io</a>
-              </iframe>
+              {!mobile && itchioEmbed !== null && (
+                <iframe
+                  src={'https://itch.io/embed-upload/' + itchioEmbed}
+                  title={`${title} on itch.io`}
+                  className="aspect-video h-auto w-full rounded-2xl"
+                >
+                  <a href={itchio}>Play {title} on itch.io</a>
+                </iframe>
+              )}
 
               {/* mobile (embed) */}
-              <iframe
-                src={'https://itch.io/embed/' + itchioEmbedMobile?.toString()}
-                title={`${title} on itch.io`}
-                className="bg-accent block h-auto w-full rounded-2xl md:hidden"
-              >
-                <a href={itchio}>Play {title} on itch.io</a>
-              </iframe>
+              {(mobile || itchioEmbed === null) && itchioEmbedMobile && (
+                <iframe
+                  src={'https://itch.io/embed/' + itchioEmbedMobile?.toString()}
+                  title={`${title} on itch.io`}
+                  className="bg-accent h-auto w-full rounded-2xl"
+                >
+                  <a href={itchio}>Play {title} on itch.io</a>
+                </iframe>
+              )}
             </div>
           )}
 

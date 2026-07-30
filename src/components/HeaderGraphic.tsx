@@ -7,6 +7,9 @@ export default function HeaderGraphic({
   height = 300,
   src,
   srcPixel = false,
+  video,
+  videoLoop,
+  imgMinusHeight = 0,
   title = 'SPICYHAM',
   titleShadowColor = null,
   scaleXMultiplier = 0.24,
@@ -18,6 +21,9 @@ export default function HeaderGraphic({
   height?: number;
   src?: string | null;
   srcPixel?: boolean;
+  video?: string | null;
+  videoLoop?: boolean;
+  imgMinusHeight?: number;
   title?: string;
   titleShadowColor?: string | null;
   scaleXMultiplier?: number;
@@ -83,7 +89,7 @@ export default function HeaderGraphic({
                 className="flex w-auto items-center justify-center"
                 style={{
                   imageRendering: srcPixel ? 'pixelated' : 'auto',
-                  height: `${height - 40}px`,
+                  height: `${height}px`,
                 }}
               >
                 <img
@@ -91,12 +97,34 @@ export default function HeaderGraphic({
                   className="h-full w-full object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: `drop-shadow(0 8px 10px ${titleShadowColor})`,
-                    maxHeight: `${height - 40}px`,
+                    maxHeight: `${height - imgMinusHeight}px`,
                   }}
                 />
               </div>
             )}
-            {src == null && (
+            {video && (
+              <div
+                className="flex w-auto items-center justify-center"
+                style={{
+                  imageRendering: srcPixel ? 'pixelated' : 'auto',
+                  height: `${height - imgMinusHeight}px`,
+                }}
+              >
+                <video
+                  src={asset(video)}
+                  className="h-full w-full object-contain p-4 drop-shadow-2xl"
+                  style={{
+                    filter: `drop-shadow(0 8px 10px ${titleShadowColor})`,
+                    maxHeight: `${height - imgMinusHeight}px`,
+                  }}
+                  muted
+                  playsInline
+                  autoPlay
+                  loop={videoLoop}
+                />
+              </div>
+            )}
+            {src == null && video == null && (
               <div className="@container-size h-full w-full hover:cursor-default">
                 <div
                   className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14"

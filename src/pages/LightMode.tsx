@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { DarkModeContext } from '../App';
+import { AppContext } from '../App';
 
 export default function LightMode() {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext)!;
+  const { darkMode, toggleDarkMode } = useContext(AppContext)!;
 
   return (
     <>

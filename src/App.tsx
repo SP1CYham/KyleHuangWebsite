@@ -1,4 +1,4 @@
-import { useState, createContext, createRef, lazy, Suspense } from 'react';
+import { useState, createContext, createRef, lazy, Suspense, useRef, useEffect } from 'react';
 import './index.css';
 
 import { Routes, Route } from 'react-router-dom';
@@ -21,9 +21,14 @@ const Resume = lazy(() => import('./pages/Resume'));
 interface ContextTypes {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  screenWidth: number;
+  mobile: boolean;
+  triggerWidth: () => void;
+  registerFn: (fn: () => void) => void;
+  triggerFn: () => void;
 }
 
-export const DarkModeContext = createContext<ContextTypes | null>(null);
+export const AppContext = createContext<ContextTypes | null>(null);
 
 /*
 function getInitialDarkMode(): boolean {
@@ -52,9 +57,44 @@ function App() {
     document.documentElement.classList.toggle('light', !next);
   }
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [mobile, setMobile] = useState(window.innerWidth > 768 ? false : true);
+  function triggerWidth() {
+    const next = window.innerWidth;
+    setScreenWidth(next);
+    setMobile(next > 768 ? false : true);
+  }
+  useEffect(() => {
+    const handleResize = () => {
+      triggerWidth();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const fnRef = useRef<(() => void) | null>(null);
+
+  function registerFn(fn: () => void) {
+    fnRef.current = fn;
+  }
+
+  function triggerFn() {
+    fnRef.current?.();
+  }
+
   return (
     <>
-      <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+      <AppContext.Provider
+        value={{
+          darkMode,
+          toggleDarkMode,
+          screenWidth,
+          mobile,
+          triggerWidth,
+          registerFn,
+          triggerFn,
+        }}
+      >
         <Suspense fallback={<div>loading...</div>}>
           <div className="h-screen overflow-x-hidden" ref={scrollContainerRef}>
             <Header />
@@ -88,7 +128,7 @@ function App() {
             <Footer />
           </div>
         </Suspense>
-      </DarkModeContext.Provider>
+      </AppContext.Provider>
     </>
   );
 }

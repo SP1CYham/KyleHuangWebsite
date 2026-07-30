@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import NoiseGrad from './NoiseGrad';
 import asset from '../asset';
+import { AppContext } from '../App';
 
 interface categoryProps {
   title: string;
@@ -62,19 +63,12 @@ export default function Category({
   categoryArray: categoryProps[];
   overrideMax?: number | null;
 }) {
+  const { mobile } = useContext(AppContext)!;
   function findMaxCat() {
-    const innerWidth = window.innerWidth;
-    if (innerWidth > 768) return overrideMax ? overrideMax : 4;
+    console.log(mobile + ' is mobile');
+    if (!mobile) return overrideMax ? overrideMax : 4;
     else return 2;
   }
-
-  const [maxCatPerRow, setMaxCatPerRow] = useState(findMaxCat());
-
-  useEffect(() => {
-    const handleResize = () => setMaxCatPerRow(findMaxCat());
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const allCategories: categoryProps[][] = [];
   let currentRow: categoryProps[] = [];
@@ -83,7 +77,7 @@ export default function Category({
   categoryArray.forEach((category) => {
     currentFlex += category.flex;
     currentRow.push(category);
-    if (currentFlex >= maxCatPerRow) {
+    if (currentFlex >= findMaxCat()) {
       allCategories.push(currentRow);
       currentRow = [];
       currentFlex = 0;
