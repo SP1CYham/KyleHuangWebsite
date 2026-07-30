@@ -460,13 +460,37 @@ export default function Coding() {
         return (
           <>
             <Base>
-              <ArtCard title="Cut in Pairs" img="/favicon.svg">
+              <ArtCard
+                title="Cut in Pairs"
+                img="/assets/coding/other/cutinpairs.webp"
+                itchio="https://sp1cyham.itch.io/cuts-in-pairs"
+                itchioEmbed={15295080}
+                itchioEmbedMobile={3973122}
+              >
+                A little game I made for my high school CS Club's game jam. I actually was an exec
+                at the time of making the game so my game didn't compete. It was also my first time
+                using Godot, and this game works on mobile too! You can check out the annual game
+                jam{' '}
+                <Link to="https://itch.io/jam/woodlands-cs-club-jam-2025" target="_blank">
+                  here!
+                </Link>
+              </ArtCard>
+              <ArtCard
+                title="Physics Project"
+                img="/assets/coding/other/trafficText.webp"
+                itchio="https://sp1cyham.itch.io/traffic-texter-fong-fizx-psa"
+                itchioEmbed={13355125}
+                itchioEmbedMobile={3464584}
+              >
                 placeholder description
               </ArtCard>
-              <ArtCard title="Physics Project" img="/favicon.svg">
-                placeholder description
-              </ArtCard>
-              <ArtCard title="Shoyu the Tofu" img="/favicon.svg">
+              <ArtCard
+                title="Shoyu the Tofu"
+                img="/assets/coding/other/shoyuTofu.webp"
+                itchio="https://supershoop.itch.io/shoyu-the-tofu"
+                itchioEmbed={11267376}
+                itchioEmbedMobile={2915183}
+              >
                 placeholder description
               </ArtCard>
             </Base>

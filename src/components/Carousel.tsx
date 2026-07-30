@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Imag from './Imag';
+import { AppContext } from '../App';
 
 export default function Carousel({
   imgsToShow,
@@ -36,10 +37,13 @@ export default function Carousel({
     console.log('right. index: ' + (index + 1));
   }
 
+  const { mobile } = useContext(AppContext)!;
+  const widthButton = mobile ? h / 2 : h;
+
   return (
     <div
-      className={`bg-accent2 mx-10 flex min-w-0 max-w-[calc(100%-5rem)] items-center border-2 border-white`}
-      style={{ height: `${h}px`, borderRadius: `${h / 2}px` }}
+      className={`bg-accent2 flex min-w-0 items-center border-2 border-white`}
+      style={{ height: `${h}px`, borderRadius: `${widthButton / 2}px` }}
     >
       {!locked && (
         <button
@@ -51,8 +55,8 @@ export default function Carousel({
             margin: 0,
             height: `${h}px`,
             borderLeft: 0,
-            borderRadius: `${h / 2}px 0 0 ${h / 2}px`,
-            width: `${h}px`,
+            borderRadius: `${widthButton / 2}px 0 0 ${widthButton / 2}px`,
+            width: `${widthButton}px`,
             textAlign: 'center',
             backgroundColor: !canGoLeft
               ? 'var(--color-black)'
@@ -60,6 +64,8 @@ export default function Carousel({
                 ? 'var(--color-midtone)'
                 : 'var(--color-accent)',
             cursor: !canGoLeft ? 'not-allowed' : 'pointer',
+            fontWeight: !canGoLeft ? 'normal' : lHovered ? 'bold' : 'normal',
+            padding: '0',
             transition: 'background-color 0.2s ease',
           }}
           className="text-5xl font-medium"
@@ -113,8 +119,8 @@ export default function Carousel({
             margin: 0,
             height: `${h}px`,
             borderRight: 0,
-            borderRadius: `0 ${h / 2}px ${h / 2}px 0`,
-            width: `${h}px`,
+            borderRadius: `0 ${widthButton / 2}px ${widthButton / 2}px 0`,
+            width: `${widthButton}px`,
             textAlign: 'center',
             backgroundColor: !canGoRight
               ? 'var(--color-black)'
@@ -122,6 +128,8 @@ export default function Carousel({
                 ? 'var(--color-midtone)'
                 : 'var(--color-accent)',
             cursor: !canGoRight ? 'not-allowed' : 'pointer',
+            fontWeight: !canGoRight ? 'normal' : rHovered ? 'bold' : 'normal',
+            padding: '0',
             transition: 'background-color 0.2s ease',
           }}
           className="text-5xl font-medium"

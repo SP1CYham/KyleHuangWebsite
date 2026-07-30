@@ -1,11 +1,13 @@
 import { type ReactNode } from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import Card from './Card';
 import Carousel from './Carousel';
 import NoiseGrad from './NoiseGrad';
 import asset from '../asset';
+import { Itchio } from './ProjectCard';
+import { AppContext } from '../App';
 
 //icons
 import { TbKeyframes } from 'react-icons/tb';
@@ -37,8 +39,12 @@ function ArtInfo(info = '', value = '', icon = 0) {
 interface ArtCardProps {
   title: string;
   img?: string;
+  imgs?: string[];
   youtube?: string;
   youtubeAspect?: string;
+  itchio?: string;
+  itchioEmbed?: number | null; //just the number
+  itchioEmbedMobile?: number; //just the number
   children?: ReactNode;
   software?: string[];
   frames?: string;
@@ -53,8 +59,12 @@ interface ArtCardProps {
 export default function ArtCard({
   title,
   img,
+  imgs,
   youtube,
   youtubeAspect = '16/9',
+  itchio,
+  itchioEmbed = null, //just the number
+  itchioEmbedMobile, //just the number
   children, //text
   software = [''],
   frames = '',
@@ -66,6 +76,9 @@ export default function ArtCard({
   wipsPath = '',
 }: ArtCardProps) {
   const [open, setOpen] = useState(false);
+  const [itchOpen, setItchOpen] = useState(false);
+
+  const { mobile } = useContext(AppContext)!;
 
   function addPath(wipsVar: string[][]) {
     if (wipsVar == null) return [];
@@ -95,12 +108,28 @@ export default function ArtCard({
               {title}
             </h2>
             {img && (
-              <img
-                src={asset(img)}
-                className={`${open ? 'h-auto' : 'h-120'} aspect-auto w-full rounded-2xl py-2`}
-                loading="lazy"
-              ></img>
+              <>
+                <img
+                  src={asset(img)}
+                  className={`${open ? 'h-auto' : 'h-120'} aspect-auto w-full rounded-2xl object-contain py-2`}
+                  loading="lazy"
+                ></img>
+
+                {imgs && (
+                  <>
+                    {imgs.map((value, index) => (
+                      <img
+                        src={asset(value)}
+                        className={`${open ? 'h-auto' : 'h-120'} aspect-auto w-full rounded-2xl object-contain py-2`}
+                        loading="lazy"
+                        key={index}
+                      />
+                    ))}
+                  </>
+                )}
+              </>
             )}
+
             {youtube && (
               <iframe
                 src={youtube}
@@ -112,6 +141,14 @@ export default function ArtCard({
                 style={{ aspectRatio: youtubeAspect }}
               ></iframe>
             )}
+            {itchio && (
+              <>
+                <button onClick={() => setItchOpen(!itchOpen)}>
+                  {itchOpen ? 'close game' : 'load game!'}
+                </button>
+                {itchOpen && Itchio({ title, itchio, itchioEmbed, itchioEmbedMobile, mobile })}
+              </>
+            )}
             <div>
               <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
                 {open ? 'less info' : 'more info'}
@@ -120,7 +157,7 @@ export default function ArtCard({
 
             {wips && (
               <div
-                className={`w-full min-w-0 overflow-hidden transition-all duration-200 ease-in-out ${
+                className={`flex w-full min-w-0 flex-col overflow-hidden transition-all duration-200 ease-in-out ${
                   open ? 'mt-3 max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
@@ -175,8 +212,8 @@ export default function ArtCard({
             {links[0][0] !== '' && (
               <div className="">
                 {links.map((link, index) => (
-                  <div className="text-center">
-                    <Link to={link[0].toString()} replace target="_blank" key={index}>
+                  <div className="text-center" key={index}>
+                    <Link to={link[0].toString()} replace target="_blank">
                       {link[1].toString()}
                     </Link>
                   </div>

@@ -302,36 +302,53 @@ export default function Art() {
             <CategoryHead title="3d art">renders and other 3d work.</CategoryHead>
 
             <ArtCard
-              title="Transparent"
-              img="/favicon.svg"
-              wipsPath="/"
+              title="Translucent"
+              img="/assets/art/3D/translucent/transFish.webp"
+              imgs={[
+                '/assets/art/3D/translucent/transPhone.webp',
+                '/assets/art/3D/translucent/transForest.webp',
+                '/assets/art/3D/translucent/transBed.webp',
+              ]}
+              wipsPath="/assets/art/3D/translucent/"
               wips={[
-                ['favicon.svg', ''],
-                ['favicon.svg', ''],
-                ['favicon.svg', ''],
-                ['favicon.svg', ''],
+                ['cTransFull.webp', 'the full complete image of Translucent'],
+                ['cPhone.webp', 'the phone scene behind the scenes'],
+                [
+                  'c3DForest.webp',
+                  'i made this forest literally an hour before the summative was due',
+                ],
+                ['cFishPoster.webp', 'FISH POSTER YEAHHHHHHHHHHH'],
+                ['cFishPosterReal.webp', 'FISH POSTER BUT REAL YEAHHHHHHHHHHH'],
               ]}
             >
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Ready to Depart" img="/favicon.svg">
+            <ArtCard title="Ready to Depart" img="/assets/art/3D/readyToDepart.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Hermitcraft Bunny" img="/favicon.svg">
+            <ArtCard
+              title="Hermitcraft Bunny"
+              img="/assets/art/3D/hermitcraftBunny/hermitcraftBunny.webp"
+              wipsPath="/assets/art/3D/hermitcraftBunny/"
+              wips={[
+                ['cHermitcraftBunnyConcept.webp', 'a small sketch to layout the composition'],
+                ['cHappyGhast.webp', 'it was so fun modelling this happy ghast :)'],
+              ]}
+            >
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Hack the North" img="/favicon.svg">
+            <ArtCard title="Hack the North" img="/assets/art/3D/htn.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Ni Hao Film" img="/favicon.svg">
+            <ArtCard title="Ni Hao Film" youtube="https://www.youtube.com/embed/mz9-sbVoQCo">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Pokemon Day 2026" img="/favicon.svg">
+            <ArtCard title="Pokemon Day 2026" img="/assets/art/3D/pokemonDay2026.webp">
               placeholder description
             </ArtCard>
           </>

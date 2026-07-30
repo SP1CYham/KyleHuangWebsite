@@ -128,7 +128,7 @@ export default function HeaderGraphic({
               <div className="@container-size h-full w-full hover:cursor-default">
                 <div
                   className="flex h-full w-full flex-col items-center px-20 pt-7 pb-14"
-                  style={{ transform: `scaleX(${1 - 0.4 * smallScreenMult})` }}
+                  style={{ transform: `scaleX(${1 - 0.25 * smallScreenMult})` }}
                 >
                   <NoiseGrad
                     ref={containerRef}
