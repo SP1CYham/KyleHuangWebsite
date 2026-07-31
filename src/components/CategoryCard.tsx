@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import NoiseGrad from './NoiseGrad';
 import asset from '../asset';
 import { AppContext } from '../App';
