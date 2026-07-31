@@ -9,6 +9,7 @@ import { FaLinkedin } from 'react-icons/fa';
 import { FaTiktok } from 'react-icons/fa';
 import { FaDiscord } from 'react-icons/fa';
 import { FaRedditAlien } from 'react-icons/fa';
+import { FaItchIo } from 'react-icons/fa';
 
 function iconFunc(num = 1) {
   switch (num) {
@@ -28,6 +29,10 @@ function iconFunc(num = 1) {
       return <FaRedditAlien className="h-6 w-6" />;
     case 7:
       return <IoLogoGithub className="h-6 w-6" />;
+    case 7:
+      return <IoLogoGithub className="h-6 w-6" />;
+    case 8:
+      return <FaItchIo className="h-6 w-6" />;
   }
 }
 
@@ -51,11 +56,10 @@ function Footer() {
       <div className="flex flex-row">
         {icon('https://www.youtube.com/@SPICYham', 0) /*youtube*/}
         {icon('https://www.instagram.com/sp1cy_ham', 1) /*insta*/}
-
         {icon('https://discord.gg/6Jrc2j4', 5) /*discord*/}
-
+        {icon('https://sp1cyham.itch.io/', 8) /*itchio*/}
         {icon('https://github.com/SP1CYham', 2) /*github*/}
-        {icon('fix latere', 3) /*linkedin*/}
+        {icon('https://www.linkedin.com/in/kyle-huang-3373b4422/', 3) /*linkedin*/}
       </div>
 
       {/*
