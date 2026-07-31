@@ -36,7 +36,7 @@ export function Itchio({
   return (
     <div className="mt-4 mb-10 flex w-full justify-center">
       {/* desktop (game embed) */}
-      {!mobile && (
+      {!mobile && itchioEmbed !== null && (
         <iframe
           src={'https://itch.io/embed-upload/' + itchioEmbed + extraStringGame}
           title={`${title} on itch.io`}
@@ -182,7 +182,7 @@ export default function ProjectCard({
                     src={asset(ssPath + link[0])}
                     desc={link[1]}
                     className="flex-1"
-                    imgClassName="object-contain px-4 md:px-0"
+                    imgClassName="object-contain px-4 hover:px-4 md:px-0 md:max-w-50"
                     h={mobile ? 75 : 125}
                   ></Imag>
                 </div>

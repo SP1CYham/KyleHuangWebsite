@@ -43,7 +43,7 @@ export default function Coding() {
     switch (projIndex) {
       case 0:
         return <div></div>;
-      case 1:
+      case 1: //humpty
         return (
           <ProjectCard
             titleImg="/assets/coding/humptysRise/humptyTitle.png"
@@ -70,14 +70,11 @@ export default function Coding() {
               'C#',
             ]}
             ss={[
-              ['cGnomeSketch.webp', 'edr'],
-              ['cBanner.webp', 'df'],
+              ['cMainMenu.webp', "the main menu of Humpty's Rise, with slight edits"],
+              ['humptyThumb.webp', 'cool'],
             ]}
-            ssPath="public/assets/art/animation/gnome/"
-            links={[
-              ['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!'],
-              ['https://sp1cyham.itch.io/humptys-rise', 'ignore'],
-            ]}
+            ssPath="public/assets/coding/humptysRise/"
+            links={[['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!']]}
           >
             <i>*above demo is a beta build!</i>
             <br />
@@ -105,7 +102,7 @@ export default function Coding() {
             .
           </ProjectCard>
         );
-      case 2:
+      case 2: //exposure
         return (
           <ProjectCard
             video="/assets/coding/exposure/exposureTitle.webm"
@@ -129,10 +126,24 @@ export default function Coding() {
               'Typescript',
             ]}
             ss={[
-              ['cGnomeSketch.webp', 'edr'],
-              ['cBanner.webp', 'df'],
+              ['cCamera.webp', 'the basic camera, with additional features like leveling.'],
+              [
+                'cCropRight.webp',
+                'the coach can analyse and suggest changes, like cropping out the right distraction.',
+              ],
+              [
+                'cMetadata.webp',
+                'the coach can also scrape metadata, giving advice central to your model of camera.',
+              ],
+              ['cAdjustments.webp', 'tweak your photo; the photographer remains in control.'],
+              ['cGen1.webp', 'replace unwanted parts of your photo.'],
+              ['cGen2.webp', 'voila!'],
+              [
+                'cCurateSet.webp',
+                'the coach can curate your photos, and even preview your portfolio!',
+              ],
             ]}
-            ssPath="public/assets/art/animation/gnome/"
+            ssPath="public/assets/coding/exposure/"
             links={[
               ['https://github.com/waaberi/ht6-2026', 'github link'],
               ['https://devpost.com/software/exposure-qet3vc', 'devpost'],
@@ -186,7 +197,7 @@ export default function Coding() {
             </p>
           </ProjectCard>
         );
-      case 3:
+      case 3: //friend compass
         return (
           <ProjectCard
             titleImg="/assets/coding/friendCompass/friendTitle.webp"
@@ -196,10 +207,21 @@ export default function Coding() {
             youtube="https://www.youtube.com/embed/EtJe8NGx1LQ"
             uses={['Twilio', 'Amazon DynamoDB', 'Android Studio', 'Kitlio', 'Node.js']}
             ss={[
-              ['cGnomeSketch.webp', 'edr'],
-              ['cBanner.webp', 'df'],
+              ['cMainView.webp', 'the main view of the game!'],
+              [
+                'cRegister.webp',
+                'registering is as easy as scanning a (now defunct) qr code! scrapes hack the north data, like your name',
+              ],
+              [
+                'cAddFriend.webp',
+                'adding friends is as easy as scanning a (now defunct) qr code! scrapes hack the north data, like your name',
+              ],
+              [
+                'cTrackFriend.webp',
+                "track your friend's location using compass location and only SMS!",
+              ],
             ]}
-            ssPath="public/assets/art/animation/gnome/"
+            ssPath="public/assets/coding/friendCompass/"
             links={[
               ['https://github.com/supershoop/FriendCompass', 'github link'],
               ['https://devpost.com/software/friend-compass', 'devpost'],
@@ -243,7 +265,7 @@ export default function Coding() {
             Wang ever. It is triggering.
           </ProjectCard>
         );
-      case 4:
+      case 4: //buckshot
         return (
           <ProjectCard
             titleImg="/assets/coding/buckshot/buckshotTitle.webp"
@@ -255,27 +277,32 @@ export default function Coding() {
             itchioEmbedMobile={2893473}
             youtube="https://www.youtube.com/embed/ppfFA4YLgpY"
             uses={[
-              'Unity 2D',
-              'A* Pathfinding',
-              'Procedural Generation',
-              'Enemy AI/Behavior',
-              'Modular Upgrade System',
-              'Auto-Build System',
-              'Custom Font',
+              'Unity 3D',
+              'Devlog/Making of',
+              'Local Multiplayer',
+              'Mobile App',
+              'Blender',
+              'Blockbench',
+              'Critical Reflex',
               'Audacity',
               'FL Studio',
               'Pixilart Studio',
-              'Pixelforge',
               'C#',
             ]}
             ss={[
-              ['cGnomeSketch.webp', 'edr'],
-              ['cBanner.webp', 'df'],
+              ['cBoardView.webp', 'a view of the board'],
+              ['cHealthSystem.webp', 'each lightning bolt represents 1 health point'],
+              ['cLighter.webp', 'a cutscene animation, using the items (in this case, a lighter)'],
+              ['cDealerView.webp', 'cinematic view of the dealer'],
             ]}
-            ssPath="public/assets/art/animation/gnome/"
+            ssPath="public/assets/coding/buckshot/"
             links={[
-              ['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!'],
-              ['https://sp1cyham.itch.io/humptys-rise', 'ignore'],
+              [
+                'https://sp1cyham.itch.io/multiplayer-buckshot-roulette',
+                'itch.io link (no download)',
+              ],
+              ['https://github.com/SP1CYham/Buckshot-Mobile', 'github link'],
+              ['https://www.youtube.com/watch?v=I_nc_XhKI2g', 'listen to the ost!'],
             ]}
           >
             <i>*please keep in mind the game is not available to download!</i>
@@ -294,7 +321,7 @@ export default function Coding() {
             Roulette as a tabletop multiplayer game, and here is the making of it. . wip
           </ProjectCard>
         );
-      case 5:
+      case 5: //taime
         return (
           <ProjectCard
             video="/assets/coding/taime/taimeTitle.webm"
@@ -319,13 +346,16 @@ export default function Coding() {
               'C#',
             ]}
             ss={[
-              ['cGnomeSketch.webp', 'edr'],
-              ['cBanner.webp', 'df'],
+              [
+                'cSavedTime.webp',
+                'How much time someone saved by using AI! But what was the impact?',
+              ],
+              ['cQuestions.webp', 'some of the questions we asked quiz takers'],
             ]}
-            ssPath="public/assets/art/animation/gnome/"
+            ssPath="public/assets/coding/taime/"
             links={[
-              ['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!'],
-              ['https://sp1cyham.itch.io/humptys-rise', 'ignore'],
+              ['https://devpost.com/software/t-ai-me-4dlnvk', 'devpost link!'],
+              ['https://github.com/SP1CYham/jamhacksProject2026AIweb', 'github link!'],
             ]}
           >
             WIP
@@ -382,7 +412,7 @@ export default function Coding() {
             consumption, as data is still unreliable.
           </ProjectCard>
         );
-      case 6:
+      case 6: //wbs
         return (
           <ProjectCard
             titleImg="/assets/coding/wbs/wbsTitle.webp"
@@ -393,6 +423,7 @@ export default function Coding() {
             itchio="https://sp1cyham.itch.io/wbs"
             itchioEmbed={10512227}
             itchioEmbedMobile={2728107}
+            youtube="https://www.youtube.com/embed/OUgwzJAGKE4"
 
             uses={[
               'Unity 2D',
@@ -403,10 +434,13 @@ export default function Coding() {
               'C#',
             ]}
             ss={[
-              ['cGnomeSketch.webp', 'edr'],
-              ['cBanner.webp', 'df'],
+              ['cRightDoor.webp', 'the "art girl" at the right door'],
+              ['cCamSide.webp', 'the "deca kid" seen through the side cam'],
+              ['cRobotics.webp', "Absolute Robotics, or team 4308's bot in 2024"],
+              ['cPiracy.webp', 'kjos piracy prevention (one of the in-between-night minigames)'],
+              ['cTopDown.webp', 'explore the school in a twin-stick shooter!'],
             ]}
-            ssPath="public/assets/art/animation/gnome/"
+            ssPath="public/assets/coding/wbs/"
             links={[
               ['https://sp1cyham.itch.io/wbs', 'itch.io link!'],
               [
@@ -456,7 +490,7 @@ export default function Coding() {
             .
           </ProjectCard>
         );
-      case 7:
+      case 7: //etc
         return (
           <>
             <Base>
@@ -537,49 +571,49 @@ export default function Coding() {
             {
               title: "Humpty's Rise",
               text: 'dungeon crawler w/ balatro-like elements built in unity!',
-              img: '/favicon.svg',
+              img: '/assets/coding/humptysRise/humptyThumb.webp',
               onClick: () => handleCategoryClick(1),
               flex: 3,
             },
             {
               title: 'Exposure',
               text: 'full photography editing suite + personalized coach',
-              img: '/favicon.svg',
+              img: '/assets/coding/exposure/cCurateSet.webp',
               onClick: () => handleCategoryClick(2),
               flex: 2,
             },
             {
               title: 'Friend Compass',
               text: 'navigation for friends using only SMS!',
-              img: '/favicon.svg',
+              img: '/assets/coding/friendCompass/cRegister.webp',
               onClick: () => handleCategoryClick(3),
               flex: 2,
             },
             {
               title: 'Buckshot Mobile',
               text: 'a recreation of "Buckshot Roulette" for mobile multiplayer',
-              img: '/favicon.svg',
+              img: '/assets/coding/buckshot/cDealerView.webp',
               onClick: () => handleCategoryClick(4),
               flex: 2,
             },
             {
               title: 'T(AI)ME',
               text: 'how is AI saving you time... and impacting the world?',
-              img: '/favicon.svg',
+              img: '/assets/coding/taime/cSavedTime.webp',
               onClick: () => handleCategoryClick(5),
               flex: 2,
             },
             {
               title: 'Woodlands Bath. Sim.',
               text: 'a FNAF fangame themed around a high-school bathroom',
-              img: '/favicon.svg',
+              img: '/assets/coding/wbs/cCamSide.webp',
               onClick: () => handleCategoryClick(6),
               flex: 3,
             },
             {
               title: 'other',
               text: 'etc',
-              img: '/favicon.svg',
+              img: '/assets/coding/other/shoyuTofu.webp',
               onClick: () => handleCategoryClick(7),
               flex: 2,
             },

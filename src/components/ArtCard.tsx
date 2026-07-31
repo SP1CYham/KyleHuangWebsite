@@ -156,10 +156,16 @@ export default function ArtCard({
 
             {itchio && (
               <>
-                <button onClick={() => setItchOpen(!itchOpen)}>
-                  {itchOpen ? 'close game' : 'load game!'}
-                </button>
-                {itchOpen && Itchio({ title, itchio, itchioEmbed, itchioEmbedMobile, mobile })}
+                {!mobile && (
+                  <button
+                    onClick={() => setItchOpen(!itchOpen)}
+                    className="h-20 text-2xl font-black"
+                  >
+                    {itchOpen ? 'close game' : 'load game!'}
+                  </button>
+                )}
+                {(itchOpen || mobile) &&
+                  Itchio({ title, itchio, itchioEmbed, itchioEmbedMobile, mobile })}
               </>
             )}
             <div>

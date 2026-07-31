@@ -39,7 +39,7 @@ export function OverlayProvider({ children }: { children: ReactNode }) {
             <div className="m-auto flex h-full w-full flex-1">
               <img
                 src={content.src}
-                className="mx-auto h-auto max-h-[70vh] w-auto max-w-full object-contain"
+                className="mx-auto h-auto max-h-[70vh] w-full max-w-full object-contain"
               />
             </div>
             <p className="mt-4 max-w-[80%] items-center text-center text-balance">{content.desc}</p>

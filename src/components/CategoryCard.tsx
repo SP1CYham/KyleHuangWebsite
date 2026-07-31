@@ -21,13 +21,14 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
       <img
         src={asset(img)}
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-300 group-hover:scale-x-150 group-hover:rotate-3 group-active:scale-200 group-active:-rotate-3"
+        className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-300 group-hover:scale-x-110 group-hover:scale-y-110 group-hover:rotate-3 group-active:-rotate-3"
         style={{
           mixBlendMode: 'screen',
           zIndex: 0,
         }}
         loading="lazy"
       />
+
       <div className="relative z-10 flex h-full flex-col">
         <NoiseGrad
           className="flex h-full flex-col rounded-3xl transition-all"
@@ -43,10 +44,10 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
             direction="170deg"
             color="var(--color-midtone)"
           >
-            <p className="text-shadow-accent2 z-10 ml-1 flex-2 shrink-0 text-left text-6xl font-bold -tracking-widest hyphens-auto italic transition-all duration-300 text-shadow-lg/100 group-hover:text-[4em] group-hover:text-shadow-[10px_10px_0px_rgb(0_0_0/1)] group-active:text-[3em] md:hyphens-none">
+            <p className="text-shadow-accent2 z-10 ml-1 flex-2 shrink-0 text-left text-6xl font-bold -tracking-widest hyphens-auto italic transition-all duration-300 text-shadow-lg/100 group-hover:text-shadow-[10px_10px_0px_rgb(0_0_0/1)] md:hyphens-none md:group-hover:text-[4em] md:group-active:text-[3em]">
               {title}
             </p>
-            <p className="group-hover:animate-hover line-clamp-3 inline-block min-h-12 flex-1 shrink-0 place-content-end p-4 text-right align-text-bottom text-balance">
+            <p className="group-hover:animate-hover line-clamp-3 inline-block min-h-12 flex-1 shrink-0 place-content-end p-4 text-right align-text-bottom font-medium text-balance text-shadow-[2px_2px_3px_var(--color-accent2)]">
               {text}
             </p>
           </NoiseGrad>
