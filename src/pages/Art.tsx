@@ -358,8 +358,19 @@ export default function Art() {
           <>
             <CategoryHead title="2d art">characters & backgrounds!</CategoryHead>
 
-            <ArtCard title="Late Drive Home" video="/assets/art/2D/lateDriveHome.webm">
-              placeholder description
+            <ArtCard
+              title="Late Drive Home"
+              video="/assets/art/2D/lateDriveHome.webm"
+              frames="16, 8 fps"
+              date="June 28, 2024"
+            >
+              An art piece I made after a long swim meet and the coziest drive home I've ever
+              experienced.
+              <br />
+              <br />I also made{' '}
+              <Link target="_blank" to="https://youtu.be/Qeq75XT7UhM">
+                music for this piece!
+              </Link>
             </ArtCard>
 
             <ArtCard
@@ -664,35 +675,43 @@ export default function Art() {
           <>
             <CategoryHead title="promo">for highschool clubs and such.</CategoryHead>
 
-            <ArtCard title="Pixel Art Workshop" img="/favicon.svg">
+            <ArtCard title="Pixel Art Workshop" img="/assets/art/promo/pixelWorkshop.png">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Samosa" img="/favicon.svg">
+            <ArtCard title="Samosa" img="/assets/art/promo/samosa.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Kowloon City" img="/favicon.svg">
+            <ArtCard title="Kowloon City" img="/assets/art/promo/kowloon.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Comes in Pairs" img="/favicon.svg">
+            <ArtCard title="Comes in Pairs" img="/assets/art/promo/csJamPairs.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Depths" img="/favicon.svg">
+            <ArtCard title="Depths" img="/assets/art/promo/csJamDepths.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Matcha Mochi" img="/favicon.svg">
+            <ArtCard title="Matcha Mochi" img="/assets/art/promo/matchaMochi.webp">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Animation Workshop" img="/favicon.svg">
+            <ArtCard title="Animation Workshop" video="/assets/art/promo/animWorkshop.webm">
               placeholder description
             </ArtCard>
 
-            <ArtCard title="Asia Month Teaser" img="/favicon.svg">
+            <ArtCard
+              title="Mooncake Workshop"
+              img="/assets/art/promo/mooncake1.webp"
+              imgs={['/assets/art/promo/mooncake2.webp']}
+            >
+              placeholder description
+            </ArtCard>
+
+            <ArtCard title="Asia Month Teaser" img="/assets/art/promo/asaTeaser.webp">
               placeholder description
             </ArtCard>
           </>
