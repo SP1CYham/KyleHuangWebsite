@@ -503,8 +503,10 @@ export default function Coding() {
               >
                 A little game I made for my high school CS Club's game jam. I actually was an exec
                 at the time of making the game so my game didn't compete. It was also my first time
-                using Godot, and this game works on mobile too! You can check out the annual game
-                jam{' '}
+                using Godot, and this game works on mobile too!
+                <br />
+                <br />
+                You can check out the annual game jam{' '}
                 <Link to="https://itch.io/jam/woodlands-cs-club-jam-2025" target="_blank">
                   here!
                 </Link>

@@ -267,13 +267,6 @@ export default function Art() {
               time="~1 week"
               date="Feb 27, 2024"
               links={[['https://www.youtube.com/watch?v=TgrYxzbDuUs', 'Youtube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
-              wips={[
-                [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
-                ],
-              ]}
             >
               yeah
             </ArtCard>

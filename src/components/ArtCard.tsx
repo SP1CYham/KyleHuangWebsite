@@ -233,7 +233,7 @@ export default function ArtCard({
                 {links.map((link, index) => (
                   <div className="text-center" key={index}>
                     <Link to={link[0].toString()} replace target="_blank">
-                      {link[1].toString()}
+                      <button>{link[1].toString()}</button>
                     </Link>
                   </div>
                 ))}
