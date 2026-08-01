@@ -12,9 +12,11 @@ interface categoryProps {
 }
 
 export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryProps) {
+  const { darkMode } = useContext(AppContext)!;
+
   return (
     <div
-      className="bg-accent2 group hover:bg-accent relative h-full min-w-0 overflow-hidden rounded-3xl transition-all duration-300 hover:cursor-pointer active:bg-white"
+      className={`bg-accent2 group relative h-full min-w-0 overflow-hidden rounded-3xl transition-all duration-300 hover:cursor-pointer ${darkMode ? 'hover:bg-accent active:bg-white' : 'hover:bg-dark active:bg-black'}`}
       style={{ flex }}
       onClick={onClick}
     >
@@ -23,7 +25,7 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-300 group-hover:scale-x-110 group-hover:scale-y-110 group-hover:rotate-3 group-active:-rotate-3"
         style={{
-          mixBlendMode: 'screen',
+          mixBlendMode: darkMode ? 'screen' : 'overlay',
           zIndex: 0,
         }}
         loading="lazy"

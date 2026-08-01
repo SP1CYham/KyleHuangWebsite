@@ -20,7 +20,7 @@ export default function About() {
 
           <div className="md:flex-1">
             <h2 className="text-midtone mt-3 mb-2 text-2xl md:-mt-2">Hiya!</h2>
-            <p>
+            <div>
               I'm <strong>Kyle Huang</strong>, but people online may know me as{' '}
               <strong>SPICYHAM</strong>. I'm an animator, developer and CS student heading to the
               University of Waterloo this fall.
@@ -46,7 +46,7 @@ export default function About() {
                 discord
               </Link>{' '}
               or email <Link to="mailto:kylehuang1107@gmail.com">{'kylehuang1107@gmail.com'}</Link>!
-            </p>
+            </div>
           </div>
         </div>
         <Link to="/resume">

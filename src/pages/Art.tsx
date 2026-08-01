@@ -736,7 +736,7 @@ export default function Art() {
               },
               {
                 title: '3D renders',
-                text: 'moving pictures and all.',
+                text: 'rendered in another dimension!',
                 img: '/assets/art/3D/translucent/transPhone.webp',
                 onClick: () => handleCategoryClick(2),
                 flex: 2,

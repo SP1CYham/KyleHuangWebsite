@@ -45,13 +45,13 @@
 }
 :root.light {
     --color-black: #f3e6be; 
-    --color-shadow: #ecc3a9;
-    --color-dark: #2b7836;  
+    --color-shadow: #a3faeb;
+    --color-dark: #96c042;  
     --color-midtone: #60af40;   
-    --color-light: #96c042;
+    --color-light: #2b7836;
     --color-white: #0f1d29;
-    --color-accent: #2b7836;    
-    --color-accent2: #52b5b5;
+    --color-accent: #60af40;    
+    --color-accent2: #70d6d6;
 
     --color-accent-light: #6de4d1;
     --color-head-light: #a3faeb;
