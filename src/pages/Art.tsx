@@ -103,11 +103,19 @@ export default function Art() {
                 ['https://www.youtube.com/watch?v=sfZZX7dUDc4', 'Youtube Link!'],
                 ['https://www.instagram.com/reel/DW37RX9Efn9/', 'Promotional Video I Made'],
               ]}
-              wipsPath="public/assets/art/animation/gnome/"
+              wipsPath="public/assets/art/animation/comotion/"
               wips={[
                 [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                  'cComotionSketch.webm',
+                  'the animation sketch. originally, it was planned to be 200 frames, but art kept being submitted!',
+                ],
+                [
+                  'cArtClubGuys.webp',
+                  'these guys are discord emojis in the art club server. the white cat is designed by @0ghoti, and the mouse cheese guy is designed by @AllBrite!',
+                ],
+                [
+                  'cClubFrames.webp',
+                  "i also wanted to represent our school's other clubs: (in order) deca, music, absolute robotics / 4308, tmun, drama, prefets, asian student association, athletics, cs and debate club!",
                 ],
               ]}
             >
@@ -136,11 +144,13 @@ export default function Art() {
               time="2 days"
               date="Apr 9, 2024"
               links={[['https://www.youtube.com/watch?v=-ia6zQR0olI', 'Youtube Link!']]}
-              wipsPath="public/assets/art/animation/gnome/"
+              wipsPath="public/assets/art/animation/eclipse/"
               wips={[
+                ['cEclipseShowcase.webp', 'LETS GOOOOOOOO'],
+                ['cRedigit.webp', 'LETS GOOOOOOOO x2'],
                 [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                  'cEclipseIRL.webp',
+                  'crappy picture i took when i went to see the real solar eclipse (not totality)',
                 ],
               ]}
             >
@@ -191,16 +201,31 @@ export default function Art() {
               frames="720 (15 fps)"
               time="1 week"
               date="Nov 23, 2025"
-              links={[['https://www.youtube.com/watch?v=a-2mq2p-guY', 'Youtube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
-              wips={[
+              links={[
+                ['https://www.youtube.com/watch?v=a-2mq2p-guY', 'Youtube Link!'],
                 [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
+                  'https://giphy.com/gifs/pixel-sp1cyham-hk-silksong-dUWwzOoultuiIjy8u4',
+                  'Giphy Link!',
                 ],
               ]}
             >
-              na
+              A Hollow Knight: Silksong animation! I had the idea of Hornet playing along with
+              Sherma for a while, but never got around to making it. Even after I started animating,
+              I struggled to get the backgrounds looking right and lost motivation.
+              <br />
+              <br />
+              This was also my first full-blown animation made with Toonsquid! If you noticed the
+              shading and compositing is wayyy better in this video than any previous video, that's
+              why.
+              <br />
+              <br />
+              I knew the Silksong hype kinda died down so the video wouldn't do great, so I posted
+              it on Reddit and a gif on Giphy first. Somehow I check 3 days later and the gif blows
+              up on Giphy with a million views. Then I get like 3 messages on Reddit asking if they
+              could repost the video on youtube, and someone actually reposts on youtube and that
+              one blows up.
+              <br />
+              <br />I then proceeded to post on Youtube. It did not blow up. Life is unfair.
             </ArtCard>
 
             <ArtCard
@@ -211,15 +236,24 @@ export default function Art() {
               time="~1 month"
               date="Apr 9, 2024"
               links={[['https://www.youtube.com/watch?v=qrPZx68gY9I', 'Youtube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
-              wips={[
-                [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
-                ],
-              ]}
+              wipsPath="/assets/art/animation/goblin/"
+              wips={[['cGoblinSketch.webp', 'a small sketch to map colors and design']]}
             >
-              na
+              Terraria Goblin Tinkerer Animated remains my most viewed (longform) video. This kinda
+              baffles me since at first it flopped heavily. I kinda assumed the whole Terraria trend
+              was over and I would have to start doing something else.
+              <br />
+              <br />
+              This video did, in part, inspire the change to a much more narrative-focused animation
+              style. What I mean by that is, previously I would rely on the game's weird quirks and
+              mechanics to make an animation interesting, like the jumpscare you get from Duke
+              Fishron when fishing with a truffle worm. My more recent animations, instead of
+              showing a funny scenario in Terraria, tell a story set in Terraria's world. Even
+              though it takes longer to animate it, this form of storytelling is much more fufilling
+              to watch and to make.
+              <br />
+              <br />I don't think anything I can make will ever surpass this video's view count.
+              Except those goddammed shorts. And my stupid gifs. lol.
             </ArtCard>
 
             <ArtCard
@@ -230,15 +264,11 @@ export default function Art() {
               time="~1 week"
               date="Feb 27, 2024"
               links={[['https://www.youtube.com/watch?v=gfI4R38zY-g', 'Youtube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
-              wips={[
-                [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
-                ],
-              ]}
             >
-              na
+              This was one of the greatest moments of Hermitcraft S10 so I knew I had to animate it.
+              <br />
+              <br />I also tried out a new lip-syncing style in this video, and it ended up sticking
+              cuz I use it all the time now!
             </ArtCard>
 
             <ArtCard
@@ -249,15 +279,8 @@ export default function Art() {
               time="~1 week"
               date="Feb 27, 2024"
               links={[['https://www.youtube.com/watch?v=24v18rdIe80', 'Youtube Link!']]}
-              wipsPath="/assets/art/animation/gnome/"
-              wips={[
-                [
-                  'cGnomeSketch.webp',
-                  'a small sketch to map colors and design. i remember struggled a lot with the gnome design. bottom right art is by OrangeDudeTV and inspired the design!',
-                ],
-              ]}
             >
-              na
+              this video is an enigma
             </ArtCard>
 
             <ArtCard
@@ -267,7 +290,10 @@ export default function Art() {
               frames="~1000 (15 fps)"
               time="~1 week"
               date="Feb 27, 2024"
-              links={[['https://www.youtube.com/watch?v=TgrYxzbDuUs', 'Youtube Link!']]}
+              links={[
+                ['https://www.youtube.com/watch?v=TgrYxzbDuUs', 'Youtube Link!'],
+                ['https://giphy.com/gifs/phonk-tree-pvz-hCmk4p5Hc7P5FawQkv', 'Giphy Link!'],
+              ]}
             >
               yeah
             </ArtCard>
@@ -318,12 +344,35 @@ export default function Art() {
                 ['cFishPoster.webp', 'FISH POSTER YEAHHHHHHHHHHH'],
                 ['cFishPosterReal.webp', 'FISH POSTER BUT REAL YEAHHHHHHHHHHH'],
               ]}
+              date="Jan. 21st 2026"
+              time="~1 month"
             >
-              placeholder description
+              Translucent is my art series I made as my final summative for my highschool media arts
+              class. Its supposed to represent stress in my life by personifying and exaggerating
+              scenarios and objects, but isn't afraid to shy away from whimsy and the surreal. It
+              also has a theme of windows (like you're peering into my life, but only a part of it,
+              hence the name Translucent).
+              <br />
+              <br />I didn't really try super hard to stick to the theme though, and just had fun
+              creating weird scenes in blender. Its a school assignment after all for a class where
+              I didn't need the credits anyways. I did get a 100 on this though, so win-win.
+              <br />
+              <br />
+              Much of my 3D work, especially these pieces, are inspired by the wonderful work of
+              Louie Zong.
             </ArtCard>
 
-            <ArtCard title="Ready to Depart" img="/assets/art/3D/readyToDepart.webp">
-              placeholder description
+            <ArtCard
+              title="Ready to Depart"
+              img="/assets/art/3D/readyToDepart.webp"
+              date="Nov. 20 2025"
+              time="1.5 hours"
+            >
+              A small art piece I made for a creative exploration exercise in media arts.
+              <br />
+              <br />
+              There's not much "deeper meaning" or whatever in this, I just tried to embrace the
+              whimsy and surreal.
             </ArtCard>
 
             <ArtCard
@@ -334,20 +383,57 @@ export default function Art() {
                 ['cHermitcraftBunnyConcept.webp', 'a small sketch to layout the composition'],
                 ['cHappyGhast.webp', 'it was so fun modelling this happy ghast :)'],
               ]}
+              date="Jan. 21st 2026"
+              time="~4 days"
             >
-              placeholder description
+              This was made for an Art Secret Santa for our highschool Art Club! My recipient wanted
+              something Hermitcraft-related, so I 3D-modelled one of the funniest moments in S11
+              thus far.
             </ArtCard>
 
-            <ArtCard title="Hack the North" img="/assets/art/3D/htn.webp">
-              placeholder description
+            <ArtCard
+              title="Hack the North"
+              img="/assets/art/3D/htn.webp"
+              date="Oct. 3rd 2025"
+              time="1 week"
+            >
+              This was my first real piece in blender! It was inspired by my friend, Owen, and I's
+              time at Hack the North 2025. It was hella stressful and our first hackathons ever.
+              This was made for a media arts assignment where we replicated a certain artist's
+              style, and I chose Louie Zong.
+              <br />
+              <br />
+              Check out <Link to="/coding">Friend Compass,</Link> the Android App we made at
+              HTN2025!
             </ArtCard>
 
-            <ArtCard title="Ni Hao Film" youtube="https://www.youtube.com/embed/mz9-sbVoQCo">
-              placeholder description
+            <ArtCard
+              title="Ni Hao Film"
+              youtube="https://www.youtube.com/embed/mz9-sbVoQCo"
+              date="Nov. 16th 2025"
+              time="1 week"
+            >
+              A small short film I made for media arts about being a 2nd-generation immigrant.
+              <br />
+              <br />
+              I'm not very happy with the result but oh well.
             </ArtCard>
 
-            <ArtCard title="Pokemon Day 2026" img="/assets/art/3D/pokemonDay2026.webp">
-              placeholder description
+            <ArtCard
+              title="Pokemon Day 2026"
+              img="/assets/art/3D/pokemonDay2026.webp"
+              date="Feb. 27th 2026"
+              time="1 day"
+            >
+              Pokemon day!
+              <br />
+              <br />I wasn't really into pokemon as a kid, but at the time I was playing so much
+              Cobblemon (minecraft pokemon mod) with my friends. I thought it would be fun to make
+              artwork!
+              <br />
+              <br />
+              It features my favourite pokemon, Gengar, my friend Hang's favourite pokemon, Snorlax,
+              and Jirachi for the hell of it.
             </ArtCard>
           </>
         );
@@ -361,6 +447,7 @@ export default function Art() {
               video="/assets/art/2D/lateDriveHome.webm"
               frames="16, 8 fps"
               date="June 28, 2024"
+              time="~5-7 days"
             >
               An art piece I made after a long swim meet and the coziest drive home I've ever
               experienced.
@@ -386,15 +473,43 @@ export default function Art() {
                   'a preliminary sketch. i actually like the wonders of the world in the background, i wish i did that in the final design.',
                 ],
               ]}
+              date="May 8, 2024"
+              time="like a month"
             >
-              placeholder description
+              Our highschool, The Woodlands, has door mural opportunities for artists every year.
+              Doors to classrooms wrapped with student artwork, and I think its awesome!
+              <br />
+              <br />I decided to submit a mural design in 2024, originally for a science classroom
+              (you can see my old design below), but one of my friends got the mural instead (100%
+              deserved), and the art teacher asked if I wanted to do the ESL (english as a second
+              language) mural instead.
+              <br />
+              <br />I didn't know what design I'd even do but I decided on doing it anyways.
+              Designing the mural was also really difficult since there was a huge window in the
+              middle of the door (most of the design had to sit at the floor).
+              <br />
+              <br />I decided on a "hang in there" poster-like design, with a cat gliding down with
+              a bunch of different country flags into Canada. I really tried to get "hang in there"
+              text in the door design, with a bunch of different languages but ultimately decided
+              against it. The main subject being a cat meant the design could be universally related
+              to, no matter what race, religion, culture, etc you were.
             </ArtCard>
 
-            <ArtCard title="Lost Flock" img="/assets/art/2D/lostflock.webp">
-              placeholder description
+            <ArtCard
+              title="Lost Flock"
+              img="/assets/art/2D/lostflock.webp"
+              date="Apr. 26, 2023"
+              time="~3 days"
+            >
+              A small little background.
             </ArtCard>
 
-            <ArtCard title="Panda's Plight" video="/assets/art/2D/hang.webm">
+            <ArtCard
+              title="Panda's Plight"
+              video="/assets/art/2D/hang.webm"
+              date="Dec. 16, 2022"
+              time="~2 days"
+            >
               I just came up with the name lol.
               <br />
               <br />
@@ -411,8 +526,12 @@ export default function Art() {
                   'when i compressed the image with Squoosh the color compression did this and it actually looks pretty cool',
                 ],
               ]}
+              date="May. 6, 2023"
+              time="~2 days"
             >
-              placeholder description
+              The main menu art of one of Lucas Ma, my friend's, Unity game called Pac Ma. It was a
+              bullet hell avoiding game (vaguely like Just Shapes and Beats), but had stolen pac man
+              assets.
             </ArtCard>
 
             <ArtCard title="Pikmin Pancake" img="/assets/art/2D/pikminPancake.webp">
@@ -673,44 +792,111 @@ export default function Art() {
           <>
             <CategoryHead title="promo">for highschool clubs and such.</CategoryHead>
 
-            <ArtCard title="Pixel Art Workshop" img="/assets/art/promo/pixelWorkshop.png">
-              placeholder description
+            <ArtCard
+              title="Pixel Art Workshop"
+              img="/assets/art/promo/pixelWorkshop.png"
+              links={[['https://www.instagram.com/p/DInGD03tzs1/', 'insta link!']]}
+            >
+              The workshop I hosted about pixel art!
+              <br />
+              <br />
+              Hugely inspired by the brilliant Brandon James Greer.
             </ArtCard>
 
-            <ArtCard title="Samosa" img="/assets/art/promo/samosa.webp">
-              placeholder description
+            <ArtCard
+              title="Samosa"
+              img="/assets/art/promo/samosa.webp"
+              links={[['https://www.instagram.com/p/DBhrj--tgV0/', 'insta link!']]}
+            >
+              Our highschool had these "exemption days", being the only days when schoool clubs
+              could sell food.
+              <br />
+              <br />
+              Our club, Asian Student Association, sold samosas and made bank. Naturally, it was all
+              because of this promo image (it was actually cuz the place we ordered them from was
+              about to shut down or something so they sold it to us on an uber discount)
             </ArtCard>
 
-            <ArtCard title="Kowloon City" img="/assets/art/promo/kowloon.webp">
-              placeholder description
+            <ArtCard
+              title="Kowloon City"
+              img="/assets/art/promo/kowloon.webp"
+              links={[['https://www.instagram.com/p/DU6_DocDK6b/', 'insta link!']]}
+            >
+              I made this for a Kowloon City Crisis Committee in TMUN 2026. I'm not actually part of
+              TMUN, Andrew Dai asked if I wanted to and I said yeah
             </ArtCard>
 
-            <ArtCard title="Comes in Pairs" img="/assets/art/promo/csJamPairs.webp">
-              placeholder description
+            <ArtCard
+              title="Comes in Pairs"
+              img="/assets/art/promo/csJamPairs.webp"
+              links={[['https://itch.io/jam/woodlands-cs-club-jam-2025', 'game jam link!']]}
+            >
+              A poster for our CS club game jam, where the theme was "Comes in Pairs".
+              <br />
+              <br />
+              Check out my game I made for the jam, Cut in Pairs, in the coding section of the
+              website.
             </ArtCard>
 
-            <ArtCard title="Depths" img="/assets/art/promo/csJamDepths.webp">
-              placeholder description
+            <ArtCard
+              title="Depths"
+              img="/assets/art/promo/csJamDepths.webp"
+              links={[
+                ['https://itch.io/jam/woodlands-cs-club-game-jam-spring-2026', 'game jam link!'],
+              ]}
+            >
+              A poster for our CS club game jam, where the theme was "Comes in Pairs".
+              <br />
+              <br />
+              You can tell CS club started falling off at this time.
             </ArtCard>
 
-            <ArtCard title="Matcha Mochi" img="/assets/art/promo/matchaMochi.webp">
-              placeholder description
+            <ArtCard
+              title="Matcha Mochi"
+              img="/assets/art/promo/matchaMochi.webp"
+              links={[['https://www.instagram.com/p/DRS04u4gLOx/', 'insta link!']]}
+            >
+              holy performative
             </ArtCard>
 
-            <ArtCard title="Animation Workshop" video="/assets/art/promo/animWorkshop.webm">
-              placeholder description
+            <ArtCard
+              title="Animation Workshop"
+              video="/assets/art/promo/animWorkshop.webm"
+              links={[['https://www.instagram.com/p/DCZN2dhJAhU/?img_index=1', 'insta link!']]}
+            >
+              I also did a workshop on animation!
             </ArtCard>
 
             <ArtCard
               title="Mooncake Workshop"
               img="/assets/art/promo/mooncake1.webp"
               imgs={['/assets/art/promo/mooncake2.webp']}
+              links={[
+                ['https://www.instagram.com/p/C_57CJJJkAU/?img_index=1', 'insta link!'],
+                ['https://www.instagram.com/p/DAKVXDzgcH1/', 'recap reel link!'],
+              ]}
             >
-              placeholder description
+              This was our first workshop when we fully took over as the leaders of the Asian
+              Student Association club at our highschool. It was a lot of fun!
+              <br />
+              <br />
+              Also check out the recap reel I made!
             </ArtCard>
 
-            <ArtCard title="Asia Month Teaser" img="/assets/art/promo/asaTeaser.webp">
-              placeholder description
+            <ArtCard
+              title="Secret Santa"
+              img="/assets/art/promo/secretSanta.webp"
+              links={[['https://www.instagram.com/p/DSJf4LUDNU_/', 'insta link!']]}
+            >
+              A poster for our Art Club's Art Secret Santa event!
+            </ArtCard>
+
+            <ArtCard
+              title="Asia Month Teaser"
+              img="/assets/art/promo/asaTeaser.webp"
+              links={[['https://www.instagram.com/p/DX0V5xQgAlc/', 'insta link!']]}
+            >
+              The last ever promo I made for ASA. Gone are the times.
             </ArtCard>
           </>
         );
@@ -718,7 +904,9 @@ export default function Art() {
         return (
           <>
             <CategoryHead title="music">
-              most of these are short demos or previews,
+              most of these are demos or for games,
+              <br />
+              so these songs are pretty scrappy.
               <br />
               maybe one day i'll put them on streaming platforms?
               <br />

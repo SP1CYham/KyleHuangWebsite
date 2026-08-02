@@ -4,6 +4,7 @@ import NoiseGrad from './NoiseGrad';
 interface OverlayContent {
   src: string;
   desc: string;
+  video?: boolean;
 }
 
 interface OverlayContextType {
@@ -37,10 +38,19 @@ export function OverlayProvider({ children }: { children: ReactNode }) {
             baseFrequency={2}
           >
             <div className="m-auto flex h-full w-full flex-1">
-              <img
-                src={content.src}
-                className="mx-auto h-auto max-h-[70vh] w-full max-w-full object-contain"
-              />
+              {!content.video ? (
+                <img
+                  src={content.src}
+                  className="mx-auto h-auto max-h-[70vh] w-full max-w-full object-contain"
+                />
+              ) : (
+                <video
+                  src={content.src}
+                  className="mx-auto h-auto max-h-[70vh] w-full max-w-full object-contain"
+                  loop
+                  autoPlay
+                />
+              )}
             </div>
             <p className="mt-4 max-w-[80%] items-center text-center text-balance">{content.desc}</p>
             <p className="text-midtone mt-4">(click anywhere to close)</p>
