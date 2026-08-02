@@ -553,6 +553,28 @@ export default function Coding() {
             </Base>
           </>
         );
+      case 8: //circuit breaker
+        return (
+          <ProjectCard
+            titleImg="/assets/coding/circuit/circuitTitle.webp"
+            titleShadow="#3E157080"
+            title="Circuit Breaker"
+            tagline="A Sokoban-Style Puzzle Game (Winner of GMTK Game Jam 2026!)"
+            itchio="https://sp1cyham.itch.io/circuit-breaker"
+            itchioEmbedMobile={4828647}
+            youtube="https://www.youtube.com/embed/OUgwzJAGKE4"
+
+            uses={['Unity 2D', 'A* Pathfinding', 'FL Studio', 'Audacity', 'C#']}
+            ss={[
+              ['cCircuitArt.webp', 'itch io cover!'],
+              ['cCircuitArt.webp', 'the "art girl" at the right door'],
+            ]}
+            ssPath="public/assets/coding/circuit/"
+            links={[['https://sp1cyham.itch.io/circuit-breaker', 'itch.io link!']]}
+          >
+            WIP!
+          </ProjectCard>
+        );
       default:
         return <div>either wip or bug!</div>;
     }
@@ -606,6 +628,13 @@ export default function Coding() {
               flex: 2,
             },
             {
+              title: 'Circuit Breaker',
+              text: 'winner of the GMTK Game Jam 2026!',
+              img: '/assets/coding/circuit/cCircuitArt.webp',
+              onClick: () => handleCategoryClick(8),
+              flex: 2,
+            },
+            {
               title: 'Friend Compass',
               text: 'navigation for friends using only SMS!',
               img: '/assets/coding/friendCompass/cRegister.webp',
@@ -631,14 +660,14 @@ export default function Coding() {
               text: 'a FNAF fangame themed around a high-school bathroom',
               img: '/assets/coding/wbs/cCamSide.webp',
               onClick: () => handleCategoryClick(6),
-              flex: 3,
+              flex: 2,
             },
             {
               title: 'other',
               text: 'etc',
               img: '/assets/coding/other/shoyuTofu.webp',
               onClick: () => handleCategoryClick(7),
-              flex: 2,
+              flex: 1,
             },
           ]}
         />
