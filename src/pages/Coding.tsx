@@ -205,7 +205,14 @@ export default function Coding() {
             title="Friend Compass"
             tagline="An SMS-based friend finder"
             youtube="https://www.youtube.com/embed/EtJe8NGx1LQ"
-            uses={['Twilio', 'Amazon DynamoDB', 'Android Studio', 'Kitlio', 'Node.js']}
+            uses={[
+              'Twilio',
+              'Amazon DynamoDB',
+              'Android Studio',
+              'Kitlio',
+              'Node.js',
+              'SMS-based Technology',
+            ]}
             ss={[
               ['cMainView.webp', 'the main view of the game!'],
               [
@@ -309,16 +316,43 @@ export default function Coding() {
             <br />
             <br />
             <strong>Buckshot Mobile</strong> is a remake of Buckshot Roulette, a video game by Mike
-            Klubnika.
+            Klubnika. Buckshot Roulette, like Russian Roulette, is a game about probability. Live
+            and blank rounds are loaded in the shotgun in a random order, and you must best your
+            opponent simply named “The Dealer” to win. Items spawn during the game which allow you
+            to double the damage of the shotgun, or check if the round is a live or a blank, adding
+            a lot more strategy into the game.
             <br />
             <br />
-            Buckshot Roulette, like Russian Roulette, is a game about probability. Live and blank
-            rounds are loaded in the shotgun in a random order, and you must best your opponent
-            simply named “The Dealer” to win. While watching big youtubers and streamers like
-            Markiplier, 8BitRyan, and CaseOh play, I wondered how cool Buckshot Roulette could be if
-            it was made as a tabletop multiplayer game. Imagine shooting your opponent by actually
-            holding up the phone and shooting! You actually don't have to imagine; I coded Buckshot
-            Roulette as a tabletop multiplayer game, and here is the making of it. . wip
+            At the time, no multiplayer version of the game was available, and I realized the format
+            would work incredibly well on mobile devices. I decided to spend a month remaking the
+            game from scratch for mobile devices. This included all of the code, the 3D models, the
+            art, music, game states and loops and more. I also recorded the entire process to turn
+            into a developer vlog, or devlog.
+            <br />
+            <br />I made sure to confirm with the Critical Reflex team that the game was ok to
+            publish. Only 30 minutes after releasing the game and the devlog, did the CEO personally
+            reach out to me, telling me I had to take down the game. It had turned out the person I
+            spoke to had incorrectly given permission for me to release when it actually violated
+            the game's copyright.
+            <br />
+            <br />
+            This really sucked. I had lost a month of my life to one message. What I was even more
+            furious about though, was the lack of communication and coordination in their team.
+            You're telling me you had weeks to confirm whether the game was actually ok to release,
+            and only AFTER I released it did you realise it wasn't????
+            <br />
+            <br />
+            Thank god I had the devlog recorded and uploaded, so I had something to show for all
+            this work! Imagine if I was an aspiring game developer who spent even longer polishing
+            and perfecting a fangame, and had it shut down immediately after release. That would
+            absolutely kill my motivation to ever work on games again!!
+            <br />
+            <br />
+            Thankfully, it seemed this whole situation has improved the coordination of the team.
+            Please don't harrass Critical Reflex for any of this by the way, that's just not cool.
+            <br />
+            <br />I feel like it's been long enough, so I open-sourced the project in case anyone
+            was curious about the inner workings of the game. Please don't distribute a build.
           </ProjectCard>
         );
       case 5: //taime
@@ -332,18 +366,15 @@ export default function Coding() {
             tagline="How much time does AI save you? Is it worth it??"
             youtube="https://www.youtube.com/embed/BWxXolwkqVo"
             uses={[
-              'Unity 2D',
-              'A* Pathfinding',
-              'Procedural Generation',
-              'Enemy AI/Behavior',
-              'Modular Upgrade System',
-              'Auto-Build System',
-              'Custom Font',
-              'Audacity',
-              'FL Studio',
-              'Pixilart Studio',
-              'Pixelforge',
-              'C#',
+              'TypeScript',
+              'HMTL',
+              'CSS',
+              'Node.js',
+              'AI',
+              'PSA',
+              'Research',
+              'Vite',
+              'JamHacks 10',
             ]}
             ss={[
               [
@@ -351,6 +382,8 @@ export default function Coding() {
                 'How much time someone saved by using AI! But what was the impact?',
               ],
               ['cQuestions.webp', 'some of the questions we asked quiz takers'],
+              ['cTaimeCost.webp', 'Real life impact of AI.'],
+              ['cTaimeMind.webp', 'how AI impacts the mind.'],
             ]}
             ssPath="public/assets/coding/taime/"
             links={[
@@ -358,58 +391,46 @@ export default function Coding() {
               ['https://github.com/SP1CYham/jamhacksProject2026AIweb', 'github link!'],
             ]}
           >
-            WIP
-            <br />
-            <br />
             Across North America, ongoing plans for data centers (such as recent proposals in
             Mississauga and Hamilton) and AI-related projects have sparked significant debate on the
-            environmental cost of progress. Despite this, consumers are either mostly unaware of
-            these impacts or the scale of impact on them and their local community. These facilities
-            require massive amounts of electricity, water, and physical infrastructure, yet most
-            consumers have little understanding of how their everyday AI usage contributes to these
-            demands. We created TAIME (pronounced time) to bridge this gap. Our goal was to make the
-            hidden environmental costs of AI visible, understandable, and personally relevant. By
+            environmental cost of progress. These facilities require massive amounts of electricity,
+            water, and physical infrastructure, yet most consumers have little understanding of how
+            their everyday AI usage contributes to these demands. I and my team of 3 other hackers
+            created T(AI)ME (pronounced time) to bridge this gap. Our goal was to make the hidden
+            environmental costs of AI visible, understandable, and personally relevant. By
             connecting individual AI usage to environmental metrics and local community impacts, we
             hope to encourage more informed conversations about the future of AI and the
-            infrastructure that powers it. What it does TAIME is an interactive transparency
-            platform that estimates the environmental footprint of an individual's AI usage through
-            a survey-based model. Users answer questions about their AI habits, including frequency
-            of AI use, types of models used, image, video, and text generation activity, and
-            duration and intensity of usage. Using publicly available research and infrastructure
-            estimates, TAIME generates personalized impact metrics, including estimated electricity
-            consumption, estimated carbon emissions, estimated water usage, as well as show the
-            potential impacts of AI infrastructure on local communities through utility bills and
-            cognitive function.
+            infrastructure that powers it.
             <br />
             <br />
-            How we built it with hopes and dreams? Taime was built by a team of four over the course
-            of JAMHacks using a Node.js backend with a Typescript, HTML, and CSS frontend. The
-            calculation engine uses user-submitted usecases to estimate the number of tokens, which
-            can be used to find energy and water consumption. This required us to do large amounts
-            of research into the energy consumption created by different models and it's relevant
-            cost found in areas such as Ontario. Challenges we ran into Accurate quantitative
-            sources on AI power consumption are often biased and few and far between, and we tried
-            finding citable and defensible sources The environmental impact on an individual level
-            was much lower than expected, meaning we had to adjust some features Being able to build
-            a product that feels personal and impactful to the user elliot is a beautiful chadlite
-            and claude is an ltn
+            <strong>T(AI)ME</strong> is an interactive transparency platform that estimates the
+            environmental footprint of an individual's AI usage through a survey-based model. Users
+            answer questions about their AI habits, including frequency of AI use, types of models
+            used, image, video, and text generation activity, and duration and intensity of usage.
+            Using publicly available research and infrastructure estimates, T(AI)ME generates
+            personalized impact metrics, including estimated electricity consumption, estimated
+            carbon emissions, estimated water usage, as well as show the potential impacts of AI
+            infrastructure on local communities through utility bills and cognitive function.
             <br />
             <br />
-            Accomplishments that we're proud of Being beginner hackers, we were really proud that we
-            managed to pick up so many skills on the fly and ultimately create a product we are
-            proud of. Cool visual elements Finding the really awesome 213 page MIT study What we
-            learned "meow. wait no i learned that coding. is evil. and that everyone that works in
-            tech and ai is kind of evil. " Elliot "we learned a lot about ai and it's actual impacts
-            on the environment, challenging our assumptions such as energy and water usage." Kyle
-            "and I LEARNED how to use claude" Lucas "i learned about the power of friendship and
-            that my head fits perfectly under a chair that blocks out light so i can sleep in hour
-            intervals" Andrew
+            Taime was built by me and a team of 3 other people during JAMHacks 10 using Node.js,
+            Typescript, HTML, and CSS. The calculation engine uses user-submitted usecases to
+            estimate the number of tokens, which can be used to find energy and water consumption
             <br />
             <br />
-            What's next for T(AI)ME We think that our product could be further integrated to LLMs
-            via plug-ins or browser extensions that would allow users to understand their impact and
-            usage during sessions. Further research must also be conducted on the resource
-            consumption, as data is still unreliable.
+            To be honest, we didn't really know what we were getting ourselves into. Turns out,
+            people who vibecode burn millions of tokens every day, meaning even with the highest
+            settings, the token estimated usage is too low. Additionally, we spent so long
+            researching on AI that we barely implemented any features. Accurate, quantitative
+            sources on AI power consumption are often biased and few and far between. Also,
+            environmental impact on an individual level ended up being much lower than expected,
+            leading to our stance almost seeming pro-AI when it was supposed to be more neutral.
+            <br />
+            <br />
+            We think that our product could be further integrated to LLMs via plug-ins or browser
+            extensions that would allow users to understand their impact and usage during sessions.
+            Further research must also be conducted on the resource consumption, as data is still
+            unreliable.
           </ProjectCard>
         );
       case 6: //wbs
