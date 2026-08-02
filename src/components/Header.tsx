@@ -17,6 +17,9 @@ import { FaPaintbrush } from 'react-icons/fa6';
 import { IoSunny } from 'react-icons/io5';
 import { FaMoon } from 'react-icons/fa6';
 
+import { ImVolumeMedium } from 'react-icons/im';
+import { ImVolumeMute2 } from 'react-icons/im';
+
 function Icon({ index, className }: { index?: number; className: string }) {
   switch (index) {
     case 0:
@@ -148,6 +151,14 @@ function Header() {
                     <FaMoon className="text-midtone h-7 w-7 text-center group-hover:text-white" />
                   )}
                 </Link>
+
+                <div className="group mt-1 mr-2 hover:cursor-pointer">
+                  {darkMode ? (
+                    <ImVolumeMedium className="text-midtone h-7 w-7 text-center group-hover:text-white" />
+                  ) : (
+                    <ImVolumeMute2 className="text-midtone h-7 w-7 text-center group-hover:text-white" />
+                  )}
+                </div>
 
                 <div
                   className="hover:animate-hover mr-3 h-10 w-10 hover:cursor-pointer md:hidden"

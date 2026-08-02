@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import HeaderGraphic from '../components/HeaderGraphic';
 import Category from '../components/CategoryCard';
 import ArtCard from '../components/ArtCard';
+import MusicPlayer from '../components/MusicPlayer';
 
 export default function Art() {
   const [projIndex, setProjIndex] = useState(0);
@@ -292,7 +293,11 @@ export default function Art() {
       case 2: //3d art
         return (
           <>
-            <CategoryHead title="3d art">renders and other 3d work.</CategoryHead>
+            <CategoryHead title="3d art">
+              renders and other 3d work.
+              <br />
+              made with blender!
+            </CategoryHead>
 
             <ArtCard
               title="Translucent"
@@ -707,6 +712,37 @@ export default function Art() {
             <ArtCard title="Asia Month Teaser" img="/assets/art/promo/asaTeaser.webp">
               placeholder description
             </ArtCard>
+          </>
+        );
+      case 5: //music
+        return (
+          <>
+            <CategoryHead title="music">
+              most of these are short demos or previews,
+              <br />
+              maybe one day i'll put them on streaming platforms?
+              <br />
+              <br />i use FL Studio to make music.
+            </CategoryHead>
+
+            <MusicPlayer title="Humpty's Rise: Basement" src="/assets/music/1basementCombat.ogg" />
+            <MusicPlayer title="Humpty's Rise: Factory" src="/assets/music/eggLevel2.mp3" />
+            <MusicPlayer title="Bittersweet Battle" src="/assets/music/pinao.mp3" />
+            <MusicPlayer title="Mole Music" src="/assets/music/victorShakuhachi.mp3" />
+            <MusicPlayer title="Balatro Theme (Remix)" src="/assets/music/balala.mp3" />
+            <MusicPlayer
+              title="Woodlands Bathroom Simulator: Ram Bossfight"
+              src="/assets/music/fnaf boss.mp3"
+            />
+            <MusicPlayer title="36-Bar Blues" src="/assets/music/victor1Midi.mp3" />
+            <ArtCard
+              title="Buckshot Mobile OST"
+              youtube="https://www.youtube.com/embed/I_nc_XhKI2g"
+            />
+            <ArtCard
+              title="CO-MOTION (Music)"
+              youtube="https://www.youtube.com/embed/sfZZX7dUDc4"
+            />
           </>
         );
       default:

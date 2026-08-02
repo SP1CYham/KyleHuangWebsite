@@ -67,7 +67,7 @@ export default function ArtCard({
   itchio,
   itchioEmbed = null, //just the number
   itchioEmbedMobile, //just the number
-  children, //text
+  children = null, //text
   software = [''],
   frames = '',
   time = '',
@@ -168,11 +168,13 @@ export default function ArtCard({
                   Itchio({ title, itchio, itchioEmbed, itchioEmbedMobile, mobile })}
               </>
             )}
-            <div>
-              <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
-                {open ? 'less info' : 'more info'}
-              </button>
-            </div>
+            {children !== null && (
+              <div>
+                <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
+                  {open ? 'less info' : 'more info'}
+                </button>
+              </div>
+            )}
 
             {wips && (
               <div
