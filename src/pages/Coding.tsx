@@ -539,7 +539,9 @@ export default function Coding() {
                 itchioEmbed={13355125}
                 itchioEmbedMobile={3464584}
               >
-                placeholder description
+                a game i made for my grade 11 physics class! we were tasked to do a PSA for texting
+                while driving. i decided to make a game that actually tests your ability to text and
+                drive.
               </ArtCard>
               <ArtCard
                 title="Shoyu the Tofu"
@@ -548,7 +550,24 @@ export default function Coding() {
                 itchioEmbed={11267376}
                 itchioEmbedMobile={2915183}
               >
-                placeholder description
+                its actually incredible how bad we f*cked this game up. like seriously. <br />
+                <br />
+                shoyu the tofu is probably the prime example of how you SHOULDN'T make a video game.
+                this game was made in 4 days for the gmtk game jam 2024, where the theme was "built
+                to scale". our ideas were actually pretty solid, where you play as this tofu who can
+                puff up or shrink down. your size changes, but your density doesnt, so you can jump
+                super high when puffed and can deal damage when shrunk down by ramming into enemies.
+                <br />
+                <br />
+                but everything else just sucks. the hitboxes are egregious, the tilemaps are all
+                shifted by decimals in random spots, the movement is clunky and uncontrollable, and
+                the enemies are punishing and their hitboxes remain after death. you get stuck
+                halfway through because we forgot to set the door prefab attributes to the next
+                level.
+                <br />
+                <br />
+                don't play this game. we're keeping it up for educational purposes. and i guess the
+                art and music is ok.
               </ArtCard>
             </Base>
           </>
