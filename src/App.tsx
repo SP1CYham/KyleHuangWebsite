@@ -1,6 +1,7 @@
 import { useState, createContext, createRef, lazy, Suspense, useRef, useEffect } from 'react';
 import './index.css';
 
+import { Howler } from 'howler';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -21,6 +22,8 @@ const Resume = lazy(() => import('./pages/Resume'));
 interface ContextTypes {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  muted: boolean;
+  toggleMute: () => void;
   screenWidth: number;
   mobile: boolean;
   triggerWidth: () => void;
@@ -57,6 +60,15 @@ function App() {
     document.documentElement.classList.toggle('light', !next);
   }
 
+  // global mute: covers howler.js sounds here; native players read `muted` from context
+  const [muted, setMuted] = useState(false);
+  function toggleMute() {
+    setMuted((m) => !m);
+  }
+  useEffect(() => {
+    Howler.mute(muted);
+  }, [muted]);
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [mobile, setMobile] = useState(window.innerWidth > 768 ? false : true);
   function triggerWidth() {
@@ -88,6 +100,8 @@ function App() {
         value={{
           darkMode,
           toggleDarkMode,
+          muted,
+          toggleMute,
           screenWidth,
           mobile,
           triggerWidth,

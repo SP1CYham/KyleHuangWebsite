@@ -17,8 +17,8 @@ import { FaPaintbrush } from 'react-icons/fa6';
 import { IoSunny } from 'react-icons/io5';
 import { FaMoon } from 'react-icons/fa6';
 
-import { ImVolumeMedium } from 'react-icons/im';
-import { ImVolumeMute2 } from 'react-icons/im';
+import { HiVolumeUp } from 'react-icons/hi';
+import { HiVolumeOff } from 'react-icons/hi';
 
 function Icon({ index, className }: { index?: number; className: string }) {
   switch (index) {
@@ -97,7 +97,7 @@ function Header() {
     );
   }
 
-  const { darkMode } = useContext(AppContext)!;
+  const { darkMode, muted, toggleMute } = useContext(AppContext)!;
 
   return (
     <div className="sticky top-0 z-10 w-screen items-center gap-0">
@@ -152,11 +152,16 @@ function Header() {
                   )}
                 </Link>
 
-                <div className="group mt-1 mr-2 hover:cursor-pointer">
-                  {darkMode ? (
-                    <ImVolumeMedium className="text-midtone h-7 w-7 text-center group-hover:text-white" />
+                <div
+                  className="group mt-1 mr-2 hover:cursor-pointer"
+                  onClick={toggleMute}
+                  role="button"
+                  aria-label={muted ? 'unmute' : 'mute'}
+                >
+                  {muted ? (
+                    <HiVolumeOff className="text-midtone h-7 w-7 text-center group-hover:text-white" />
                   ) : (
-                    <ImVolumeMute2 className="text-midtone h-7 w-7 text-center group-hover:text-white" />
+                    <HiVolumeUp className="text-midtone h-7 w-7 text-center group-hover:text-white" />
                   )}
                 </div>
 

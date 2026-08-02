@@ -4,7 +4,7 @@ import { FaPlay, FaPause } from 'react-icons/fa6';
 import NoiseGrad from './NoiseGrad';
 import asset from '../asset';
 
-import App, { AppContext } from '../App';
+import { AppContext } from '../App';
 
 interface MusicPlayerProps {
   title?: string;
@@ -35,7 +35,7 @@ export default function MusicPlayer({
   const rafRef = useRef<number | null>(null);
   const lastTs = useRef<number | null>(null);
 
-  const { mobile } = useContext(AppContext)!;
+  const { mobile, muted, darkMode } = useContext(AppContext)!;
   const waveBars = mobile ? Math.round(bars / 2.5) : bars;
 
   // stable fake waveform: heights in 0.15–1, only regenerated if the bar count changes
@@ -53,6 +53,12 @@ export default function MusicPlayer({
     if (playing) el.play().catch(() => setPlaying(false));
     else el.pause();
   }, [playing]);
+
+  // keep the native <audio> in sync with the global mute (set the property directly,
+  // since React doesn't reliably reflect the `muted` attribute onto the element)
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.muted = muted;
+  }, [muted]);
 
   // demo clock: advance `current` while playing when there's no real audio to read from
   useEffect(() => {
@@ -90,11 +96,11 @@ export default function MusicPlayer({
 
   return (
     <NoiseGrad
-      className="mb-10 flex w-full items-center gap-4 rounded-4xl border-2 border-white bg-black p-4"
+      className={`${playing ? `${darkMode ? 'bg-accent/50' : 'bg-shadow'}` : 'bg-black'} mb-10 flex w-full items-center gap-4 rounded-4xl border-2 border-white p-4 transition-all`}
       childClassName="rounded-4xl"
       direction="to top"
       color="var(--color-accent2)"
-      baseFrequency={0.6}
+      baseFrequency={0.4}
       xtraOpacity={40}
     >
       {src && (
