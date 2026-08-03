@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import NoiseGrad from './NoiseGrad';
 import asset from '../asset';
 import { AppContext } from '../App';
+import { Howl } from 'howler';
 
 interface categoryProps {
   title: string;
@@ -14,11 +15,20 @@ interface categoryProps {
 export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryProps) {
   const { darkMode } = useContext(AppContext)!;
 
+  const leverUpSfx = new Howl({
+    src: [asset('/assets/sfx/leverUp.ogg')],
+  });
+
+  function click() {
+    onClick?.();
+    leverUpSfx.play();
+  }
+
   return (
     <div
       className={`bg-accent2 group relative h-full min-w-0 overflow-hidden rounded-3xl transition-all duration-300 hover:cursor-pointer ${darkMode ? 'hover:bg-accent active:bg-white' : 'hover:bg-dark active:bg-black'}`}
       style={{ flex }}
-      onClick={onClick}
+      onClick={click}
     >
       <img
         src={asset(img)}
@@ -46,7 +56,7 @@ export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryPr
             direction="170deg"
             color="var(--color-midtone)"
           >
-            <p className="text-shadow-accent2 z-10 ml-1 flex-2 shrink-0 text-left text-6xl font-bold -tracking-widest hyphens-auto italic transition-all duration-300 text-shadow-lg/100 group-hover:text-shadow-[10px_10px_0px_rgb(0_0_0/1)] md:hyphens-none md:group-hover:text-[4em] md:group-active:text-[3em]">
+            <p className="text-shadow-accent2 z-10 ml-1 flex-2 shrink-0 text-left text-6xl font-bold -tracking-widest hyphens-auto italic transition-all duration-300 text-shadow-lg/100 group-hover:text-shadow-[8px_8px_0px_rgb(0_0_0/1)] md:hyphens-none md:group-hover:text-[4em] md:group-active:text-[3em]">
               {title}
             </p>
             <p className="group-hover:animate-hover line-clamp-3 inline-block min-h-12 flex-1 shrink-0 place-content-end p-4 text-right align-text-bottom font-medium text-balance text-shadow-[2px_2px_3px_var(--color-accent2)]">

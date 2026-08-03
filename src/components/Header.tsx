@@ -8,6 +8,8 @@ import SpicyhamLogo from './spicyhamLogo';
 import SpicyhamLogoFace from './spicyhamLogoFace';
 
 import { AppContext } from '../App';
+import { Howl } from 'howler';
+import asset from '../asset';
 
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { IoHomeSharp } from 'react-icons/io5';
@@ -48,6 +50,10 @@ function NavItem({
   const { dropdownFalse } = useContext(dropdownCnxt)!;
   const { pathname } = useLocation();
 
+  const clickSfx = new Howl({
+    src: [asset('/assets/sfx/click.ogg')],
+  });
+
   const desktopString =
     'bg-accent group-hover:bg-midtone group-active:bg-light m-1 -mb-2 line-clamp-1 inline-block cursor-default rounded-2xl border-2 border-white px-2 py-1 font-normal text-nowrap text-white transition-all group-hover:px-3 group-hover:font-bold';
 
@@ -57,6 +63,7 @@ function NavItem({
       className={`group h-full align-middle ${mobile ? '' : 'inline-block'}`}
       onClick={() => {
         scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+        clickSfx.play();
         if (text === 'coding') {
           triggerFn();
         }
@@ -83,6 +90,11 @@ export const dropdownCnxt = createContext<{ dropdownFalse: () => void } | null>(
 function Header() {
   const [hovered, setHovered] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+
+  const moveSfx = new Howl({
+    src: [asset('/assets/sfx/move.mp3')],
+    volume: 0.2,
+  });
 
   function dropdownFalse() {
     setDropdown(false);
@@ -167,7 +179,9 @@ function Header() {
 
                 <div
                   className="hover:animate-hover mr-3 h-10 w-10 hover:cursor-pointer md:hidden"
-                  onClick={() => setDropdown(!dropdown)}
+                  onClick={() => {
+                    (setDropdown(!dropdown), moveSfx.play());
+                  }}
                 >
                   <IoMdArrowDropdown
                     className="h-full w-full transition-all"

@@ -8,6 +8,7 @@ import { scrollContainerRef } from '../App';
 import NoiseGrad from '../components/NoiseGrad';
 import { Link } from 'react-router-dom';
 import asset from '../asset';
+import { Howl } from 'howler';
 
 export default function Home() {
   const [hover, setHover] = useState(false);
@@ -29,6 +30,10 @@ export default function Home() {
   const allTransforms = ['scaleX(1) scaleY(1)', 'scaleX(-1) scaleY(1)', 'scaleX(1) scaleY(-1)'];
   var transformIndex = 0;
 
+  const clickSfx = new Howl({
+    src: [asset('/assets/sfx/click.ogg')],
+  });
+
   //changing the squareGrad
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,6 +43,14 @@ export default function Home() {
     }, 500);
     return () => clearInterval(interval);
   }, []);
+
+  function actionButton({ to, desc }: { to: string; desc: string }) {
+    return (
+      <Link to={to} onClick={() => clickSfx.play()}>
+        <button className="w-90">{desc}</button>
+      </Link>
+    );
+  }
 
   return (
     <>
@@ -174,18 +187,10 @@ export default function Home() {
             className="flex max-w-90 flex-col items-center self-center"
             onClick={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <Link to="/art">
-              <button className="w-90">see more of my art!</button>
-            </Link>
-            <Link to="/coding">
-              <button className="w-90">check out my coding projects!</button>
-            </Link>
-            <Link to="/about">
-              <button className="w-90">learn more about me!</button>
-            </Link>
-            <Link to="/resume">
-              <button className="w-90 font-black">R E S U M E</button>
-            </Link>
+            {actionButton({ to: '/art', desc: 'see more of my art!' })}
+            {actionButton({ to: '/coding', desc: 'check out my coding projects!' })}
+            {actionButton({ to: '/about', desc: 'learn more about me!' })}
+            {actionButton({ to: '/resume', desc: 'R E S U M E' })}
           </div>
         </div>
       </Base>

@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react';
 import Imag from './Imag';
 import { AppContext } from '../App';
+import { Howl } from 'howler';
+import asset from '../asset';
 
 export default function Carousel({
   imgsToShow,
@@ -26,18 +28,25 @@ export default function Carousel({
   const [lHovered, setLHovered] = useState(false);
   const [rHovered, setRHovered] = useState(false);
 
+  const moveSfx = new Howl({
+    src: [asset('/assets/sfx/move.mp3')],
+    volume: 0.2,
+  });
+
   function goLeft() {
     if (locked) return;
     if (canGoLeft) setIndex((i) => i - 1);
     console.log('left. index: ' + (index - 1));
+    moveSfx.play();
   }
   function goRight() {
     if (locked) return;
     if (canGoRight) setIndex((i) => i + 1);
     console.log('right. index: ' + (index + 1));
+    moveSfx.play();
   }
 
-  const { mobile } = useContext(AppContext)!;
+  const { mobile, darkMode } = useContext(AppContext)!;
   const widthButton = mobile ? h / 2 : h;
 
   return (
@@ -59,7 +68,7 @@ export default function Carousel({
             width: `${widthButton}px`,
             textAlign: 'center',
             backgroundColor: !canGoLeft
-              ? 'var(--color-black)'
+              ? `${darkMode ? 'var(--color-black)' : 'var(--color-accent2-light)'}`
               : lHovered
                 ? 'var(--color-midtone)'
                 : 'var(--color-accent)',
@@ -123,7 +132,7 @@ export default function Carousel({
             width: `${widthButton}px`,
             textAlign: 'center',
             backgroundColor: !canGoRight
-              ? 'var(--color-black)'
+              ? `${darkMode ? 'var(--color-black)' : 'var(--color-accent2-light)'}`
               : rHovered
                 ? 'var(--color-midtone)'
                 : 'var(--color-accent)',

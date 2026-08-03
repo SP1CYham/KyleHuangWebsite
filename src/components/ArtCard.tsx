@@ -8,6 +8,7 @@ import NoiseGrad from './NoiseGrad';
 import asset from '../asset';
 import { Itchio } from './ProjectCard';
 import { AppContext } from '../App';
+import { Howl } from 'howler';
 
 //icons
 import { TbKeyframes } from 'react-icons/tb';
@@ -86,6 +87,13 @@ export default function ArtCard({
     if (wipsVar == null) return [];
     return wipsVar.map((row) => [asset(wipsPath + row[0]), ...row.slice(1)]);
   }
+
+  const expandSfx = new Howl({
+    src: [asset('/assets/sfx/expand.mp3')],
+  });
+  const contractSfx = new Howl({
+    src: [asset('/assets/sfx/contract.mp3')],
+  });
 
   return (
     <>
@@ -170,7 +178,13 @@ export default function ArtCard({
             )}
             {children !== null && (
               <div>
-                <button style={{ marginTop: '10px' }} onClick={() => setOpen(!open)}>
+                <button
+                  style={{ marginTop: '10px' }}
+                  onClick={() => {
+                    setOpen(!open);
+                    open ? expandSfx.play() : contractSfx.play();
+                  }}
+                >
                   {open ? 'less info' : 'more info'}
                 </button>
               </div>

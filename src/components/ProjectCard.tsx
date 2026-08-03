@@ -8,6 +8,7 @@ import Imag from './Imag';
 import asset from '../asset';
 import { CategoryContext } from '../pages/Coding';
 import { AppContext } from '../App';
+import { Howl } from 'howler';
 
 export function Itchio({
   title,
@@ -104,6 +105,15 @@ export default function ProjectCard({
   const { resetProjIndex } = useContext(CategoryContext)!;
   const { mobile } = useContext(AppContext)!;
 
+  const expandSfx = new Howl({
+    src: [asset('/assets/sfx/expand.mp3')],
+  });
+
+  function closeProject() {
+    expandSfx.play();
+    resetProjIndex();
+  }
+
   return (
     <>
       <HeaderGraphic
@@ -191,7 +201,7 @@ export default function ProjectCard({
           </div>
 
           <div className="flex w-full items-center justify-center">
-            <button className="w-[80%]" onClick={resetProjIndex}>
+            <button className="w-[80%]" onClick={closeProject}>
               Close
             </button>
           </div>

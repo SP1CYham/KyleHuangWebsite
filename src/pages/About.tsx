@@ -2,8 +2,13 @@ import Base from '../Base';
 import HeaderGraphic from '../components/HeaderGraphic';
 import { Link } from 'react-router-dom';
 import asset from '../asset';
+import { Howl } from 'howler';
 
 export default function About() {
+  const clickSfx = new Howl({
+    src: [asset('/assets/sfx/click.ogg')],
+  });
+
   return (
     <>
       <HeaderGraphic title="ABOUT ME" finalMult={1.02} />
@@ -49,8 +54,8 @@ export default function About() {
             </div>
           </div>
         </div>
-        <Link to="/resume">
-          <button className="w-full py-10 font-black">R E S U M E</button>
+        <Link to="/resume" onClick={() => clickSfx.play()}>
+          <button className="w-full">R E S U M E</button>
         </Link>
       </Base>
     </>
