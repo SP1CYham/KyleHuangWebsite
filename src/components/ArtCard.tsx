@@ -15,6 +15,13 @@ import { TbKeyframes } from 'react-icons/tb';
 import { IoMdTime } from 'react-icons/io';
 import { MdDateRange } from 'react-icons/md';
 
+const expandSfx = new Howl({
+  src: [asset('/assets/sfx/expand.mp3')],
+});
+const contractSfx = new Howl({
+  src: [asset('/assets/sfx/contract.mp3')],
+});
+
 function iconFunc(num = 1) {
   switch (num) {
     case 0:
@@ -87,13 +94,6 @@ export default function ArtCard({
     if (wipsVar == null) return [];
     return wipsVar.map((row) => [asset(wipsPath + row[0]), ...row.slice(1)]);
   }
-
-  const expandSfx = new Howl({
-    src: [asset('/assets/sfx/expand.mp3')],
-  });
-  const contractSfx = new Howl({
-    src: [asset('/assets/sfx/contract.mp3')],
-  });
 
   return (
     <>

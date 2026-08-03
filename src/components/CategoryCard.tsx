@@ -12,12 +12,12 @@ interface categoryProps {
   flex: number;
 }
 
+const leverUpSfx = new Howl({
+  src: [asset('/assets/sfx/leverUp.ogg')],
+});
+
 export function CategoryCard({ title, text, img, onClick, flex = 1 }: categoryProps) {
   const { darkMode } = useContext(AppContext)!;
-
-  const leverUpSfx = new Howl({
-    src: [asset('/assets/sfx/leverUp.ogg')],
-  });
 
   function click() {
     onClick?.();

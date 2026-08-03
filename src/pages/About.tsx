@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import asset from '../asset';
 import { Howl } from 'howler';
 
-export default function About() {
-  const clickSfx = new Howl({
-    src: [asset('/assets/sfx/click.ogg')],
-  });
+const clickSfx = new Howl({
+  src: [asset('/assets/sfx/click.ogg')],
+});
 
+export default function About() {
   return (
     <>
       <HeaderGraphic title="ABOUT ME" finalMult={1.02} />

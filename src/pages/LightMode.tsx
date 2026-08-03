@@ -10,25 +10,25 @@ const FIRST_FRAME = 1;
 const LAST_FRAME = 12;
 const frameBegin = '/assets/other/lightMachine/WebsiteLightMode_0';
 
+const pullSfx = new Howl({
+  src: [asset('/assets/sfx/pull.ogg')],
+  volume: 0.5,
+});
+const switchOnSfx = new Howl({
+  src: [asset('/assets/sfx/leverDown.ogg')],
+});
+const switchOffSfx = new Howl({
+  src: [asset('/assets/sfx/leverUp.ogg')],
+});
+const setupSfx = new Howl({
+  src: [asset('/assets/sfx/setupLights.mp3')],
+});
+const flashSfx = new Howl({
+  src: [asset('/assets/sfx/flashbang.mp3')],
+});
+
 export default function LightMode() {
   const { darkMode, toggleDarkMode, mobile, machine, toggleMachine } = useContext(AppContext)!;
-
-  const pullSfx = new Howl({
-    src: [asset('/assets/sfx/pull.ogg')],
-    volume: 0.5,
-  });
-  const switchOnSfx = new Howl({
-    src: [asset('/assets/sfx/leverDown.ogg')],
-  });
-  const switchOffSfx = new Howl({
-    src: [asset('/assets/sfx/leverUp.ogg')],
-  });
-  const setupSfx = new Howl({
-    src: [asset('/assets/sfx/setupLights.mp3')],
-  });
-  const flashSfx = new Howl({
-    src: [asset('/assets/sfx/flashbang.mp3')],
-  });
 
   const [progress, setProgress] = useState(darkMode ? 0 : 1);
   function addProgress() {

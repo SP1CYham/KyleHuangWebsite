@@ -14,18 +14,18 @@ interface OverlayContextType {
   show: (content: OverlayContent) => void;
 }
 
+const selectSfx = new Howl({
+  src: [asset('/assets/sfx/select.wav')],
+});
+const deselectSfx = new Howl({
+  src: [asset('/assets/sfx/deselect.wav')],
+});
+
 const OverlayContext = createContext<OverlayContextType | null>(null);
 
 export function OverlayProvider({ children }: { children: ReactNode }) {
   const [content, setContent] = useState<OverlayContent | null>(null);
   const [flashed, setFlashed] = useState(false);
-
-  const selectSfx = new Howl({
-    src: [asset('/assets/sfx/select.wav')],
-  });
-  const deselectSfx = new Howl({
-    src: [asset('/assets/sfx/deselect.wav')],
-  });
 
   function show(c: OverlayContent) {
     setContent(c);

@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom';
 import asset from '../asset';
 import { Howl } from 'howler';
 
+const clickSfx = new Howl({ src: [asset('/assets/sfx/click.ogg')] });
+const sayHiSfx = new Howl({ src: [asset('/assets/sfx/sayHi.mp3')], loop: true });
+
 export default function Home() {
   const [hover, setHover] = useState(false);
   const gifRef = useRef<HTMLVideoElement>(null);
@@ -30,9 +33,15 @@ export default function Home() {
   const allTransforms = ['scaleX(1) scaleY(1)', 'scaleX(-1) scaleY(1)', 'scaleX(1) scaleY(-1)'];
   var transformIndex = 0;
 
-  const clickSfx = new Howl({
-    src: [asset('/assets/sfx/click.ogg')],
-  });
+  // loop the "hi" sound while hovered; the cleanup stops it when hover ends
+  // (or if the page unmounts mid-hover)
+  useEffect(() => {
+    if (!hover) return;
+    sayHiSfx.play();
+    return () => {
+      sayHiSfx.stop();
+    };
+  }, [hover]);
 
   //changing the squareGrad
   useEffect(() => {
