@@ -22,6 +22,8 @@ const Resume = lazy(() => import('./pages/Resume'));
 interface ContextTypes {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  machine: boolean;
+  toggleMachine: () => void;
   muted: boolean;
   toggleMute: () => void;
   screenWidth: number;
@@ -58,6 +60,11 @@ function App() {
     const next = !darkMode;
     setDarkMode(next);
     document.documentElement.classList.toggle('light', !next);
+  }
+
+  const [machine, setMachine] = useState(false);
+  function toggleMachine() {
+    setMachine(!machine);
   }
 
   // global mute: covers howler.js sounds here; native players read `muted` from context
@@ -100,6 +107,8 @@ function App() {
         value={{
           darkMode,
           toggleDarkMode,
+          machine,
+          toggleMachine,
           muted,
           toggleMute,
           screenWidth,

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function NotFound() {
   return (
     <>
-      <div className="h-screen">
+      <div className="h-[85vh]">
         <h1 style={{ fontSize: '200px' }}>404</h1>
         <p className="text-center">
           your page was not found! <br /> how unfortunate.
