@@ -56,7 +56,7 @@ function Footer() {
       <div className="flex flex-row">
         {icon('https://www.youtube.com/@SPICYham', 0) /*youtube*/}
         {icon('https://www.instagram.com/sp1cy_ham', 1) /*insta*/}
-        {icon('https://discord.gg/6Jrc2j4', 5) /*discord*/}
+        {icon('https://discord.gg/MD26m85Qq5', 5) /*discord*/}
         {icon('https://sp1cyham.itch.io/', 8) /*itchio*/}
         {icon('https://github.com/SP1CYham', 2) /*github*/}
         {icon('https://www.linkedin.com/in/kyle-huang-3373b4422/', 3) /*linkedin*/}

@@ -47,10 +47,14 @@ export default function About() {
               </ul>
               <br />
               feel free to reach out through{' '}
-              <Link to="https://discord.gg/6Jrc2j4" target="_blank">
+              <Link to="https://discord.gg/MD26m85Qq5" target="_blank">
                 discord
               </Link>{' '}
-              or email <Link to="mailto:kylehuang1107@gmail.com">{'kylehuang1107@gmail.com'}</Link>!
+              or email{' '}
+              <Link to="mailto:huangkyle08@gmail.com?subject=Message%20From%20Your%20Website!&body=I%20saw%20your%20website,%20it's%20really%20cool%20and%20you're%20so%20cool%20and%20handsome.">
+                {'huangkyle08@gmail.com'}
+              </Link>
+              !
             </div>
           </div>
         </div>
