@@ -15,13 +15,17 @@ export function Itchio({
   itchio,
   itchioEmbed = null, //just the number
   itchioEmbedMobile = null, //just the number
+  overrideEmbed = null,
   mobile,
+  itchAspect = 16 / 9,
 }: {
   title: string;
   itchio?: string;
   itchioEmbed?: number | null;
   itchioEmbedMobile?: number | null;
+  overrideEmbed?: string | null;
   mobile: boolean;
+  itchAspect?: number;
 }) {
   const bgColor = '2629BD';
   const textColor = 'FFF8E2';
@@ -29,27 +33,33 @@ export function Itchio({
 
   const extraString = `?border_width=0&amp;bg_color=${bgColor}&amp;fg_color=${textColor}&amp;link_color=${buttonColor};border_color=000000`;
   const widget = 'https://itch.io/embed/' + itchioEmbedMobile?.toString() + extraString;
-  console.log(widget);
+  //console.log(widget);
   //doesnt work for some reason i guess itch io is weird
 
   const extraStringGame = `?color=${bgColor}`;
 
   return (
     <div className="mt-4 mb-10 flex w-full justify-center">
+      {/* steam embed or other stuff */}
+      {overrideEmbed && <iframe src={overrideEmbed} className="h-fit min-h-50 w-full"></iframe>}
+
       {/* desktop (game embed) */}
-      {!mobile && itchioEmbed !== null && (
+      {itchio && !mobile && itchioEmbed !== null && (
         <iframe
           src={'https://itch.io/embed-upload/' + itchioEmbed + extraStringGame}
           title={`${title} on itch.io`}
-          className="aspect-video h-auto w-full rounded-2xl border-2 border-white"
+          className="h-auto w-full rounded-2xl border-2 border-white"
           color="var(--color-accent2)"
+          style={{
+            aspectRatio: itchAspect,
+          }}
         >
           <a href={itchio}>Play {title} on itch.io</a>
         </iframe>
       )}
 
       {/* mobile (widget embed) */}
-      {(mobile || itchioEmbed === null) && itchioEmbedMobile !== null && (
+      {itchio && (mobile || itchioEmbed === null) && itchioEmbedMobile !== null && (
         <iframe
           src={widget}
           title={`${title} on itch.io`}
@@ -77,6 +87,8 @@ export default function ProjectCard({
   itchio,
   itchioEmbed = null, //just the number
   itchioEmbedMobile, //just the number
+  itchAspect = 16 / 9,
+  overrideEmbed,
   children,
   uses = [''],
   ss = [],
@@ -96,6 +108,8 @@ export default function ProjectCard({
   itchio?: string;
   itchioEmbed?: number | null;
   itchioEmbedMobile?: number | null;
+  itchAspect?: number;
+  overrideEmbed?: string | null;
   children: ReactNode;
   uses?: string[];
   ss?: string[][];
@@ -139,7 +153,7 @@ export default function ProjectCard({
 
           {img && (
             <div className="mt-4 mb-10 flex w-full justify-center">
-              <img src={asset(img)} className="h-auto max-h-80 w-full"></img>
+              <img src={asset(img)} className="h-auto max-h-200 w-full object-scale-down"></img>
             </div>
           )}
 
@@ -154,7 +168,16 @@ export default function ProjectCard({
             ></iframe>
           )}
 
-          {itchio && Itchio({ title, itchio, itchioEmbed, itchioEmbedMobile, mobile })}
+          {(itchio || overrideEmbed) &&
+            Itchio({
+              title,
+              itchio,
+              itchioEmbed,
+              itchioEmbedMobile,
+              overrideEmbed,
+              mobile,
+              itchAspect,
+            })}
 
           <div className="flex grow-0 flex-col-reverse gap-4 md:flex-row">
             {/*left part */}

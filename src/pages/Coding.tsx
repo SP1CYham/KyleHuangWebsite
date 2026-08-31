@@ -48,13 +48,12 @@ export default function Coding() {
           <ProjectCard
             titleImg="/assets/coding/humptysRise/humptyTitle.png"
             titleShadow="#3E157080"
+            img="/assets/coding/humptysRise/cBoxArt.webp"
             pixel={true}
             imgMinusHeight={40}
             title="Humpty's Rise"
             tagline="A Humpty Dumpty themed dungeon crawler"
-            itchio="https://sp1cyham.itch.io/humptys-rise"
-            itchioEmbed={13998305}
-            itchioEmbedMobile={3083622}
+            overrideEmbed="https://store.steampowered.com/widget/5079540"
             uses={[
               'Unity 2D',
               'A* Pathfinding',
@@ -74,11 +73,11 @@ export default function Coding() {
               ['humptyThumb.webp', 'cool'],
             ]}
             ssPath="public/assets/coding/humptysRise/"
-            links={[['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!']]}
+            links={[
+              ['https://store.steampowered.com/app/5079540/Humptys_Rise/', 'steam storepage!'],
+              ['https://sp1cyham.itch.io/humptys-rise', 'itch.io link!'],
+            ]}
           >
-            <i>*above demo is a beta build!</i>
-            <br />
-            <br />
             <strong>Humpty's Rise</strong> is a dungeon crawler with balatro-like elements. Collect
             cards and shells, apply modifiers, and take your revenge against the evil usurper, The
             Gingerbread Man.
@@ -94,8 +93,8 @@ export default function Coding() {
             (unreleased) OST and much, much more.
             <br />
             <br />
-            The game isn't released yet, but I've learned a lot from making it! You can play a
-            (very) early demo on{' '}
+            The game isn't released yet, but I've learned a lot from making it! You can wishlist the
+            game on steam, or play a (very) early demo on{' '}
             <Link to="https://sp1cyham.itch.io/humptys-rise" target="_blank">
               itch.io
             </Link>
@@ -578,20 +577,76 @@ export default function Coding() {
             titleImg="/assets/coding/circuit/circuitTitle.webp"
             titleShadow="#3E157080"
             title="Circuit Breaker"
-            tagline="A Sokoban-Style Puzzle Game (Winner of GMTK Game Jam 2026!)"
+            tagline="A Wire-Placing Puzzle Game (Winner of GMTK Game Jam 2026!)"
             itchio="https://sp1cyham.itch.io/circuit-breaker"
+            itchioEmbed={18772971}
             itchioEmbedMobile={4828647}
-            youtube="https://www.youtube.com/embed/OUgwzJAGKE4"
+            itchAspect={8 / 5}
+            youtube="https://www.youtube.com/embed/gQYV9-juHb4"
 
-            uses={['Unity 2D', 'A* Pathfinding', 'FL Studio', 'Audacity', 'C#']}
+            uses={['Unity 2D', 'Pathfinding', 'Puzzle Design', 'FL Studio', 'Audacity', 'C#']}
             ss={[
               ['cCircuitArt.webp', 'itch io cover!'],
-              ['cCircuitArt.webp', 'the "art girl" at the right door'],
+              ['cComic1.webp', 'the first comic page! details your origin as a marketable robot'],
+              [
+                'cComic2.webp',
+                "the second comic page! you realise you've been sold to mr. evil at closed AI!!",
+              ],
+              [
+                'cComic3.webp',
+                'the third comic page! you run away, narrowly escaping by connecting wire to a bomb, caving in the door!',
+              ],
+              [
+                'cComic4.webp',
+                'the fourth comic page! this appears after beating the game, when you finally escape.',
+              ],
+              ['cComic5.webp', 'the last comic page! thanks for playing!!!'],
             ]}
             ssPath="public/assets/coding/circuit/"
-            links={[['https://sp1cyham.itch.io/circuit-breaker', 'itch.io link!']]}
+            links={[
+              ['https://sp1cyham.itch.io/circuit-breaker', 'itch.io link!'],
+              ['https://youtu.be/awegilW3DTc?t=287', "GMTK's feature video!"],
+            ]}
           >
-            WIP!
+            <i>
+              *unity or itch is being weird and scaling the game wrong, please just play on the{' '}
+              <Link to="https://sp1cyham.itch.io/circuit-breaker">actual itch page!</Link>
+            </i>
+            <br />
+            <br />
+            <strong>Circuit Breaker</strong> is a puzzle game my friend Lucas and I created in only
+            3 days for the GMTK Game Jam 2026, which happened to be 2026's biggest game jam. <br />
+            <br />
+            Against over 10,000 other entries and over 37,000 developers, we placed #85th in audio,
+            #64th in creativity, and #8th in enjoyment. We also landed in GMTK's top 20 favourite
+            games, winning* the whole jam.
+            <br />
+            <br />
+            Inspired by the theme "Countdown", the puzzle game features a wire placing mechanic that
+            allows you to carve a path to a bomb. Then, you must escape the room before the
+            electricity reaches the bomb. This creates an interesting set of mechanics for puzzles,
+            as you must think about where to lay the fuse, and what to do while your available moves
+            tick down.
+            <br />
+            <br />
+            In Mark "GMTK" Brown's words,{' '}
+            <i>
+              "this is a very clever puzzler with a bunch of thoughtful conundrums that, if you're
+              asking me, strike a perfect difficulty balance."
+            </i>
+            <br />
+            <br />
+            As a huge fan of GMTK, Mark Brown's game design videos and devlogs, as well as literally
+            learning how to code from his tutorial, winning this jam was a dream come true. I
+            documented my entire process in a 20 minute devlog which you can watch above! And try
+            out the game on itch.io below!
+            <br />
+            <br />
+            <i className="text-[7px]">
+              *technically the "winner" is decided by placement alone, but most people consider
+              placing top 100 as winning in jams as competitive as GMTK. Also, technically we did
+              get a #1 spot in the "Mark's Favourites" category, so it counts!!
+            </i>
           </ProjectCard>
         );
       default:

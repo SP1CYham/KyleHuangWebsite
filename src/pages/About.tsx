@@ -15,11 +15,11 @@ export default function About() {
 
       <Base maxW={45} className="z-10 mb-30">
         <div className="mb-10 gap-10 md:flex">
-          <div className="md:sticky md:top-24 md:min-w-0 md:flex-1">
+          <div className="md:min-w-0 md:flex-1">
             <img
               loading="lazy"
               src={asset('assets/other/me.webp')}
-              className="h-auto max-h-60 w-full items-center object-scale-down md:max-h-full"
+              className="h-auto max-h-60 w-full items-center object-scale-down md:sticky md:top-24 md:max-h-full"
             />
           </div>
 
@@ -33,16 +33,16 @@ export default function About() {
               <br />
               I've been actively posting content for 6 years, amassing{' '}
               <strong>80+ million views</strong> in total. My animations and games have been
-              recognized by <strong>ReLogic</strong> and <strong>Critical Reflex</strong>,
-              publishers of games like Terraria and Buckshot Roulette. I've also swam my whole life
-              and coached swimmers for 2 years.
+              recognized by publishers and gamemakers such as <strong>ReLogic</strong>,{' '}
+              <strong>Game Maker's Toolkit</strong>, and <strong>Critical Reflex</strong>,
+              publishers of games like Terraria and Buckshot Roulette.
               <br />
               <br />
               Some of my interests:
               <ul>
                 <li>game dev</li>
-                <li>swimming and pickleball</li>
-                <li>making music (sax, drums)</li>
+                <li>design and illustration</li>
+                <li>making music</li>
                 <li>sandbox video games</li>
               </ul>
               <br />
@@ -52,7 +52,7 @@ export default function About() {
               </Link>{' '}
               or email{' '}
               <Link to="mailto:huangkyle08@gmail.com?subject=Message%20From%20Your%20Website!&body=I%20saw%20your%20website,%20it's%20really%20cool%20and%20you're%20so%20cool%20and%20handsome.">
-                {'huangkyle08@gmail.com'}
+                {'huangkyle08[at]gmail.com'}
               </Link>
               !
             </div>
