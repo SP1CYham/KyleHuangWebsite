@@ -827,6 +827,25 @@ export default function Art() {
             </ArtCard>
 
             <ArtCard
+              title="Absolute Robotics Reveal (2025)"
+              youtube="https://www.youtube.com/embed/nIxVWvzXnkc"
+              links={[['https://www.instagram.com/p/DIMD9l0uMSm/', 'insta link!']]}
+              software={['Premiere Pro', 'After Effects']}
+            >
+              Despite not even being part of Absolute Robotics / FRC Team 4308, I was asked to make
+              the robot reveal for 2025's bot, Doohickey. I did not record the footage, but edited,
+              animated, composited and color graded everything.
+              <br />
+              <br />I had a lot of fun with this project. Our highschool's team was notorious for
+              always getting the reveal out late, so I split the video in 2: one serious side and
+              one goofy side, reflecting the bot's name.
+              <br />
+              <br />
+              Later I found out this trailer was used to get a $1,000 sponsorship donation from the
+              Rotary Club of Mississauga. Funny how things work out that way.
+            </ArtCard>
+
+            <ArtCard
               title="Comes in Pairs"
               img="/assets/art/promo/csJamPairs.webp"
               links={[['https://itch.io/jam/woodlands-cs-club-jam-2025', 'game jam link!']]}
@@ -857,6 +876,33 @@ export default function Art() {
               links={[['https://www.instagram.com/p/DRS04u4gLOx/', 'insta link!']]}
             >
               holy performative
+            </ArtCard>
+
+            <ArtCard
+              title="WGS Bedwars Tournament"
+              youtube="https://youtube.com/embed/T5LH8mLbAos"
+              youtubeAspect="1/1"
+              links={[
+                ['https://www.instagram.com/p/Cyit8pmLkak/?img_index=1', 'insta link!'],
+                [
+                  'https://youtube.com/shorts/xCjnxtE9VOM',
+                  'similar animated poster for val. tournament',
+                ],
+              ]}
+              software={['Premiere Pro', 'After Effects', 'Photoshop', 'Illustrator', 'Minemator']}
+            >
+              This is an animated trailer/video for our school's Gaming Club. My friend Andrew
+              designed some of the poster and recorded the footage, while I edited, designed, and
+              animated in minemator.
+              <br />
+              <br />
+              This trailer used the entire Adobe video and photo editing suite, 2 entire weeks, and
+              3D animation. Then the actual event happens and our organizers fumbled the entire
+              thing. Goes to show sometimes life isn't fair.
+              <br />
+              <br />
+              To obtain my role as exec, I animated a different poster (that Andrew designed for
+              2023's Valorant tournament), you can watch that down below.
             </ArtCard>
 
             <ArtCard
